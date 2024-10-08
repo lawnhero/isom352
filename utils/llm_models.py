@@ -1,0 +1,47 @@
+from langchain_openai import ChatOpenAI
+from langchain_anthropic import ChatAnthropic
+
+# Create a couple of Global Variables
+TEMPERATURE = 0.2
+MAX_TOKENS = 512
+
+# Code generation llm with gpt-3.5
+openai_gpt35 = ChatOpenAI(temperature=TEMPERATURE, 
+                 model="gpt-3.5-turbo",
+                 verbose=False,
+                 max_tokens=300,
+                 )
+
+
+# Router llm: Choose OpenAI-GPT4 for better reasoning 
+openai_gpt4 = ChatOpenAI(temperature=0.1, 
+                 model="gpt-4-0125-preview",
+                 verbose=False,
+                 max_tokens=50,
+                 )
+
+
+openai_gpt4o = ChatOpenAI(temperature=0.1, 
+        model='gpt-4o',
+        # max_tokens=self.max_tokens,,
+        )
+
+# define the Anthropic chat client
+# overall style seems consistent with the OpenAI chat client
+claude_sonnet = ChatAnthropic(
+        model='claude-3-5-sonnet-20240620',
+        temperature=TEMPERATURE,
+        max_tokens=MAX_TOKENS
+        )
+
+claude_opus = ChatAnthropic(
+        model='claude-3-opus-20240229',
+        temperature=TEMPERATURE,
+        max_tokens=MAX_TOKENS
+        )
+
+claude_haiku = ChatAnthropic(
+        model='claude-3-haiku-20240307',
+        temperature=TEMPERATURE,
+        max_tokens=MAX_TOKENS
+        )

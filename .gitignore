@@ -1,0 +1,13 @@
+# Ignore specific folders within the project
+__pycache__/
+bin/
+include/
+lib/
+share/
+etc/
+
+# Additionally, ignore all hidden files and directories
+# with the exception of .gitignore and the data directory
+.*
+!.gitignore
+!/data/
