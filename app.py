@@ -1,8 +1,5 @@
 import streamlit as st
 from langchain_community.vectorstores import FAISS
-from langchain_openai import OpenAIEmbeddings
-from langchain_openai import ChatOpenAI
-from langchain_anthropic import ChatAnthropic
 from langchain.globals import set_verbose
 from langchain_core.messages import HumanMessage, AIMessage
 
@@ -105,8 +102,8 @@ def main():
         # initialize chat history
         st.session_state.chat_history = []
         st.session_state.chat_history.append(
-            # AIMessage("Hello! I'm your virtual TA. Ask me about the course📚, Python🐍, SQL🛢️ and Analytics📊...")
-            AIMessage(f"Hello! The time now is {current_time.strftime('%Y-%m-%d %H:%M')} and midterm will ends at {end_date.strftime('%Y-%m-%d %H:%M')}... Good luck!" )
+            AIMessage("Hello! I'm your virtual TA. Ask me about the course📚, Python🐍, SQL🛢️ and Analytics📊...")
+            # AIMessage(f"Hello! The time now is {current_time.strftime('%Y-%m-%d %H:%M')} and midterm will ends at {end_date.strftime('%Y-%m-%d %H:%M')}... Good luck!" )
             )
         # initialize activity history as dict
         st.session_state.history = {}
@@ -139,6 +136,7 @@ def main():
             st.markdown(user_query)
 
 
+        is_midterm = False
         # check the time and compare to 10/13/2024
         if is_midterm:
             response = midterm_chain.stream(user_query,)
