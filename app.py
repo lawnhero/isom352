@@ -10,26 +10,21 @@ import utils.llm_models as llms
 # Enable verbose logging
 set_verbose(True)
 
-# Enable Langchain logging
-LANGCHAIN_TRACING_V2="true"
-LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
-# LANGCHAIN_API_KEY="<your-api-key>"
-LANGCHAIN_PROJECT="streamlit-demo"
-
 # Set the page_title
 st.set_page_config(
-        page_title="🦜 ISOM 352 Virtual TA - Beta", 
+        page_title="🦜 ISOM 352 Virtual TA - Beta 2", 
         page_icon="🔍",
         layout="wide")
 
-from utils.utils import load_db
+from utils.utils import load_db, query_db_connection, process_and_store_query
 from datetime import datetime
 
 # 1. Load the Vectorised database
-db = load_db()
+retriever = load_db().as_retriever()
 
-# 2. Function for similarity search
-retriever = db.as_retriever()
+# 2. MongoDB Atlas connection
+mongo_db = query_db_connection()
+collection = mongo_db['ISOM 352']
 
 # 3. Setup LLM and chains
 gpt35 = llms.openai_gpt35
@@ -147,17 +142,20 @@ def main():
                 'previous_query': st.session_state.history['previous_query'],
                 "previous_classification": st.session_state.history["previous_classification"]})
             
-            # define the new query
+            # store data in MongoDB
+            process_and_store_query(collection, query=user_query, label=choice.label)
+
+            # update the new query except for debug mode
             if "debug" not in choice.label:
                 user_query = choice.query
 
             print(f"router: {choice.label}, query: {user_query}")
             # with st.spinner("Great question..."):
             # get proper response
-            response = generate_response(query=user_query,router_choice=choice.label, 
+            response = generate_response(query=user_query,
+                                         router_choice=choice.label, 
                                         history=st.session_state.history)
-        # generate 
-        # with st.spinner():
+        
         with st.chat_message("AI", avatar="🦜"):
             ai_response = st.write_stream(response)
         

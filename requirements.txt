@@ -5,3 +5,4 @@ langchain_openai
 langchain_anthropic
 faiss-cpu
 datetime
+pymongo
