@@ -5,4 +5,4 @@ langchain_openai
 langchain_anthropic
 faiss-cpu
 datetime
-pymongo
+pymongo==4.3.3
