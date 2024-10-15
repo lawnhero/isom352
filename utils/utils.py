@@ -23,7 +23,7 @@ def load_db(db_path=kb_db_path, embedding_model='text-embedding-ada-002'):
 
 MONGODB_PASSWORD="9vYq3TWWsQn7bp2v"
 
-uri = f"mongodb+srv://streamlit_app:{MONGODB_PASSWORD}@virtual-ta.q344d.mongodb.net/test?retryWrites=true&w=majority"
+uri = f"mongodb+srv://streamlit_app:{MONGODB_PASSWORD}@virtual-ta.q344d.mongodb.net/myFirstDatabase?retryWrites=true&w=majority&ssl=true&ssl_cert_reqs=CERT_NONE"
 
 # MongoDB Atlas connection
 @st.cache_resource
