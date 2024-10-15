@@ -4,6 +4,8 @@ import streamlit as st
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from datetime import datetime
+import ssl
+
 
 # knowledge base path
 kb_db_path = 'data/emb_db'
@@ -27,7 +29,10 @@ uri = f"mongodb+srv://streamlit_app:{MONGODB_PASSWORD}@virtual-ta.q344d.mongodb.
 @st.cache_resource
 def query_db_connection():
     """Return a MongoDB connection to the user_queries_db database."""
-    client = MongoClient(uri, server_api=ServerApi('1'))
+    client = MongoClient(uri, server_api=ServerApi('1'),
+                        ssl=True,
+                        ssl_cert_reqs=ssl.CERT_NONE,
+                        tlsAllowInvalidCertificates=True )
     print("Connected to MongoDB")
     return client['user_queries_db']
 
