@@ -31,8 +31,9 @@ def query_db_connection():
     """Return a MongoDB connection to the user_queries_db database."""
     client = MongoClient(uri, server_api=ServerApi('1'),
                         ssl=True,
-                        ssl_cert_reqs=ssl.CERT_NONE,
-                        tlsAllowInvalidCertificates=True )
+                        # ssl_cert_reqs=ssl.CERT_NONE,
+                        # tlsAllowInvalidCertificates=True 
+                        )
     print("Connected to MongoDB")
     return client['user_queries_db']
 
