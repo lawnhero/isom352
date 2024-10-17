@@ -72,7 +72,9 @@ def router_chain(llm):
     
     When determining the label, think step by step and follow the guidelines provided:
     1. Understand the current query in the context of the previous query: {previous_query} and its classification: {previous_classification}. 
-    2. Rewrite the current query to a new query for better information retrival and classification.
+    2. Rewrite the current query to a new query for better information retrival and classification. 
+        - Provide additional context if necessary.
+        - Retain all key information from the original query.
     3. Determine the type of query based on the new query:
         - If the query is specifically about data anlaytics with pandas or sklearn, on topics including data manipulation, visulization, and descriptive and predictive analytics, output the label: analytics.
         - If the query is specifically about coding in Python, including syntax, libraries, and programming concepts, and asks for an explanation or clarification, output the label: explain-python.
@@ -86,7 +88,7 @@ def router_chain(llm):
     
     Current query: <query>{query}</query>
 
-    The output should strictly adhere to the following guideline:
+    The output should be a JSON Object strictly adhere to the following guideline:
         - output a dict with two keys: query and label 
         - output nothing else
     '''
