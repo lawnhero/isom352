@@ -27,25 +27,26 @@ mongo_db = query_db_connection()
 collection = mongo_db['ISOM 352']
 
 # 3. Setup LLM and chains
-gpt35 = llms.openai_gpt35
+gpt4o_mini = llms.openai_gpt4o_mini
+gpt4o_mini_json = llms.openai_4o_mini_json
 claude_sonnet = llms.claude_sonnet
 claude_haiku = llms.claude_haiku
 gpt4o = llms.openai_gpt4o
 
 # 3a. Setup query router
-router_chain = chains.router_chain(claude_sonnet)
+router_chain = chains.router_chain(gpt4o_mini_json) 
 # 3b. Setup LLMChain & prompts for RAG answer generation
-rag_chain = chains.rag_chain(claude_haiku, retriever)
+rag_chain = chains.rag_chain(claude_sonnet, retriever)
 # 3c. Setup openai_chain for explain concepts
-explain_chain = chains.explain_chain(claude_haiku)
+explain_chain = chains.explain_chain(gpt4o)
 # 3d. Setup openai exercise chain
 exercise_chain = chains.exercise_chain(claude_sonnet)
 # 3e. Setup openai chat chain
-chat_chain = chains.chat_chain(gpt35)
+chat_chain = chains.chat_chain(gpt4o_mini)
 # 3f. Setup openai analytics chain
-analytics_chain = chains.analytics_chain(claude_haiku)
+analytics_chain = chains.analytics_chain(claude_sonnet)
 # 3g. Setup debug chain
-debug_chain = chains.debug_chain(gpt35)
+debug_chain = chains.debug_chain(claude_haiku)
 # midterm chain
 midterm_chain = chains.exam_chain(claude_sonnet)
 

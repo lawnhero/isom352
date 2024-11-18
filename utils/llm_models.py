@@ -12,6 +12,17 @@ openai_gpt35 = ChatOpenAI(temperature=TEMPERATURE,
                  max_tokens=300,
                  )
 
+openai_gpt4o_mini = ChatOpenAI(temperature=TEMPERATURE, 
+                 model="gpt-4o-mini",
+                 verbose=False,
+                 max_tokens=300,
+                 )
+
+openai_4o_mini_json = ChatOpenAI(temperature=TEMPERATURE,
+        model="gpt-4o-mini",
+        max_tokens=300,
+        model_kwargs={ "response_format": { "type": "json_object" } }
+        )
 
 # Router llm: Choose OpenAI-GPT4 for better reasoning 
 openai_gpt4 = ChatOpenAI(temperature=0.1, 
