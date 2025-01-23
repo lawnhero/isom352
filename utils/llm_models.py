@@ -40,7 +40,7 @@ openai_gpt4o = ChatOpenAI(temperature=0.1,
 # define the Anthropic chat client
 # overall style seems consistent with the OpenAI chat client
 claude_sonnet = ChatAnthropic(
-        model='claude-3-5-sonnet-20240620',
+        model='claude-3-5-sonnet-20241022',
         temperature=TEMPERATURE,
         max_tokens=MAX_TOKENS
         )
@@ -52,7 +52,7 @@ claude_opus = ChatAnthropic(
         )
 
 claude_haiku = ChatAnthropic(
-        model='claude-3-haiku-20240307',
+        model='claude-3-5-haiku-20241022',
         temperature=TEMPERATURE,
         max_tokens=MAX_TOKENS
         )
