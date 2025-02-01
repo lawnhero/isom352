@@ -7,8 +7,10 @@ import utils.chains_lcel as chains
 from utils.sidebar import sidebar
 import utils.llm_models as llms
 
+import langchain
+langchain.debug = False
 # Enable verbose logging
-set_verbose(True)
+# set_verbose(True)
 
 # Set the page_title
 st.set_page_config(
@@ -55,30 +57,32 @@ def generate_response(query:str, router_choice:str, history:dict):
 
     if "course" in router_choice:
         # only pass the str as a Runnable parameter
-        response = rag_chain.stream(query) 
+        response = rag_chain.stream(input={
+            'query': query,
+            "chat_history": [history['previous_response']],}) 
     
     elif "exercise" in router_choice:
         response = exercise_chain.stream(input={
-            'current_query': query, 
-            'previous_query': history["previous_query"],
-            "skill_level": "beginner" ,
-            "previous_exercise": history["previous_response"]} )
+            'query': query, 
+            'chat_history': [
+                history['previous_query'],
+                history['previous_response']]} )
     
     elif "explain" in router_choice:
         response = explain_chain.stream(input={'query': query, 
-            'previous_query': history['previous_query'],})
+            'chat_history': [history['previous_response']],})
         
     elif 'analytics' in router_choice: # invoke to chat model
         response = analytics_chain.stream(input={'query': query, 
-            'chat_history': history['previous_response'],})
+            'chat_history': [history['previous_response']],})
         
     elif 'debug' in router_choice: # invoke to debug model
         response = debug_chain.stream(input={'query': query, 
-            'chat_history': history['previous_response'],})
+            'chat_history': [history['previous_response']],})
     
     else: # invoke to chat model
         response = chat_chain.stream(input={'query': query, 
-            'chat_history': history['previous_response'],})
+            'chat_history': st.session_state.chat_history,})
     
     return response
         
@@ -95,13 +99,14 @@ def main():
         is_midterm = True
     # Initialize chat history in session state
     if "chat_history" not in st.session_state:
-        # initialize chat history
+        # initialize chat history for display only
         st.session_state.chat_history = []
         st.session_state.chat_history.append(
             AIMessage("Hello! I'm your virtual TA. Ask me about the course📚, Python🐍, SQL🛢️ and Analytics📊...")
             # AIMessage(f"Hello! The time now is {current_time.strftime('%Y-%m-%d %H:%M')} and midterm will ends at {end_date.strftime('%Y-%m-%d %H:%M')}... Good luck!" )
             )
-        # initialize activity history as dict
+        
+        # initialize activity history to feed into chains as history context
         st.session_state.history = {}
         st.session_state.history['previous_query'] = ""
         st.session_state.history['previous_classification'] = ""
@@ -110,14 +115,12 @@ def main():
     # display the chat history
     for message in st.session_state.chat_history:
         if isinstance(message, HumanMessage):
-            with st.chat_message("Human"):
-                st.markdown(message.content)
+            st.chat_message("Human").markdown(message.content)
         elif isinstance(message, AIMessage):
-            with st.chat_message("AI", avatar="🦜"):
-                st.markdown(message.content)
+            st.chat_message("AI", avatar="🦜").markdown(message.content)
 
     # truncate chat history to last 5 messages
-    max_num_messages = 3
+    max_num_messages = 5
     if len(st.session_state.chat_history) > max_num_messages:
         st.session_state.chat_history = st.session_state.chat_history[-max_num_messages:]
 
@@ -130,8 +133,10 @@ def main():
         # display user query
         with st.chat_message("Human"):
             st.markdown(user_query)
+        
+        st.session_state.chat_history.append(HumanMessage(user_query))
 
-
+        # check if midterm time period and set is_midterm
         is_midterm = False
         # check the time and compare to 10/13/2024
         if is_midterm:
@@ -161,14 +166,15 @@ def main():
             ai_response = st.write_stream(response)
         
         # append the chat history
-        st.session_state.chat_history.append(HumanMessage(user_query))
+        
         st.session_state.chat_history.append(AIMessage(ai_response))
 
         # update history states for customization 
-        st.session_state.history['previous_query'] += "Query:" + user_query + "\n"
+        # st.session_state.history['previous_query'] += "Query:" + user_query + "\n"
+        st.session_state.history['previous_query'] = HumanMessage(user_query)
         if not is_midterm:
             st.session_state.history['previous_classification'] = choice
-        st.session_state.history['previous_response'] = ai_response
+        st.session_state.history['previous_response'] = AIMessage(ai_response)
 
 if __name__ == '__main__':
     main()

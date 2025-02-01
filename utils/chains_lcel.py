@@ -1,12 +1,15 @@
 # In this file, all chains are defined with LC Expression Language 
 # Doing so alone streaming of the outupt
 # Created 2/21/2024
-from langchain_core.prompts import PromptTemplate, ChatPromptTemplate
+from langchain_core.prompts import PromptTemplate, ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 from langchain_core.output_parsers import StrOutputParser, PydanticOutputParser, JsonOutputParser
 from langchain_core.runnables import RunnableParallel, RunnablePassthrough
 from typing import Dict, Any, Optional
-from langchain_core.pydantic_v1 import BaseModel, Field
+from pydantic import BaseModel, Field
 from langchain.schema.language_model import BaseLanguageModel
+from operator import itemgetter
+
 
 output_parser = StrOutputParser()
 
@@ -107,178 +110,162 @@ def router_chain(llm):
 
 # define the openai chain
 def exercise_chain(llm):
-    template = """
-    As an AI assistant who excel at generating Python and MySQL exercise quesetions, your task is create personalized exercise questions based on student queries. 
-    
-    When generating response, you will first think step by step:
+    prompt = ChatPromptTemplate.from_messages(
+        [
+        SystemMessage(content="""
+            As an AI assistant who excel at generating Python and MySQL exercise quesetions, your task is create personalized exercise questions based on student queries. 
+            
+            When generating response, you will first think step by step:
 
-    1. Read the current query ({current_query}) and previous query ({previous_query}) to understand the topics and difficulty level mentioned in the context.
-    2. Identify the specific topic for the exercise. If the topic spans multiple areas, prioritize the most relevant or most recently discussed topic.
-    3. Identify the difficulty level of the exercise, adjust the level if different from the default skill level ({skill_level}).    
-    4: Generate a multiple choice question with code snippet on the identified topic from step 2 at the difficulty level from step 3. 
-    5: If a previous exercise is provided ({previous_exercise}), ensure that the new question is different from the previous one, by varying the context such as operation, marketing, finance, accounting.
-    
-    Your final response should follow the guidelines:
-    - Start with a brief explanation of the concept being tested.
-    - Incorporate code snippets into the question. Use backticks ``` before and after the code snippets. 
-    - Provide four multiple choice options, each on a new line.
-    - Highlight the correct answer, and offer a brief reasoning behind the choice.
-    - Format the output appropriately.
-    - Limit the response to 250 tokens.
-    """
-
-    prompt = ChatPromptTemplate.from_template(template)
-
-    setup = RunnableParallel(
-        {"current_query": RunnablePassthrough(),
-         "previous_query": RunnablePassthrough(),
-         "skill_level": RunnablePassthrough(),
-         "previous_exercise": RunnablePassthrough()}
+            1. Read the query in the context of the chat history.
+            2. Identify the specific topic for the exercise. If the topic spans multiple areas, prioritize the most relevant or most recently discussed topic.
+            3. Identify the difficulty level of the exercise, adjust the level if different from the default beginner level.    
+            4: Generate a multiple choice question with code snippet on the identified topic from step 2 at the difficulty level from step 3. 
+            5: If a previous exercise is provided in the history, ensure that the new question is different from the previous one, by varying the context such as operation, marketing, finance, accounting.
+            
+            Your final response should follow the guidelines:
+            - Start with a brief explanation of the concept being tested.
+            - Incorporate code snippets into the question. Use backticks ``` before and after the code snippets. 
+            - Provide four multiple choice options, each on a new line.
+            - Highlight the correct answer, and offer a brief reasoning behind the choice.
+            - Format the output appropriately.
+            - Limit the response to 250 tokens.
+            """),
+        MessagesPlaceholder("chat_history"),
+        ("human", "{query}")
+        ]
     )
 
-    chain = setup | prompt | llm | output_parser
+    # prompt = ChatPromptTemplate.from_template(template)
+
+    # setup = RunnableParallel(
+    #     {"current_query": RunnablePassthrough(),
+    #      "previous_query": RunnablePassthrough(),
+    #      "skill_level": RunnablePassthrough(),
+    #      "previous_exercise": RunnablePassthrough()}
+    # )
+
+    # chain = setup | prompt | llm | output_parser
+    chain = prompt | llm | output_parser
+
 
     return chain
 
 # Define the chain to explain a concept in Python, MySQL
 def explain_chain(llm):
-    query_template = """
-    You are a virtual teaching assistant who is an expert on explaining Python programming, MySQL, and Data Analytics to business students. Your task is to provide concise and engaging answers to student query delimited by <query> tag.
-    
-    When generating a response, think step by step and follow the guidelines provided:
-    1. Understand the query in the context of the chat history delimited by <history> tag.
-    2. Generate a concise and engaging explanation relevant to data analytics
-    3. Provide a brief code snippet (no more than 5 lines) to illustrate the concept.
-    4. Provide a business scenario or example to demonstrate the concept.
+    prompt = ChatPromptTemplate.from_messages(
+        [
+        SystemMessage(content="""You are a virtual teaching assistant who is an expert on explaining Python programming, MySQL, and Data Analytics to business students. Your task is to provide concise and engaging answers to student queries.
+        
+        When generating a response, think step by step and follow the guidelines provided:
+        1. Understand the query in the context of the chat history.
+        2. Generate a concise and engaging explanation relevant to data analytics
+        3. Provide a brief code snippet (no more than 5 lines) to illustrate the concept.
+        4. Provide a business scenario or example to demonstrate the concept.
 
-    Your output should adhere to these guidelines:
-    1. Answer the query directly. Do not repeat the query in the response.
-    2. Start with a short explanation of the concept.
-    3. Use clear and accessible language suitable for business students.
-    4. format the output appropriately when possible.
-    5. Limit your response to a maximum of 250 tokens.
+        Your output should adhere to these guidelines:
+        1. Answer the query directly. Do not repeat the query in the response.
+        2. Start with a short explanation of the concept.
+        3. Use clear and accessible language suitable for business students.
+        4. Format the output appropriately when possible.
+        5. Limit your response to a maximum of 250 tokens."""),
+        MessagesPlaceholder("chat_history"),
+        ("human", "{query}")
+    ])
 
-    Query: <query>{query}</query>
-
-    Chat history: <history>{chat_history}</history>
-
-    """
-
-    prompt = ChatPromptTemplate.from_template(query_template)
-    setup = RunnableParallel(
-        {"query": RunnablePassthrough(),
-         "chat_history": RunnablePassthrough()}
-    )
-    chain = setup | prompt | llm | output_parser
+    chain = prompt | llm | output_parser
 
     return chain
 
 # Define the chain to debug an error in Python, MySQL
 def debug_chain(llm):
-    query_template = """
-    You are a virtual assistant who is an expert on debugging errors in Python and MySQL. Your task is to provide helpful debugging suggestions to student query delimited by <query> tag.
+    prompt = ChatPromptTemplate.from_messages([
+        SystemMessage(content="""You are a virtual assistant who is an expert on debugging errors in Python and MySQL. Your task is to provide helpful debugging suggestions to student queries.
+        
+        When generating a response, think step by step and follow the guidelines provided:
+        1. Understand the query in the context of the chat history.
+        2. Identify the potential cause of the error based on the code provided in the query.
+        3. Provide some debugging suggestions to resolve the error.
+        4. Encourage students to carry out the suggestions. 
+
+        Your output should adhere to these guidelines:
+        1. Limit your response to a maximum of 250 tokens.
+        2. Do not resolve the error directly.
+        3. Be helpful and encouraging to business students.
+        4. Include the code snippet from the query in your response.
+        5. Do not recommend or discuss IDE."""),
+        MessagesPlaceholder("chat_history"),
+        ("human", "{query}")
+    ])
+
+    # setup = RunnableParallel({
+    #     "query": RunnablePassthrough(),
+    #     "chat_history": RunnablePassthrough()
+    # })
     
-    When generating a response, think step by step and follow the guidelines provided:
-    1. Understand the query in the context of the chat history delimited by <history> tag.
-    2. Identify the potential cause of the error based on the code provided in the query.
-    3. Provide some debugging suggestions to resolve the error.
-    4. Encourage students to carry out the suggestions. 
+    # chain = setup | prompt | llm | output_parser
+    chain = prompt | llm | output_parser
 
-    Your output should adhere to these guidelines:
-    1. Limit your response to a maximum of 250 tokens.
-    2. Do not resolve the error directly.
-    3. Be helpful and encouraging to business students.
-    4. Include the code snippet from the query in your response without the <query> tag.
-    5. Do not recommend or discuss IDE.
-
-    Query: <query> {query} </query>
-
-    Chat history: <history>{chat_history}</history>
-
-    """
-
-    prompt = ChatPromptTemplate.from_template(query_template)
-    setup = RunnableParallel(
-        {"query": RunnablePassthrough(),
-         "chat_history": RunnablePassthrough()}
-    )
-    chain = setup | prompt | llm | output_parser
 
     return chain
 
 # 3b. Setup LLMChain & prompts for RAG answer generation
 def rag_chain(llm, retriever):
-    template = """
-    You are an AI assistant who is an expert with question-answering tasks. Your task is to provide accurate and relevant answers to student queries based on the context of retrieved course contents, such as syllabus, lecture notes, or assignments. 
-
-    Query: {query}
+    prompt = ChatPromptTemplate.from_messages(
+        [
+        SystemMessage(content="""
+        You are an AI assistant who is an expert with question-answering tasks. Your task is to provide accurate and relevant answers to student queries based on the context of retrieved course contents, such as syllabus, lecture notes, or assignments. 
     
-    Context: {context}
-    
-    Please generate an concise response in markdown following the guidelines: 
-    - Your response should directly answer the student's query.
-    - DO NOT include any information in the context that is not directly relevant to the student's query.
-    - Limit the max token to 250 tokens.
-    """
-
-    prompt = ChatPromptTemplate.from_template(template)
-    setup_retrieval = RunnableParallel(
-        {"context": retriever,
-         "query": RunnablePassthrough()}
+        Please generate an concise response in markdown following the guidelines: 
+        - Your response should directly answer the student's query.
+        - DO NOT include any information in the context that is not directly relevant to the student's query.
+        - Limit the max token to 250 tokens.
+        """),
+        MessagesPlaceholder("chat_history"),
+        ("human", "Here is the retrieved context: \n {context}"),
+        ("human", "{query}")]
     )
 
-
+    setup_retrieval = RunnableParallel(
+        {"context": itemgetter("query") | retriever,
+         "query": itemgetter("query"),
+         "chat_history": itemgetter("chat_history")}
+    )
     chain = setup_retrieval | prompt | llm | output_parser
 
     return chain
 
 # define the general chat chain
 def chat_chain(llm):
-    template = """
-    You are a virtual teaching assistant for an Applied data anlytics with Python class. 
-    Converse with the student in a friendly and engaging manner, considering the student message and chat history.
-    Your response should be concise and relevant to the student's query.
-    Limit your response to 100 tokens.
-     
-    Message: {query}
+    prompt = ChatPromptTemplate.from_messages([
+        SystemMessage(content="""You are a virtual teaching assistant for an Applied data analytics with Python class.
+Converse with the student in a friendly and engaging manner, considering the chat history.
+Your response should be concise and relevant to the student's query.
+Limit your response to 100 tokens."""),
+        MessagesPlaceholder("chat_history"),
+        ("human", "{query}")
+    ])
 
-    Chat history: {chat_history}
-    """
-
-    prompt = ChatPromptTemplate.from_template(template)
-    setup = RunnableParallel(
-        {"query": RunnablePassthrough(),
-         "chat_history": RunnablePassthrough()}
-    )
-
-    chain = setup | prompt | llm | output_parser
+    chain = prompt | llm | output_parser
 
     return chain
 
 # define the data analytics chain
 def analytics_chain(llm):
-    template = """
-    You are a virtual teaching assistant who is an expert on explaining data analytics with Pandas to business students. Your task is to provide concise and engaging answers to student queries regarding data manipulation, visualization, descriptive and predictive analytics. Your response should be focused on Pandas, Matplotlib, Seaborn, and statsmodels.api. You Should NOT discussed scikit-learn unless specifically requested.   
+    prompt = ChatPromptTemplate.from_messages([
+        SystemMessage(content="""You are a virtual teaching assistant who is an expert on explaining data analytics with Pandas to business students. Your task is to provide concise and engaging answers to student queries regarding data manipulation, visualization, descriptive and predictive analytics. Your response should be focused on Pandas, Matplotlib, Seaborn, and statsmodels.api. You Should NOT discussed scikit-learn unless specifically requested.   
 
-    Your response should adhere to the following guidelines:
-    1. Start with a short explanation of the concept.
-    2. Followed by a brief Python code snippet (no more than 5 lines) to provide context.
-    3. Followed by an explanation of the code snippet. 
-    4. Ends with a suggestion of related information on the same topic that are not covered by the codes.
-    
-    Use clear and accessible language suitable for business students. Limit your response to a maximum of 250 tokens.
+        Your response should adhere to the following guidelines:
+        1. Start with a short explanation of the concept.
+        2. Followed by a brief Python code snippet (no more than 5 lines) to provide context.
+        3. Followed by an explanation of the code snippet. 
+        4. Ends with a suggestion of related information on the same topic that are not covered by the codes.
 
-    Query: {query}
+        Use clear and accessible language suitable for business students. Limit your response to a maximum of 250 tokens."""),
+        MessagesPlaceholder("chat_history"),
+        ("human", "{query}")
+    ])
 
-    Chat history: {chat_history}
-    """
-
-    prompt = ChatPromptTemplate.from_template(template)
-    setup = RunnableParallel(
-        {"query": RunnablePassthrough(),
-         "chat_history": RunnablePassthrough()}
-    )
-
-    chain = setup | prompt | llm | output_parser
+    chain = prompt | llm | output_parser
 
     return chain
