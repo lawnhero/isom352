@@ -93,7 +93,7 @@ def main():
     # st.write("Currently support queries on syllabus and coding request.")
     sidebar()
     current_time = datetime.now()
-    end_date = datetime(2024, 10, 13, 23, 59, 59)
+    end_date = datetime(2025, 02, 22, 10, 00, 00)
 
     if current_time < end_date:
         is_midterm = True
@@ -102,8 +102,8 @@ def main():
         # initialize chat history for display only
         st.session_state.chat_history = []
         st.session_state.chat_history.append(
-            AIMessage("Hello! I'm your virtual TA. Ask me about the course📚, Python🐍, SQL🛢️ and Analytics📊...")
-            # AIMessage(f"Hello! The time now is {current_time.strftime('%Y-%m-%d %H:%M')} and midterm will ends at {end_date.strftime('%Y-%m-%d %H:%M')}... Good luck!" )
+            # AIMessage("Hello! I'm your virtual TA. Ask me about the course📚, Python🐍, SQL🛢️ and Analytics📊...")
+            AIMessage(f"Hello! The time now is {current_time.strftime('%Y-%m-%d %H:%M')} and midterm will ends at {end_date.strftime('%Y-%m-%d %H:%M')}... Good luck!" )
             )
         
         # initialize activity history to feed into chains as history context
@@ -137,7 +137,7 @@ def main():
         st.session_state.chat_history.append(HumanMessage(user_query))
 
         # check if midterm time period and set is_midterm
-        is_midterm = False
+        # is_midterm = False
         # check the time and compare to 10/13/2024
         if is_midterm:
             response = midterm_chain.stream(user_query,)
