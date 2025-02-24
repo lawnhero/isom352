@@ -95,16 +95,19 @@ def main():
     current_time = datetime.now()
     end_date = datetime(2025, 2, 22, 10, 00, 00)
 
+    # check if midterm time period
     if current_time < end_date:
-        is_midterm = True
+        is_midterm = True        
+        welcome_message = AIMessage(f"Hello! The time now is {current_time.strftime('%Y-%m-%d %H:%M')} and midterm will ends at {end_date.strftime('%Y-%m-%d %H:%M')}... Good luck!" )
+    else:    
+        is_midterm = False
+        welcome_message = AIMessage("Hello! I'm your virtual TA. Ask me about the course📚, Python🐍, SQL🛢️ and Analytics📊...")
+    
     # Initialize chat history in session state
     if "chat_history" not in st.session_state:
         # initialize chat history for display only
         st.session_state.chat_history = []
-        st.session_state.chat_history.append(
-            # AIMessage("Hello! I'm your virtual TA. Ask me about the course📚, Python🐍, SQL🛢️ and Analytics📊...")
-            AIMessage(f"Hello! The time now is {current_time.strftime('%Y-%m-%d %H:%M')} and midterm will ends at {end_date.strftime('%Y-%m-%d %H:%M')}... Good luck!" )
-            )
+        st.session_state.chat_history.append(welcome_message)
         
         # initialize activity history to feed into chains as history context
         st.session_state.history = {}
