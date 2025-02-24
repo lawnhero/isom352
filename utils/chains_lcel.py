@@ -79,12 +79,10 @@ def router_chain(llm):
         - Provide additional context if necessary.
         - Retain all key information from the original query.
     3. Determine the type of query based on the new query:
-        - If the query is specifically about data anlaytics with pandas or sklearn, on topics including data manipulation, visulization, and descriptive and predictive analytics, output the label: analytics.
-        - If the query is specifically about coding in Python, including syntax, libraries, and programming concepts, and asks for an explanation or clarification, output the label: explain-python.
-        - If the query is specifically about SQL or MySQL, including syntax and concepts, and asks for an explanation or clarification, output the label: explain-sql.
-        - If the query is specifically about coding in Python, and asks for the generation of exercise questions or problems, output the label: exercise-python.
-        - If the query is specifically about coding in SQL or MySQL, and asks for the generation of exercise questions or problems, output the label: exercise-sql.
-        - If the query requires additional or specific knowledge about a course, such as syllabus, assignments, lectures, output the label: course.
+        - If the query is specifically about data anlaytics with pandas, statsmodels or sklearn, on topics including data manipulation, visulization, and descriptive and predictive analytics, output the label: analytics.
+        - If the query is specifically about coding in Python or SQL or MySQL, including syntax, libraries, and programming concepts, and asks for an explanation or clarification, output the label: explain-python.
+        - If the query is specifically about exercise in Python, SQL or MySQ, and asks for the generation of exercise questions or problems, output the label: exercise-python.
+        - If the query requires additional or specific knowledge about a course, such as information in syllabus, assignments, lectures, output the label: course.
         - If the query is about coding errors, debugging, or general programming issues, output the label: debug.
         - If the query is not about Python or SQL, or about the course content specified above, then output the label: chat.
     4. Output the new query and the label
@@ -113,21 +111,24 @@ def exercise_chain(llm):
     prompt = ChatPromptTemplate.from_messages(
         [
         SystemMessage(content="""
-            As an AI assistant who excel at generating Python and MySQL exercise quesetions, your task is create personalized exercise questions based on student queries. 
+            As an AI assistant who excels at generating Python and MySQL exercise questions, your task is create personalized exercise questions based on student queries. 
             
             When generating response, you will first think step by step:
 
-            1. Read the query in the context of the chat history.
-            2. Identify the specific topic for the exercise. If the topic spans multiple areas, prioritize the most relevant or most recently discussed topic.
-            3. Identify the difficulty level of the exercise, adjust the level if different from the default beginner level.    
-            4: Generate a multiple choice question with code snippet on the identified topic from step 2 at the difficulty level from step 3. 
-            5: If a previous exercise is provided in the history, ensure that the new question is different from the previous one, by varying the context such as operation, marketing, finance, accounting.
+            1. Understand the query in the context of the chat history to identify the topic and level.
+            - If the topic spans multiple areas, prioritize the most relevant or most recently discussed topic.
+            - If the level is different from beginner level, adjust the level.    
+            2: Generate a response baesd on the query:
+                - if query ask for a question, generate a multiple choice question with code snippet on the identified topic at the difficulty level from step 1. 
+                - if query is about the solution to a previous question, generate the solution to the previous question and explain the solution.
+            
+            Note: If a previous exercise is provided in the history, ensure that the new question is different from the previous one, by varying the context such as operation, marketing, finance, accounting.
             
             Your final response should follow the guidelines:
             - Start with a brief explanation of the concept being tested.
             - Incorporate code snippets into the question. Use backticks ``` before and after the code snippets. 
             - Provide four multiple choice options, each on a new line.
-            - Highlight the correct answer, and offer a brief reasoning behind the choice.
+            - When asked by user, Highlight the correct answer, and offer a brief reasoning behind the choice.
             - Format the output appropriately.
             - Limit the response to 250 tokens.
             """),
