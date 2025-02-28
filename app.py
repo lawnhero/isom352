@@ -38,7 +38,7 @@ gpt4o = llms.openai_gpt4o
 # 3a. Setup query router
 router_chain = chains.router_chain(gpt4o_mini_json) 
 # 3b. Setup LLMChain & prompts for RAG answer generation
-rag_chain = chains.rag_chain(claude_sonnet, retriever)
+rag_chain = chains.rag_chain(gpt4o, retriever)
 # 3c. Setup openai_chain for explain concepts
 explain_chain = chains.explain_chain(gpt4o)
 # 3d. Setup openai exercise chain
