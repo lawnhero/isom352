@@ -31,8 +31,8 @@ collection = mongo_db['ISOM 352']
 # 3. Setup LLM and chains
 gpt4o_mini = llms.openai_gpt4o_mini
 gpt4o_mini_json = llms.openai_4o_mini_json
-claude_sonnet = llms.claude_sonnet
-claude_haiku = llms.claude_haiku
+claude_sonnet = llms.claude_sonnet_with_fallback
+claude_haiku = llms.claude_haiku_with_fallback
 gpt4o = llms.openai_gpt4o
 
 # 3a. Setup query router
