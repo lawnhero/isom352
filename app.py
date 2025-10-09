@@ -93,7 +93,7 @@ def main():
     # st.write("Currently support queries on syllabus and coding request.")
     sidebar()
     current_time = datetime.now()
-    end_date = datetime(2025, 2, 22, 10, 00, 00)
+    end_date = datetime(2025, 10, 12, 00, 00, 00)
 
     # check if midterm time period
     if current_time < end_date:
