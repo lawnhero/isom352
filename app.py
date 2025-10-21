@@ -1,6 +1,6 @@
 import streamlit as st
 from langchain_community.vectorstores import FAISS
-from langchain.globals import set_verbose
+# from langchain_core.globals import set_verbose
 from langchain_core.messages import HumanMessage, AIMessage
 
 import utils.chains_lcel as chains
