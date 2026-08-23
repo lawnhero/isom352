@@ -1,0 +1,75 @@
+# Tier A — hand-maintained course facts (ISOM 352)
+#
+# This file is written by a HUMAN and only ever read by the app.
+# The sync script never touches it. (Canvas-derived data lives in schedule.json.)
+#
+# RULE: if Canvas already owns a fact, do NOT restate it here.
+#   - due dates, assignment names, module list  -> schedule.json (synced)
+#   - office hours, grading weights, policies   -> this file (hand-maintained)
+# Duplicating a fact across both files recreates the drift problem.
+#
+# STATUS: skeleton created at the 550 fork. Every TODO below must be filled
+# from the Fall 2026 syllabus before this tutor faces students. Until
+# schedule.json is synced, date questions abstain and point to Canvas.
+
+term          = "Fall 2026"
+last_reviewed = "2026-08-23"   # TODO: bump when the TODOs below are filled
+
+# Days schedule.json may go un-synced before the tutor stops stating specific
+# due dates. Fall term has breaks: 12-14 is the right range.
+stale_after_days = 12
+
+
+[course]
+code       = "ISOM 352"
+title      = "Applied Data Analytics with Coding"
+# Section 1101. NOTE: Fall 2026 runs TWO sections (Canvas 165126 and 165131);
+# decide whether this repo serves both before writing a single meeting line.
+canvas_url = "https://canvas.emory.edu/courses/165126"
+meeting    = ""   # TODO: days/times/room per section
+
+
+[instructor]
+name  = "Prof Wen Gu"
+title = "Associate Professor, ISOM area"
+email = "wenjun.gu@emory.edu"
+
+office_hours = ""   # TODO
+office       = "GBS 415"
+
+
+[[tas]]
+# TODO: add Fall 2026 TAs (name + email). Placeholder rows are skipped by the
+# renderer, so leaving this as-is is safe.
+name  = "TBD"
+email = ""
+
+
+[grading]
+# TODO: paste the weights table from the Fall 2026 syllabus.
+weights = ""
+
+late_policy  = ""   # TODO
+regrade      = ""   # TODO
+
+
+[materials]
+body = ""   # TODO: textbook / required materials
+
+
+[software]
+# The software route answers coding how-to from the model's own knowledge,
+# grounded by this block. For 352 this is the Python/SQL toolchain, not menus.
+# TODO: confirm versions and environment for Fall 2026.
+python   = ""   # e.g. "Python 3.11 via Anaconda / Google Colab"
+notebook = ""   # e.g. "Jupyter notebooks distributed through Canvas"
+database = ""   # e.g. "MySQL 8 via ..."
+
+# Course conventions the tutor must respect when writing code answers.
+# These replace the old hard-coded prompt rules from the previous app
+# (e.g. "statsmodels, not scikit-learn, unless asked").
+conventions = """
+- TODO: which libraries are in scope (pandas, matplotlib/seaborn, statsmodels ...)
+- TODO: libraries to avoid unless asked (e.g. scikit-learn)
+- TODO: any house style (variable naming, notebook structure)
+"""
