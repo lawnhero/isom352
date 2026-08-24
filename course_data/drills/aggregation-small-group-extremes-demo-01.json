@@ -1,0 +1,27 @@
+{
+  "id": "aggregation-small-group-extremes-demo-01",
+  "disease": "aggregation-small-group-extremes",
+  "disease_label": "Aggregation/groupby — Small-group extremes",
+  "status": "clean",
+  "debut_session": 3,
+  "spine": "demo",
+  "artifact": {
+    "code": "import pandas as pd\n\nhomes = pd.read_csv(\"demo_homes.csv\")\n\navg_size = homes.groupby(\"neighborhood\")[\"sqft\"].mean().round(0)\ncounts = homes.groupby(\"neighborhood\")[\"sqft\"].count()\n\nprint(\"Average home size (sqft) by neighborhood:\")\nprint(avg_size)\nprint()\nprint(\"Homes per neighborhood:\")\nprint(counts)",
+    "output": "Average home size (sqft) by neighborhood:\nneighborhood\nNorthside    1937.0\nOldtown      2097.0\nRiverview    2156.0\nName: sqft, dtype: float64\n\nHomes per neighborhood:\nneighborhood\nNorthside    30\nOldtown      30\nRiverview    30\nName: sqft, dtype: int64"
+  },
+  "answer_key": {
+    "verdict": "sign",
+    "flaw": "",
+    "mechanism": "The sqft column is complete, each neighborhood average rests on a group of thirty homes, and the group sizes are printed beside the averages so the reader can judge them. The claim -- average size by neighborhood -- is exactly what was computed.",
+    "consequence": "",
+    "caveats": [
+      "An average hides spread: two neighborhoods with the same mean sqft can have very different mixes of homes.",
+      "Size is not value -- nothing here says which neighborhood is more expensive per square foot."
+    ]
+  },
+  "provenance": {
+    "recipe": "drill_recipes/demo_clean_groupby.py",
+    "master": "course_data/drills/demo/demo_homes.csv",
+    "built_at": "2026-08-24T04:42:22Z"
+  }
+}

@@ -590,6 +590,19 @@ def get_course_links():
 
 
 @st.cache_data(show_spinner=False)
+def _cached_facts(mtimes):
+    _, facts = load()
+    return facts
+
+
+def get_course_facts():
+    """The parsed facts.toml dict (or None), for code that needs data rather
+    than a rendered block -- the drill door reads [schedule] from it to gate
+    on the current session number. Safe to call every rerun."""
+    return _cached_facts(_mtimes())
+
+
+@st.cache_data(show_spinner=False)
 def _cached_banner(mtimes):
     """What the sidebar footer states about the course: code, term, when the
     schedule was last synced, and who teaches it. Read from the same two files

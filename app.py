@@ -20,11 +20,12 @@ from utils.attachments import (
 from utils.course_context import (
     get_course_context,
     get_course_date_span,
+    get_course_facts,
     get_course_links,
     get_software_context,
 )
-from utils import practice
-from utils.sidebar import sidebar
+from utils import drills, practice
+from utils.sidebar import diagnostics_unlocked, sidebar
 import utils.llm_models as llms
 from utils.ta_tools import TurnArtifacts
 
@@ -408,6 +409,227 @@ def _resolve_pending_intent(pending, selected_value, typed_query, uploaded_files
     return typed_query, False, False
 
 
+# --------------------------------------------------------------------------
+# The verification-drill door
+#
+# Deliberately modal and router-free. The v2 design's two-lane rule: free
+# text goes through the invisible router; submitting to an artifact goes
+# through an explicit door that names the AI relationship the student chose.
+# While a drill is open, app.py owns the turn -- the router never sees it.
+#
+# The hard outcomes (verdict correct, false alarm, miss) come from the
+# student's own sign/don't-sign click, computed in utils.drills.score --
+# never parsed out of model prose. The chains only coach and debrief.
+#
+# Rule E1: everything logged here is formative. Events carry a self-asserted
+# handle and feed the weekly report's calibration curve; they are never
+# grading evidence, which is why a resettable handle is sufficient identity.
+# --------------------------------------------------------------------------
+DRILL_DOOR_LINE = (
+    "**You chose: auditee mode.** I produced work; you verify it. "
+    "That is the relationship — I will not hint unless you ask (lab "
+    "conditions only), and your verdict is yours to sign."
+)
+
+NO_DRILLS_MESSAGE = (
+    "The drill bank has nothing for where the course is right now — drills "
+    "arrive as class sessions do. Ask me to explain or practice a concept "
+    "in the meantime."
+)
+
+DRILL_VERDICT_NEEDED = (
+    "Pick a verdict first — **I'd sign it** or **Don't sign** below — or "
+    "take a hint. Your reasoning comes right after the click."
+)
+
+
+def _drill_turn(human_text: str, ai_text: str, *, route: str,
+                interaction_id: str = "") -> None:
+    """Append one finished drill exchange to history with its meta.
+
+    Drill turns replay through the same section renderer as router turns, so
+    the transcript shows the drill badge and the rating thumbs like any
+    other answer.
+    """
+    st.session_state.chat_history.append(HumanMessage(human_text))
+    st.session_state.chat_history.append(AIMessage(ai_text))
+    _set_meta(
+        len(st.session_state.chat_history) - 1,
+        sections=[{"text": ai_text, "route": route, "sources": [],
+                   "abstained": False, "retrieval_quality": ""}],
+        route=route,
+        sources=[],
+        abstained=False,
+        interaction_id=interaction_id,
+        diagnostics={},
+        attachment_notice="",
+        retrieval_quality="",
+        progress={"label": ui.route_meta(route)["done"], "state": "complete"},
+    )
+
+
+def _log_drill_event(route: str, metadata: dict, *, query: str = "") -> str:
+    payload = build_event_payload(
+        event_type="drill",
+        session_id=st.session_state.session_id,
+        mode="drill",
+        response_mode=st.session_state.get("response_mode", ""),
+        query=query,
+        route_label=route,
+        learning_objective=metadata.get("disease", ""),
+        resolved=True,
+        metadata={**metadata, "handle": st.session_state.get("drill_handle", "")},
+    )
+    try:
+        return str(store_event(collection, payload))
+    except Exception:
+        traceback.print_exc()
+        return ""
+
+
+def _serve_drill(conditions: str) -> None:
+    """Pick from the bank and put the artifact on screen, or say why not."""
+    bank, problems = drills.load_bank(include_demo=diagnostics_unlocked())
+    for line in problems:
+        print(f"[drills] skipped: {line}")
+    session_number = drills.current_session(get_course_facts())
+    picked = drills.select(
+        bank, session_number, history=st.session_state.get("drill_history") or []
+    )
+    if picked is None:
+        st.session_state.drill_session = None
+        _drill_turn("Give me a verification drill", NO_DRILLS_MESSAGE,
+                    route="drill_serve")
+        return
+    st.session_state.drill_session = drills.start(picked, conditions)
+    st.session_state.drill_session["prior_hints"] = []
+    label = "lab" if conditions == "lab" else "exam"
+    artifact = (
+        DRILL_DOOR_LINE + "\n\n"
+        + drills.artifact_markdown(st.session_state.drill_session)
+    )
+    interaction_id = _log_drill_event(
+        "drill_serve",
+        {"drill_id": picked["id"], "disease": picked["disease"],
+         "status": picked["status"], "conditions": conditions,
+         "session_number": session_number},
+    )
+    _drill_turn(
+        f"Give me a verification drill ({label} conditions)",
+        artifact,
+        route="drill_serve",
+        interaction_id=interaction_id,
+    )
+
+
+def _drill_hint() -> None:
+    """One streamed nudge, lab conditions only. Never reveals clean/dirty."""
+    session = st.session_state.drill_session
+    drill = drills.drill_of(session)
+    session["prior_hints"] = session.get("prior_hints") or []
+    payload = {
+        "artifact_block": drills.artifact_markdown(session),
+        "answer_key": drills.answer_key_block(drill),
+        "hint_number": int(session.get("hints_given") or 0) + 1,
+        "max_hints": drills.MAX_DRILL_HINTS,
+        "prior_hints": "\n".join(session["prior_hints"]) or "(none yet)",
+    }
+    with st.chat_message("Human"):
+        ui.md("Hint, please")
+    with st.chat_message("AI", avatar=TA_AVATAR):
+        status = st.status("Writing a hint...", type="compact")
+        text = ui.write_stream_md(all_chains["drill_hint_chain"].stream(payload))
+        status.update(label=ui.route_meta("drill_hint")["done"], state="complete")
+    session["prior_hints"].append(text)
+    drills.record_hint(session)
+    interaction_id = _log_drill_event(
+        "drill_hint",
+        {"drill_id": drill.get("id", ""), "disease": drill.get("disease", ""),
+         "status": drill.get("status", ""),
+         "hints_given": session["hints_given"]},
+    )
+    _drill_turn("Hint, please", text, route="drill_hint",
+                interaction_id=interaction_id)
+
+
+def _grade_drill(attempt_text: str) -> None:
+    """Score the click in Python, stream the debrief, write the ledger."""
+    session = st.session_state.drill_session
+    drill = drills.drill_of(session)
+    outcome = drills.score(session)
+
+    truth = "sign" if drill.get("status") == "clean" else "dont_sign"
+    verdict_words = {"sign": "SIGN it", "dont_sign": "DO NOT sign it"}
+    outcome_text = (
+        f"The correct verdict was {verdict_words[truth]}. "
+        f"The student clicked {verdict_words[outcome['verdict']]} — "
+        + ("the RIGHT call." if outcome["verdict_correct"] else "the WRONG call.")
+    )
+    if outcome["false_alarm"]:
+        outcome_text += " This is a false alarm on clean work."
+    if outcome["miss"]:
+        outcome_text += " This is a miss on flawed work."
+
+    verdict_label = ("I'd sign it. " if outcome["verdict"] == "sign"
+                     else "Don't sign. ")
+    payload = {
+        "artifact_block": drills.artifact_markdown(session),
+        "answer_key": drills.answer_key_block(drill),
+        "outcome": outcome_text,
+        "conditions": session.get("conditions", "lab"),
+        "attempt_text": attempt_text or "(the student wrote nothing)",
+    }
+    with st.chat_message("Human"):
+        ui.md(verdict_label + attempt_text)
+    with st.chat_message("AI", avatar=TA_AVATAR):
+        status = st.status("Grading your verdict...", type="compact")
+        text = ui.write_stream_md(all_chains["drill_grade_chain"].stream(payload))
+        status.update(label=ui.route_meta("drill_grade")["done"], state="complete")
+
+    interaction_id = _log_drill_event("drill_grade", outcome, query=attempt_text)
+    history = st.session_state.setdefault("drill_history", [])
+    history.append(outcome)
+    st.session_state.drill_session = None
+    _drill_turn(verdict_label + attempt_text, text, route="drill_grade",
+                interaction_id=interaction_id)
+
+
+def _render_drill_chooser() -> None:
+    """The door itself: name the mode, take a handle, pick the conditions."""
+    with st.container(border=True):
+        st.markdown("**Verification drill** — an artifact that ran without "
+                    "errors. Decide whether you would sign it.")
+        # Copied to a plain state key on purpose: Streamlit discards
+        # widget-keyed state on any rerun where the widget is not drawn, and
+        # this chooser vanishes the moment a drill is served -- a handle
+        # bound only to the widget key would be gone before the first grade
+        # event logs it.
+        handle = st.text_input(
+            "Drill handle (optional — keeps your practice record across visits)",
+            value=st.session_state.get("drill_handle", ""),
+            key="drill_handle_input",
+            placeholder="any name or your NetID",
+        )
+        st.session_state.drill_handle = (handle or "").strip()
+        with st.container(horizontal=True):
+            lab = st.button(
+                "Lab conditions", icon=":material/science:",
+                help="Field guide open, hints allowed.",
+            )
+            exam = st.button(
+                "Exam conditions", icon=":material/timer:",
+                help="No guide, no hints — sign or don't.",
+            )
+            never_mind = st.button("Never mind", type="tertiary",
+                                   icon=":material/close:")
+    if never_mind:
+        st.session_state.drill_session = None
+        st.rerun()
+    if lab or exam:
+        _serve_drill("lab" if lab else "exam")
+        st.rerun()
+
+
 # 4. Build an app with streamlit
 def main():
     st.session_state.setdefault("session_id", str(uuid.uuid4()))
@@ -484,6 +706,14 @@ def main():
                 label_visibility="collapsed",
             )
 
+    # The drill door: the chooser panel while conditions are being picked,
+    # and a flag for the rest of the turn once an artifact is on screen.
+    drill_state = st.session_state.get("drill_session")
+    if drill_state and drill_state.get("choosing"):
+        _render_drill_chooser()
+        drill_state = st.session_state.get("drill_session")
+    drill_open = drills.is_active(drill_state)
+
     # An explicit way out of the clarify state. Typing a new question also
     # works (see _resolve_pending_intent), but the student should be able to
     # see that backing out is allowed rather than having to discover it.
@@ -500,8 +730,35 @@ def main():
 
     # Pin composer controls so students always see them while scrolling history.
     selected_action = None
+    drill_clicks = {}
     with st.bottom:
-        if not pending:
+        if drill_open:
+            # An open drill replaces the chips: the verdict IS the interface,
+            # and the click is what drills.score() trusts.
+            with st.container(horizontal=True, horizontal_alignment="distribute"):
+                if not drill_state.get("verdict"):
+                    drill_clicks["dont_sign"] = st.button(
+                        "Don't sign — I found a problem",
+                        icon=":material/report:", key="drill_dont_sign",
+                    )
+                    drill_clicks["sign"] = st.button(
+                        "I'd sign it", icon=":material/verified:", key="drill_sign",
+                    )
+                    hints_left = drills.hints_left(drill_state)
+                    if hints_left:
+                        drill_clicks["hint"] = st.button(
+                            f"Hint ({hints_left} left)",
+                            icon=":material/lightbulb:", key="drill_hint_btn",
+                        )
+                else:
+                    drill_clicks["change"] = st.button(
+                        "Change verdict", icon=":material/undo:", key="drill_change",
+                    )
+                drill_clicks["exit"] = st.button(
+                    "Exit drill", type="tertiary", icon=":material/close:",
+                    key="drill_exit",
+                )
+        elif not pending:
             if not conversation_started:
                 st.caption("Quick actions")
                 selected_action = ui.render_action_row(
@@ -514,7 +771,21 @@ def main():
                 )
 
         chat_placeholder = "Ask a question, or attach a screenshot of your work..."
-        if pending and pending.get("needs") == "topic":
+        if drill_open:
+            verdict = drill_state.get("verdict")
+            if verdict == "dont_sign":
+                chat_placeholder = (
+                    "Name where it goes wrong, what the mistake is in business "
+                    "terms, and what acting on it would cost..."
+                )
+            elif verdict == "sign":
+                chat_placeholder = (
+                    "Your checking sentence: what did you check before "
+                    "trusting this?"
+                )
+            else:
+                chat_placeholder = "Pick a verdict above, or take a hint..."
+        elif pending and pending.get("needs") == "topic":
             chat_placeholder = "Pick a topic above, or type one..."
         elif pending and pending.get("needs") == "subtopic":
             chat_placeholder = "Pick a subtopic above, or type one..."
@@ -533,6 +804,38 @@ def main():
     typed_query, uploaded_files = _parse_chat_input(raw_input)
     user_query = ""
     display_user_text = ""
+
+    # 0) An open drill owns the turn. Nothing here reaches the router: the
+    #    buttons move the drill's own state machine, and typed text is the
+    #    student's reasoning (or a nudge back to the verdict buttons).
+    if drill_open:
+        if drill_clicks.get("exit"):
+            st.session_state.drill_session = None
+            st.rerun()
+        if drill_clicks.get("change"):
+            drill_state["verdict"] = ""
+            st.rerun()
+        if drill_clicks.get("hint"):
+            _drill_hint()
+            st.rerun()
+        if drill_clicks.get("sign") or drill_clicks.get("dont_sign"):
+            drill_state["verdict"] = (
+                "sign" if drill_clicks.get("sign") else "dont_sign"
+            )
+            st.rerun()
+        if typed_query:
+            if drill_state.get("verdict"):
+                _grade_drill(typed_query)
+            else:
+                _drill_turn(typed_query, DRILL_VERDICT_NEEDED, route="drill_serve")
+            st.rerun()
+        return
+
+    # 0b) The drill chip: opens the door (conditions chooser), no query runs.
+    if selected_action is not None and selected_action.get("kind") == "drill":
+        _cancel_pending()
+        st.session_state.drill_session = {"choosing": True}
+        st.rerun()
 
     # 1) Chip click - quick action before the conversation starts, or a
     #    route-aware follow-up after it.

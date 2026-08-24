@@ -293,3 +293,40 @@ def test_empty_module_filter_widens_instead_of_abstaining(all_chains):
     assert not step.abstained
     assert step.trace["widened_from_module"] == "hypothesis-testing"
     assert step.sources == ["Interpreting R-squared"]
+
+
+# ---- drill chains ----------------------------------------------------------
+# The drill door bypasses the router, so its payloads are built in app.py by
+# hand rather than by a tool. These fixtures mirror app.py's _grade_drill and
+# _drill_hint exactly; a renamed key here means a KeyError in front of a
+# student mid-drill.
+
+DRILL_GRADE_PAYLOAD = {
+    "artifact_block": "**Verification drill** ...\n```python\nprint(1)\n```",
+    "answer_key": "Status: dirty\nCorrect verdict: DO NOT SIGN\nThe flaw: dropna()",
+    "outcome": "The correct verdict was DO NOT sign it. The student clicked SIGN it — the WRONG call. This is a miss on flawed work.",
+    "conditions": "lab",
+    "attempt_text": "Looks fine to me.",
+}
+
+DRILL_HINT_PAYLOAD = {
+    "artifact_block": "**Verification drill** ...\n```python\nprint(1)\n```",
+    "answer_key": "Status: dirty\nThe flaw: dropna()",
+    "hint_number": 1,
+    "max_hints": 2,
+    "prior_hints": "(none yet)",
+}
+
+
+def test_drill_grade_payload_renders_through_its_chain(all_chains):
+    rendered = "".join(all_chains["drill_grade_chain"].stream(DRILL_GRADE_PAYLOAD))
+    assert "Peyton" in rendered
+    assert "the WRONG call" in rendered and "Looks fine to me." in rendered
+    assert "{" not in rendered.replace("{}", ""), "unrendered template variable"
+
+
+def test_drill_hint_payload_renders_through_its_chain(all_chains):
+    rendered = "".join(all_chains["drill_hint_chain"].stream(DRILL_HINT_PAYLOAD))
+    assert "Peyton" in rendered
+    assert "hint 1 of 2" in rendered
+    assert "{" not in rendered.replace("{}", ""), "unrendered template variable"

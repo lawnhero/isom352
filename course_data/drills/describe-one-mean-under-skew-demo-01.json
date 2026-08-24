@@ -1,0 +1,24 @@
+{
+  "id": "describe-one-mean-under-skew-demo-01",
+  "disease": "describe-one-mean-under-skew",
+  "disease_label": "1-variable description — Mean under skew",
+  "status": "dirty",
+  "debut_session": 4,
+  "spine": "demo",
+  "artifact": {
+    "code": "import pandas as pd\n\nhomes = pd.read_csv(\"demo_homes.csv\")\noldtown = homes[homes[\"neighborhood\"] == \"Oldtown\"]\n\nprint(\"Oldtown homes:\", len(oldtown))\nprint(\"Typical Oldtown price:\", round(oldtown[\"price\"].mean()))\nprint(\"Highest:\", oldtown[\"price\"].max(), \"  Lowest:\", oldtown[\"price\"].min())",
+    "output": "Oldtown homes: 30\nTypical Oldtown price: 376680\nHighest: 1719980   Lowest: 145370"
+  },
+  "answer_key": {
+    "verdict": "dont_sign",
+    "flaw": "'Typical' is claimed from .mean() while the output itself shows a highest price several times the reported figure. A few luxury sales pull the mean well above what a typical Oldtown home costs; the median is the honest 'typical' here.",
+    "mechanism": "The mean weights every dollar equally, so a handful of extreme values drag it toward them. Under skew, mean and median separate, and the printed max/min is the tell: when the top value dwarfs the 'typical' value, the mean is being pulled.",
+    "consequence": "A buyer or lender using this number expects to pay more than most Oldtown homes actually sell for -- budgets, offers, and comparisons anchored on it are all inflated.",
+    "caveats": []
+  },
+  "provenance": {
+    "recipe": "drill_recipes/demo_mean_under_skew.py",
+    "master": "course_data/drills/demo/demo_homes.csv",
+    "built_at": "2026-08-24T04:42:22Z"
+  }
+}

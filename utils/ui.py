@@ -139,6 +139,40 @@ ROUTE_META = {
         "color": "green",
         "help": "Rubric-style feedback on what you wrote.",
     },
+    # The three drill routes never pass through the router -- the drill door
+    # is modal (see app.py) -- but their transcript sections carry these
+    # labels so a replayed drill reads like any other turn.
+    "drill_serve": {
+        "working": "Picking a drill from the bank",
+        "done": "Served a verification drill",
+        "badge": "Verification drill",
+        "icon": ":material/search_check:",
+        "color": "green",
+        "help": (
+            "An engineered artifact from the drill bank: real code, really "
+            "executed. It may be flawed or clean — deciding which is the drill."
+        ),
+    },
+    "drill_hint": {
+        "working": "Writing a hint",
+        "done": "Gave a drill hint",
+        "badge": "Drill hint",
+        "icon": ":material/lightbulb:",
+        "color": "green",
+        "help": "A reading move, not the flaw. Lab conditions only.",
+    },
+    "drill_grade": {
+        "working": "Grading your verdict",
+        "done": "Debriefed the drill",
+        "badge": "Drill debrief",
+        "icon": ":material/rate_review:",
+        "color": "green",
+        "help": (
+            "Your sign/don't-sign call is scored against the engineered "
+            "answer key; the written feedback coaches the locating and the "
+            "explanation."
+        ),
+    },
     "agent_direct": {
         "working": "Thinking it through",
         "done": "Answered directly",
@@ -391,10 +425,10 @@ QUICK_ACTIONS = [
         "clarify": "Paste your attempt in the chat, or attach a file, and I will check it.",
     },
     {
-        "label": "What's due",
-        "icon": ":material/event_upcoming:",
-        "kind": "query",
-        "value": "What assignments are coming up, and when are they due?",
+        "label": "Verification drill",
+        "icon": ":material/search_check:",
+        "kind": "drill",
+        "value": "drill",
     },
 ]
 
@@ -412,26 +446,24 @@ STARTER_PROMPTS = [
     "What does an R-squared of 0.62 mean?",
 ]
 
-# Three fixed chips after every answer. They reuse the quick-action intents:
-# "Explain a concept" and "Check my work" open the same clarifying turn as the
-# empty-state buttons, and "Practice this" drills the topic of the last answer
-# (or asks for one when there is none yet). Three, not more: four stretched
-# buttons already wrap awkwardly on a phone, and the chat input is always
-# there for anything not listed.
+# Three fixed chips after every answer. "Practice this" drills the topic of
+# the last answer (or asks for one when there is none yet), "Verification
+# drill" opens the drill door, and "Check my work" opens the same clarifying
+# turn as the empty-state button. Three, not more: four stretched buttons
+# already wrap awkwardly on a phone, and the chat input is always there for
+# anything not listed.
 FOLLOW_UPS = [
-    {
-        "label": "Explain a concept",
-        "icon": ":material/menu_book:",
-        "kind": "intent",
-        "value": "explain",
-        "needs": "topic",
-        "clarify": "Which concept should I explain? Pick a topic below or type it in the chat.",
-    },
     {
         "label": "Practice this",
         "icon": ":material/quiz:",
         "kind": "intent",
         "value": "practice_same",
+    },
+    {
+        "label": "Verification drill",
+        "icon": ":material/search_check:",
+        "kind": "drill",
+        "value": "drill",
     },
     {
         "label": "Check my work",

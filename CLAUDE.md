@@ -122,10 +122,23 @@ re-sync.
 anchors); rebuild `concepts.csv` from the 352 concept map + disease taxonomy with
 a `debut_session` column; re-index Tier B.
 
-**Phase 2 (by s7):** verification-drill door — drill bank generated as a
-*byproduct* of session builds (each session's dirt-script trap exports 1–2
-re-parameterized variants + a clean control); locate/explain/sign grading;
-conditions toggle; handle-based mastery ledger (formative only).
+**Phase 2 (infrastructure done 2026-08-24; content awaits session builds):**
+drill door shipped — modal, router-free (`utils/drills.py`, drill chains in
+`chains_lcel.py`, door flow in `app.py`); sign/don't-sign verdict is a button
+click so verdict-correct / false-alarm / miss are computed in Python, never
+parsed from model prose; lab/exam conditions toggle (exam = no hints);
+handle-based ledger as `event_type: "drill"` Mongo events (formative only,
+E1); bank format + validation in `course_data/drills/README.md`; factory is
+`scripts/build_drills.py` + `drill_recipes/*.py` — executes recipe code on a
+clean master, real output stored, B3 enforced structurally. Three demo drills
+(spine "demo", students never see them; visible under `?debug=1`) verified
+end-to-end in the browser: serve, hint, correct-locate debrief, miss debrief,
+ledger writes. **Blocked on content:** the eastville master + per-session
+dirt recipes (each session's trap exports 1–2 variants + a clean control),
+and `first_class` in facts.toml `[schedule]` (commented template; unset, the
+gate conservatively assumes session 1 and serves nothing). Phase 1
+(`read_code`, concepts.csv rebuild) was deliberately skipped past — still
+open.
 
 **Phase 3 (by s15):** `attack_spec` adversary tool — ends by exporting a
 transcript artifact the *team* attaches to scoping materials (export, don't

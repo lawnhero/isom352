@@ -1,0 +1,24 @@
+{
+  "id": "cleaning-silent-row-loss-demo-01",
+  "disease": "cleaning-silent-row-loss",
+  "disease_label": "Cleaning/manipulation — Silent row loss",
+  "status": "dirty",
+  "debut_session": 3,
+  "spine": "demo",
+  "artifact": {
+    "code": "import pandas as pd\n\nhomes = pd.read_csv(\"demo_homes.csv\")\nprint(\"Homes loaded:\", len(homes))\n\n# Clean the data before analysis\nclean = homes.dropna()\n\navg_price = clean[\"price\"].mean()\nprint(\"Citywide average home price:\", round(avg_price))\nprint(\"Based on\", len(clean), \"homes\")",
+    "output": "Homes loaded: 90\nCitywide average home price: 371851\nBased on 82 homes"
+  },
+  "answer_key": {
+    "verdict": "dont_sign",
+    "flaw": "The dropna() line. It silently removes every home with a missing value in ANY column -- here, homes missing year_built -- even though the analysis only uses price, which is complete. Compare 'Homes loaded' with 'Based on N homes': homes disappeared and nothing in the code decided they should.",
+    "mechanism": "dropna() with no arguments is a row-level filter on every column at once. A 'citywide average' is then computed on a subset nobody chose, and the homes excluded are not a random sample -- they are whichever homes happen to have a gap in an unrelated field.",
+    "consequence": "The reported citywide price represents only the homes with complete records. Anyone pricing, budgeting, or comparing against this number is acting on a figure whose coverage was never stated or intended.",
+    "caveats": []
+  },
+  "provenance": {
+    "recipe": "drill_recipes/demo_silent_row_loss.py",
+    "master": "course_data/drills/demo/demo_homes.csv",
+    "built_at": "2026-08-24T04:42:22Z"
+  }
+}

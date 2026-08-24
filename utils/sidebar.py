@@ -84,6 +84,10 @@ _CONVERSATION_KEYS = (
     "pending_intent",
     "last_practice_topic",
     "practice_session",
+    # The open drill clears with the chat; drill_handle and drill_history do
+    # NOT -- they describe the student, not the conversation, and the whole
+    # point of the ledger is surviving "New chat".
+    "drill_session",
     "feedback_submitted_ids",
     "clarify_topic_pills",
     "clarify_subtopic_pills",

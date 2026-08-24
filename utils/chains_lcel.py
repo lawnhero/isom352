@@ -874,6 +874,134 @@ Response:"""
     return setup | prompt | llm | output_parser
 
 
+def drill_grade_chain(llm: BaseLanguageModel):
+    """Debrief a verification-drill submission against the engineered key.
+
+    The model NEVER decides whether the verdict was right -- that is computed
+    in Python from the student's own sign/don't-sign click and handed in as
+    {outcome}. The model's job is the part a boolean cannot do: grade the
+    locating, the business-English explanation, and the checking sentence,
+    then teach the mechanism. Keeping the score out of the model is what lets
+    the calibration ledger (rule D3) be trusted.
+    """
+    template = (
+        PEYTON_PERSONA
+        + """
+
+You are debriefing a verification drill. The student was shown the artifact
+below, clicked a sign / don't-sign verdict, and wrote their reasoning.
+
+"""
+        + SHARED_POLICY
+        + """
+
+THE ARTIFACT THE STUDENT SAW:
+{artifact_block}
+
+THE ANSWER KEY (yours alone -- reveal its content through feedback, never
+mention that a key exists):
+{answer_key}
+
+WHAT HAPPENED: {outcome}
+Conditions: {conditions}
+
+Debrief rules (strict):
+1) Use this exact structure:
+   **Verdict** — one line: their call, and whether it was the right call.
+   **Locate** — did their reasoning point at the actual spot? Quote the line
+   or operation from the artifact that matters. If they pointed elsewhere,
+   name where they pointed and where the real issue lives.
+   **Mechanism** — the flaw (or the soundness) explained in business English,
+   in <=3 sentences, grounded in the key. For a clean artifact, explain why
+   the thing they flagged (if any) is actually fine.
+   **The cost** — one sentence: what acting on the number would have cost, or
+   for a correctly signed clean artifact, the caveats a careful signer notes.
+   **Your checking sentence** — grade the one sentence they should always
+   write: is it specific, checkable, and about THIS artifact? If they wrote
+   none, show them the sentence they could have written.
+2) Calibration matters as much as detection. A false alarm on clean work is
+   a real error -- say plainly that refusing to sign sound work has a cost,
+   without scolding. Correctly certifying clean work is a win -- say so.
+3) A miss on flawed work: teach the flaw fully. No softening the verdict,
+   no "almost right" -- they were about to put their name on a wrong number.
+   Then one sentence on the reading habit that would have caught it.
+4) Stay under 220 words. No follow-up question -- the drill is over; the
+   interface offers the next one.
+
+Student's written reasoning:
+{attempt_text}
+
+Response:"""
+    )
+    prompt = ChatPromptTemplate.from_template(template)
+    setup = RunnableParallel(
+        {
+            "artifact_block": itemgetter("artifact_block"),
+            "answer_key": itemgetter("answer_key"),
+            "outcome": itemgetter("outcome"),
+            "conditions": itemgetter("conditions"),
+            "attempt_text": itemgetter("attempt_text"),
+        }
+    )
+    return setup | prompt | llm | output_parser
+
+
+def drill_hint_chain(llm: BaseLanguageModel):
+    """One nudge on an open drill, lab conditions only.
+
+    Same discipline as coach_chain: the artifact is fixed, the answer is
+    withheld on purpose. The hint teaches a READING move -- where to look,
+    what to compare -- never the flaw itself, because locating is the skill
+    being drilled.
+    """
+    template = (
+        PEYTON_PERSONA
+        + """
+
+The student is working a verification drill under lab conditions and asked
+for a hint.
+
+"""
+        + SHARED_POLICY
+        + """
+
+THE ARTIFACT ON THEIR SCREEN:
+{artifact_block}
+
+THE ANSWER KEY (yours alone; never reveal, name, or gesture at the flaw):
+{answer_key}
+
+Hint rules (strict):
+1) Open with **Hint**. One nudge only: a reading move, not a finding. Good
+   hints name a place to look ("compare the row counts before and after
+   this step") or a question to ask of the output ("is that group size big
+   enough to trust its average?") -- phrased so it would be a sensible check
+   on ANY artifact, not a pointer to this one's flaw.
+2) Never say or imply whether the artifact is clean or flawed. Half the
+   skill is calibration; a hint that leaks "there is something here" (or
+   "this one is fine") destroys the drill.
+3) This is hint {hint_number} of {max_hints}. Do not repeat an earlier hint;
+   each must add a different reading move.
+4) Under 60 words. End by inviting their verdict, not another hint.
+
+Earlier hints this drill (do not repeat them):
+{prior_hints}
+
+Response:"""
+    )
+    prompt = ChatPromptTemplate.from_template(template)
+    setup = RunnableParallel(
+        {
+            "artifact_block": itemgetter("artifact_block"),
+            "answer_key": itemgetter("answer_key"),
+            "hint_number": itemgetter("hint_number"),
+            "max_hints": itemgetter("max_hints"),
+            "prior_hints": itemgetter("prior_hints"),
+        }
+    )
+    return setup | prompt | llm | output_parser
+
+
 def get_all_chains(main_llm, light_llm, vision_llm=None):
     """Build every chain once.
 
@@ -900,6 +1028,10 @@ def get_all_chains(main_llm, light_llm, vision_llm=None):
         # Coaching a stuck student is tutoring judgement, not lookup -- main
         # model. No vision variant: see coach_chain's docstring.
         "coach_chain": coach_chain(main_llm),
+        # Drill debriefs are the highest-stakes feedback the tutor writes --
+        # main model. Hints are short and pattern-bound -- light model.
+        "drill_grade_chain": drill_grade_chain(main_llm),
+        "drill_hint_chain": drill_hint_chain(light_llm),
         # Screenshot turns. Only these three routes have any use for an image:
         # "is this right" (check), "which menu do I click" (software), and
         # "what does this output mean" (concept, which streams concept_chain).
