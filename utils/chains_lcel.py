@@ -15,8 +15,9 @@ output_parser = StrOutputParser()
 # because sidebar pulls in Streamlit.
 DEFAULT_MEMORY_WINDOW = 8
 
-DAYTON_PERSONA = (
-    "You are Dayton, the Virtual TA for ISOM 550 Data and Decision Analytics."
+PEYTON_PERSONA = (
+    "You are Peyton, the Virtual TA for ISOM 352 Applied Data Analytics "
+    "with Coding."
 )
 
 # Injected into every student-facing chain so these two rules cannot drift.
@@ -63,12 +64,12 @@ def _turn_context(payload):
 # same prompt plus this, or the two drift and a student gets a different tutor
 # depending on whether they attached an image.
 VISION_POLICY = (
-    "The student attached one or more screenshots of their own work -- a JMP "
-    "output pane, an Excel sheet, a dialog box, or handwriting. You can see "
-    "them.\n"
+    "The student attached one or more screenshots of their own work -- a "
+    "notebook cell and its output, a DataFrame or regression table, an error "
+    "traceback, or handwriting. You can see them.\n"
     "1) Before interpreting anything, transcribe the values you are reading "
-    "back in one short line (e.g. 'Reading your output: n = 40, RSquare = "
-    "0.62, Price estimate = -2.31, p = 0.004'), then continue. A misread digit "
+    "back in one short line (e.g. 'Reading your output: n = 108, R-squared = "
+    "0.62, coefficient = -2.31, p = 0.004'), then continue. A misread digit "
     "is the failure mode here, and the student can catch it in one second -- "
     "but only if you show them what you read.\n"
     "2) Never guess at a value that is cropped, blurred, or cut off. Name the "
@@ -192,8 +193,8 @@ def format_topic_focus(topic: str = "", subtopic: str = "") -> str:
 # Learning objectives that are not concept modules. Software and logistics
 # questions are a large share of traffic and deserve their own analytics
 # bucket; they are not pills because there is nothing to retrieve for them.
-_SOFTWARE_KEYWORDS = ("jmp", "excel", "treeplan", "toolpak", "pivot")
-SOFTWARE_OBJECTIVE = "JMP / Excel workflows"
+_SOFTWARE_KEYWORDS = ("colab", "jupyter", "notebook", "python", "mysql", "install", "traceback")
+SOFTWARE_OBJECTIVE = "Python / Colab workflows"
 
 _LOGISTICS_KEYWORDS = {
     "grading": "Course policy and grading logistics",
@@ -328,7 +329,7 @@ def build_chain_payload(
 
 def class_chain(llm: BaseLanguageModel):
     template = (
-        DAYTON_PERSONA
+        PEYTON_PERSONA
         + """
 
 Preferred response mode: {response_mode}
@@ -383,7 +384,7 @@ def facts_chain(llm: BaseLanguageModel):
     a hint or a guided exercise, whatever tutoring style they picked.
     """
     template = (
-        DAYTON_PERSONA
+        PEYTON_PERSONA
         + """
 
 Answer using ONLY the COURSE CONTEXT below. It is the authoritative record for
@@ -439,36 +440,42 @@ Answer:"""
 
 
 def software_chain(llm: BaseLanguageModel, vision: bool = False):
-    """Answer JMP / Excel how-to questions from the model's own knowledge.
+    """Answer Python / Colab / SQL how-to questions from the model's own knowledge.
 
-    No retrieval by design: the model knows these tools better than any course
-    index could teach it, and feeding it 4 loosely-matching stats Q&A rows as
-    "context" actively misleads it -- which is what happened to ~92 logged JMP
-    questions before this route existed.
+    No retrieval by design: the model knows this toolchain better than any
+    course index could teach it, and feeding it 4 loosely-matching stats Q&A
+    rows as "context" actively misleads it -- which is what happened to ~92
+    logged software questions in the 550 fork before this route existed.
 
-    Ignores response_mode. This course teaches analytics, not JMP; withholding
-    a menu path behind a hint wastes the student's time without teaching
-    anything the course is actually assessing.
+    Ignores response_mode. This course assesses reading and verifying
+    analytics, not tool operation; withholding a working line of code behind
+    a hint wastes the student's time without teaching anything the course is
+    actually assessing.
     """
     template = (
-        DAYTON_PERSONA
+        PEYTON_PERSONA
         + """
 
-The student needs help operating software. Answer from your own knowledge of the
-tool, grounded by the course details below.
+The student needs help operating the course toolchain -- Python, pandas, Colab
+notebooks, or the course database. Answer from your own knowledge of the tools,
+grounded by the course details below.
 
 """
         + SHARED_POLICY
         + """
 
 Rules:
-1) Give concrete, numbered steps naming the exact menus, dialogs, and buttons.
-2) State which version you are assuming, and add one short line noting menus may
-   differ in other versions.
-3) NEVER invent a menu path. If you are not confident about the exact location of
-   a command in this version, say which part you are unsure of and point the
-   student to the course walkthrough or the TA. A confident wrong click path
-   costs more time than an honest "I'm not certain where this sits in 18".
+1) Give a short, runnable code snippet or concrete numbered steps -- whichever
+   the task needs. Name exact functions, arguments, and menu items.
+2) Write code in the course's Python subset: variables, basic types, booleans,
+   for loops, dicts, functions, pandas. Do NOT use while loops, try/except,
+   classes, .loc/.iloc, or comprehensions unless the student's own pasted code
+   already uses them -- and then name the construct as outside the course
+   subset and show the in-scope equivalent when one exists.
+3) NEVER invent an API, function name, argument, or menu path. If you are not
+   certain something exists, say which part you are unsure of and point the
+   student to the course walkthrough or the documentation. A confident wrong
+   line of code costs more time than an honest "I'm not certain".
 4) If COURSE CONVENTIONS below contradict the tool's default behaviour, follow
    the course convention and say so explicitly -- this is where students most
    often misread their own output.
@@ -476,12 +483,13 @@ Rules:
    version is better than a generic one.
 6) If the student asks about software this course does not use, say which tool
    the course uses for that task instead of answering for the other tool.
-7) Stay pointed at the analytics goal. Explain what the output means, briefly,
-   not just where to click.
-8) Keep it under 200 words. Steps, not essays: a student with JMP open wants
-   the next click, and the analytics explanation belongs to the concept route.
+7) Stay pointed at the analytics goal. Explain what the code or output means,
+   briefly, not just what to type.
+8) Keep it under 200 words. Code and steps, not essays: a student with a
+   notebook open wants the next cell, and the analytics explanation belongs
+   to the concept route.
 9) If no COURSE CONVENTIONS are listed, do not claim that the course expects a
-   particular option, report, or output. Describe the tool's default behaviour
+   particular library, option, or output. Describe the tool's default behaviour
    and say the course has not specified a convention for this.
 
 {software_context}
@@ -519,7 +527,7 @@ def doc_chain(llm: BaseLanguageModel):
     requirements, not a hint.
     """
     template = (
-        DAYTON_PERSONA
+        PEYTON_PERSONA
         + """
 
 Answer using the COURSE DOCUMENTS below. They are class recap announcements and
@@ -595,7 +603,7 @@ def concept_chain(llm: BaseLanguageModel, vision: bool = False):
     one line written to answer "explain it simpler, with a business example".
     """
     template = (
-        DAYTON_PERSONA
+        PEYTON_PERSONA
         + """
 
 Preferred response mode: {response_mode}
@@ -668,7 +676,7 @@ Response:"""
 
 def practice_chain(llm: BaseLanguageModel):
     template = (
-        DAYTON_PERSONA
+        PEYTON_PERSONA
         + """
 
 Topic: {topic}
@@ -736,7 +744,7 @@ Response:"""
 
 def check_chain(llm: BaseLanguageModel, vision: bool = False):
     template = (
-        DAYTON_PERSONA
+        PEYTON_PERSONA
         + """
 
 Topic: {topic}
@@ -810,7 +818,7 @@ def coach_chain(llm: BaseLanguageModel):
     wants it marked, and that is check_attempt's job.
     """
     template = (
-        DAYTON_PERSONA
+        PEYTON_PERSONA
         + """
 
 Topic: {topic}

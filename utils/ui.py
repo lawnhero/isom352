@@ -74,8 +74,8 @@ def write_stream_md(stream, container=None):
 #
 # The distinction students actually need is grounded vs. not: facts and
 # documents come from the instructor's own material, software help comes from
-# the model's general knowledge of JMP/Excel. Only the first kind should look
-# authoritative, so only the first kind gets a confident colour.
+# the model's general knowledge of Python/Colab. Only the first kind should
+# look authoritative, so only the first kind gets a confident colour.
 ROUTE_META = {
     "answer_course_facts": {
         "working": "Checking the course schedule and policies",
@@ -102,14 +102,14 @@ ROUTE_META = {
         "help": "Answered from indexed course content.",
     },
     "answer_software": {
-        "working": "Working out the JMP / Excel steps",
-        "done": "Worked out the JMP / Excel steps",
-        "badge": "JMP / Excel guidance",
+        "working": "Working out the Python / Colab steps",
+        "done": "Worked out the Python / Colab steps",
+        "badge": "Python / Colab guidance",
         "icon": ":material/build:",
         "color": "violet",
         "help": (
-            "General knowledge of the software, grounded by this course's versions "
-            "and conventions. Menu paths can differ between versions."
+            "General knowledge of Python, pandas, and Colab, grounded by this "
+            "course's environment and conventions. Details can differ between versions."
         ),
     },
     "generate_practice": {
@@ -406,9 +406,9 @@ QUICK_ACTIONS = [
 # in schedule.json or facts.toml, so the very first suggested click abstained.
 STARTER_PROMPTS = [
     "When are office hours, and where?",
-    "What do I need to do for Individual Eastville Part 1 assignment?",
-    "What did we cover in class recently?",
-    "How do I run a regression in JMP?",
+    "How is my grade calculated in this course?",
+    "What textbooks does this course use?",
+    "How do I load a CSV file into pandas in Colab?",
     "What does an R-squared of 0.62 mean?",
 ]
 

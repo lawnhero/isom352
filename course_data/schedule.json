@@ -1,0 +1,125 @@
+{
+  "generated_at": "2026-08-24T04:33:10Z",
+  "source": "canvas",
+  "course": {
+    "canvas_id": "165126",
+    "code": "FA26_ISOM_352_1101",
+    "name": "ISOM-352-1101: Appld.Data Analytics w/Coding - Fall 2026",
+    "term": "Fall 2026",
+    "timezone": "America/New_York",
+    "url": "https://canvas.emory.edu/courses/165126"
+  },
+  "grading_weights": [
+    {
+      "group": "Quizzes",
+      "weight": 0.0
+    },
+    {
+      "group": "Rhythm Portfolio",
+      "weight": 10.0
+    },
+    {
+      "group": "Cycle 1 Deliverables",
+      "weight": 15.0
+    },
+    {
+      "group": "Cycle 2 Deliverables",
+      "weight": 15.0
+    },
+    {
+      "group": "Participation",
+      "weight": 5.0
+    },
+    {
+      "group": "Peer Evaluation",
+      "weight": 5.0
+    },
+    {
+      "group": "Exam 1",
+      "weight": 25.0
+    },
+    {
+      "group": "Final Project",
+      "weight": 25.0
+    }
+  ],
+  "modules": [
+    {
+      "position": 1,
+      "name": "M0 · Course Introduction"
+    },
+    {
+      "position": 2,
+      "name": "Cycle 1 · Descriptive Analytics (Eastville)"
+    },
+    {
+      "position": 3,
+      "name": "Exam 1 · Verification Midterm"
+    },
+    {
+      "position": 4,
+      "name": "Cycle 2 · Predictive Analytics (Loan Desk)"
+    },
+    {
+      "position": 5,
+      "name": "Final Project · Presentations + Defense"
+    },
+    {
+      "position": 6,
+      "name": "Agentic Analytics"
+    }
+  ],
+  "assignments": [
+    {
+      "name": "End of Semester Pulse Check",
+      "group": "Participation",
+      "kind": "assignment",
+      "due_utc": null,
+      "due_local": null,
+      "points": 5.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1292158",
+      "instructions": "This survey specifically focuses on course contents and deliveries. Please share your experiences as well as your suggestions on how to make things better. The results will be used by me for instructional design and improvement purpose only. NO personal information will be shared with anyone. \n\nThe survey will take you 5 mins (tops). Please answer all the questions to the best of your abilities. Constructive feedbacks are most appreciated."
+    },
+    {
+      "name": "Semester Start Pulse Check",
+      "group": "Participation",
+      "kind": "assignment",
+      "due_utc": null,
+      "due_local": null,
+      "points": 5.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1292156",
+      "instructions": ""
+    }
+  ],
+  "pages": [
+    {
+      "title": "A bit about me!",
+      "url": "https://canvas.emory.edu/courses/165126/pages/a-bit-about-me"
+    },
+    {
+      "title": "Install MySQL Workbench",
+      "url": "https://canvas.emory.edu/courses/165126/pages/install-mysql-workbench"
+    },
+    {
+      "title": "ISOM352 Homepage v2 (draft for comparison)",
+      "url": "https://canvas.emory.edu/courses/165126/pages/isom352-homepage-v2-draft-for-comparison"
+    },
+    {
+      "title": "ISOM352-Homepage",
+      "url": "https://canvas.emory.edu/courses/165126/pages/isom352-homepage"
+    },
+    {
+      "title": "Notes, scripts, and recordings",
+      "url": "https://canvas.emory.edu/courses/165126/pages/notes-scripts-and-recordings"
+    },
+    {
+      "title": "Python and VS Code",
+      "url": "https://canvas.emory.edu/courses/165126/pages/python-and-vs-code"
+    },
+    {
+      "title": "TA Team",
+      "url": "https://canvas.emory.edu/courses/165126/pages/ta-team"
+    }
+  ],
+  "announcements": []
+}

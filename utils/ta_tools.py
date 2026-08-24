@@ -69,7 +69,7 @@ class TurnArtifacts:
     """Side-channel carrying what each tool prepared, one entry per tool call.
 
     The router is told a question can need two tools ("how do I run a
-    regression in JMP, and what does R-squared mean?"), so each call gets its
+    regression in Python, and what does R-squared mean?"), so each call gets its
     own ToolStep rather than sharing one set of slots. Keyed by a per-call
     `step_id` the tool generates and echoes back in its receipt, so the caller
     can match each receipt to the payload it belongs to (see router.run_ta_turn).
@@ -392,7 +392,7 @@ def annotate_compound_turn(steps: List[ToolStep]) -> int:
     the number of parts annotated, 0 when the turn is not compound.
 
     The chains were written to answer alone, and alone is what they did even
-    when paired: the JMP section explained R-squared before the concept
+    when paired: the software section explained R-squared before the concept
     section got to, both signed off with their own follow-up question, and
     nothing told the student where one part ended and the next began. The
     router already knows the split -- it wrote a query per tool -- so each
@@ -523,17 +523,17 @@ def build_ta_tools(
         )
 
     def answer_software(query: str) -> str:
-        """Help operate JMP or Excel. Answers from model knowledge, no retrieval.
+        """Help with Python / pandas / Colab / SQL how-to. Model knowledge, no retrieval.
 
         Args:
-            query: What the student is trying to do in the tool, including the
-                task and any output they are looking at.
+            query: What the student is trying to do in the toolchain, including
+                the task and any code, output, or error they are looking at.
         """
         step = artifacts.new_step("answer_software")
 
         # Deliberately no vector search. Retrieval here was actively harmful:
-        # a JMP question used to land in answer_concept and get four unrelated
-        # stats Q&A rows injected as authoritative "course context".
+        # a software question used to land in answer_concept and get four
+        # unrelated stats Q&A rows injected as authoritative "course context".
         step.covers = query
         step.stream_spec = _stream_spec(
             "software_chain",
@@ -1006,9 +1006,10 @@ def build_ta_tools(
             func=answer_software,
             name="answer_software",
             description=(
-                "Help the student operate JMP or Excel: which menu, which dialog, "
-                "which output to read. Use this for any 'how do I ... in JMP/Excel' "
-                "question, including installing the software or a TreePlan add-in. "
+                "Help the student operate the course toolchain: Python, pandas, "
+                "Colab notebooks, or the course database. Use this for any "
+                "'how do I ... in Python/pandas/Colab/SQL' question, including "
+                "reading an error traceback or setting up the environment. "
                 "Use answer_concept instead when the question is about what a "
                 "statistic MEANS rather than how to produce it."
             ),
@@ -1023,7 +1024,7 @@ def build_ta_tools(
                 "from the module list in your instructions that best matches the question "
                 "(e.g. simple-regression, inference, sensitivity-analysis). "
                 "Do NOT use for assignment task lists or class recaps — use "
-                "answer_course_documents. Do NOT use for JMP/Excel menus — use answer_software."
+                "answer_course_documents. Do NOT use for Python/Colab how-to — use answer_software."
             ),
             parse_docstring=True,
         ),

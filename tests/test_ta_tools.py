@@ -198,18 +198,18 @@ def test_a_refusal_next_to_one_answer_is_not_compound():
 
 
 def test_compound_turn_tells_each_part_about_the_others():
-    jmp = _streamed("answer_software", "how to run a regression in JMP")
+    howto = _streamed("answer_software", "how to run a regression in Python")
     r2 = _streamed("answer_concept", "how to interpret R-squared")
-    assert annotate_compound_turn([jmp, r2]) == 2
+    assert annotate_compound_turn([howto, r2]) == 2
 
-    first = jmp.stream_spec.payload["turn_context"]
+    first = howto.stream_spec.payload["turn_context"]
     second = r2.stream_spec.payload["turn_context"]
     assert first.startswith("THIS IS PART 1 OF 2")
-    assert "Part 1 (you): how to run a regression in JMP" in first
+    assert "Part 1 (you): how to run a regression in Python" in first
     assert "Part 2 (written separately): how to interpret R-squared" in first
     assert "not the last part" in first and "No closing question" in first
     assert second.startswith("THIS IS PART 2 OF 2")
-    assert "Part 1 (written separately): how to run a regression in JMP" in second
+    assert "Part 1 (written separately): how to run a regression in Python" in second
     assert "You are the last part" in second
     assert f"under {COMPOUND_SECTION_WORDS} words" in first
 

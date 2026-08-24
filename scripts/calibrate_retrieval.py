@@ -206,8 +206,8 @@ def run_replay(db, csv_path: str, sample_size: int, seed: int):
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--db", default="data/contents",
-                    help="Chroma directory to calibrate against (default: data/contents)")
+    ap.add_argument("--db", default="data/concepts",
+                    help="Chroma directory to calibrate against (default: data/concepts)")
     ap.add_argument("--embedding-model", default="text-embedding-3-small")
     ap.add_argument("--probe", action="store_true", help="Score the labelled question sets.")
     ap.add_argument("--replay", action="store_true", help="Replay the real query log.")

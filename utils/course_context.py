@@ -56,7 +56,9 @@ CLASS_RECAP_RE = re.compile(r"^\s*Class\s+\d+", re.I)
 
 # Canvas pages that are software walkthroughs. Surfaced only to the software
 # route, which does not retrieve -- it just needs the link menu.
-SOFTWARE_PAGE_RE = re.compile(r"jmp|excel|treeplan|mysql|install|software", re.I)
+SOFTWARE_PAGE_RE = re.compile(
+    r"python|pandas|colab|jupyter|notebook|mysql|sql|install|software|setup", re.I
+)
 
 
 @dataclass
@@ -466,18 +468,23 @@ def _ymd_int(iso):
 def render_software_context(schedule, facts, limit=None):
     """Grounding for the software route: versions, conventions, walkthrough links.
 
-    The software route does NOT retrieve -- the model already knows JMP and
-    Excel far better than any 21-row index could teach it. What it cannot know
-    is which version this course assumes, where this course diverges from the
-    tool defaults, and that the instructor already wrote a walkthrough for the
-    exact task being asked about. That is all this block supplies.
+    The software route does NOT retrieve -- the model already knows Python,
+    pandas, and Colab far better than any small index could teach it. What it
+    cannot know is which environment this course assumes, where this course
+    diverges from the tool defaults, and that the instructor already wrote a
+    walkthrough for the exact task being asked about. That is all this block
+    supplies.
     """
     lines = []
 
     software = (facts or {}).get("software") or {}
     if software:
         lines.append("SOFTWARE THIS COURSE USES")
-        for key, label in (("excel", "Excel"), ("jmp", "JMP"), ("addins", "Add-ins")):
+        for key, label in (
+            ("python", "Python"),
+            ("notebook", "Notebooks"),
+            ("database", "Database"),
+        ):
             if software.get(key):
                 lines.append(f"  {label}: {software[key]}")
 

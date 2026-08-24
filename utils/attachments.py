@@ -16,7 +16,7 @@ import base64
 from io import BytesIO
 from typing import Dict, List, Tuple
 
-# Per-file and total budgets. A pasted JMP export can be enormous, and the
+# Per-file and total budgets. A pasted notebook output or CSV can be enormous, and the
 # tutoring prompts are already carrying course context plus chat history.
 MAX_CHARS_PER_FILE = 4000
 MAX_CHARS_TOTAL = 8000

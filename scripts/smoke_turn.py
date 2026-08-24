@@ -23,7 +23,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from streamlit.testing.v1 import AppTest  # noqa: E402
 
-DEFAULT_QUERY = "how to do regression in JMP and how to interpret R2"
+DEFAULT_QUERY = "how to run a regression in Python and how to interpret R2"
 
 
 def main():

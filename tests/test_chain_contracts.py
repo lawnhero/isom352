@@ -104,8 +104,8 @@ def tools():
         chat_history=[HumanMessage("what does r-squared mean"), AIMessage("...")],
         response_mode="Teach me step-by-step",
         artifacts=artifacts,
-        course_context="COURSE: ISOM 550 (Fall 2026)\nUPCOMING DEADLINES\n  - Quiz 1 — due Wed Sep 2",
-        software_context="SOFTWARE THIS COURSE USES\n  JMP: JMP 18",
+        course_context="COURSE: ISOM 352 (Fall 2026)\nUPCOMING DEADLINES\n  - Quiz 1 — due Wed Sep 2",
+        software_context="SOFTWARE THIS COURSE USES\n  Python: Python 3.11",
         course_span=(20260806, 20261123),
         practice_session=session,
         attachment_text="--- Attached file: work.txt ---\nR-squared of 0.62 means 62% explained.",
@@ -115,7 +115,7 @@ def tools():
 
 CALLS = [
     ("answer_course_facts", {"query": "When is quiz 1 due?"}, "facts_chain"),
-    ("answer_software", {"query": "How do I fit a line in JMP?"}, "software_chain"),
+    ("answer_software", {"query": "How do I fit a line in Python?"}, "software_chain"),
     ("answer_course_documents", {"query": "Eastville", "doc_type": "assignment"}, "doc_chain"),
     ("answer_course_documents", {"query": "", "days_back": 30}, "doc_chain"),
     ("answer_concept", {"query": "what does r-squared mean", "module": "simple-regression"}, "concept_chain"),
@@ -133,7 +133,7 @@ def test_tool_payload_renders_through_its_chain(tools, all_chains, tool_name, ar
     assert step.stream_spec is not None, step.static_answer
     assert step.stream_spec.chain_key == chain_key
     rendered = "".join(all_chains[chain_key].stream(step.stream_spec.payload))
-    assert "Dayton" in rendered
+    assert "Peyton" in rendered
     assert "{" not in rendered.replace("{}", ""), "unrendered template variable"
 
 
@@ -256,7 +256,7 @@ def test_compound_turn_context_reaches_both_chains(tools, all_chains):
     from utils.ta_tools import annotate_compound_turn
 
     built, artifacts = tools
-    built["answer_software"].invoke({"query": "How do I fit a line in JMP?"})
+    built["answer_software"].invoke({"query": "How do I fit a line in Python?"})
     built["answer_concept"].invoke({"query": "what does r-squared mean", "module": "simple-regression"})
     steps = list(artifacts.steps.values())
     assert annotate_compound_turn(steps) == 2
@@ -268,7 +268,7 @@ def test_compound_turn_context_reaches_both_chains(tools, all_chains):
 
 def test_single_turn_renders_an_empty_context_slot(tools, all_chains):
     built, artifacts = tools
-    built["answer_software"].invoke({"query": "How do I fit a line in JMP?"})
+    built["answer_software"].invoke({"query": "How do I fit a line in Python?"})
     step = next(iter(artifacts.steps.values()))
     rendered = "".join(all_chains["software_chain"].stream(step.stream_spec.payload))
     assert "THIS IS PART" not in rendered and "{turn_context}" not in rendered

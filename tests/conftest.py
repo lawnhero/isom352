@@ -23,7 +23,7 @@ if str(ROOT) not in sys.path:
 @pytest.fixture
 def chat_history():
     return [
-        AIMessage("Hi, I'm Dayton, your virtual TA."),
+        AIMessage("Hi, I'm Peyton, your virtual TA."),
         HumanMessage("What does an R-squared of 0.62 mean?"),
         AIMessage("An R-squared of 0.62 means 62% of the variation is explained."),
     ]

@@ -428,7 +428,7 @@ def main():
         if drift:
             st.warning(drift, icon=":material/sync_problem:")
     initial_text = (
-        "Hi, I'm Dayton, your virtual TA."
+        "Hi, I'm Peyton, your virtual TA."
     )
 
     # Initialize chat history in session state
@@ -682,7 +682,7 @@ def main():
             if answerable:
                 # One section per tool call, in the order the model asked for
                 # them -- which mirrors the order the student asked. Each gets
-                # its own badge and its own sources, so a JMP walkthrough and a
+                # its own badge and its own sources, so a coding walkthrough and a
                 # concept explanation are never merged under one label.
                 texts, _ = _stream_sections(answerable, status)
                 ai_response = "\n\n".join(t for t in texts if t)

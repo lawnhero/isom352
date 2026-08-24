@@ -13,7 +13,7 @@
 # schedule.json is synced, date questions abstain and point to Canvas.
 
 term          = "Fall 2026"
-last_reviewed = "2026-08-23"   # TODO: bump when the TODOs below are filled
+last_reviewed = "2026-08-24"
 
 # Days schedule.json may go un-synced before the tutor stops stating specific
 # due dates. Fall term has breaks: 12-14 is the right range.
@@ -23,10 +23,10 @@ stale_after_days = 12
 [course]
 code       = "ISOM 352"
 title      = "Applied Data Analytics with Coding"
-# Section 1101. NOTE: Fall 2026 runs TWO sections (Canvas 165126 and 165131);
-# decide whether this repo serves both before writing a single meeting line.
+# One Canvas shell for the whole course: 165126. Section 1102 (Canvas 165131)
+# is cross-listed into it -- sync 165126 only, never 165131.
 canvas_url = "https://canvas.emory.edu/courses/165126"
-meeting    = ""   # TODO: days/times/room per section
+meeting    = "Tues and TH at 10 AM (1101) and 11:30 AM (1102) in GBS 130"   
 
 
 [instructor]
@@ -34,42 +34,69 @@ name  = "Prof Wen Gu"
 title = "Associate Professor, ISOM area"
 email = "wenjun.gu@emory.edu"
 
-office_hours = ""   # TODO
+office_hours = "Tues and Wed from 1:15 PM to 2 PM"
 office       = "GBS 415"
 
 
 [[tas]]
-# TODO: add Fall 2026 TAs (name + email). Placeholder rows are skipped by the
 # renderer, so leaving this as-is is safe.
-name  = "TBD"
-email = ""
+name  = "Virtual TA Peyton"
+email = "on Canvas course homepage"
 
 
 [grading]
-# TODO: paste the weights table from the Fall 2026 syllabus.
-weights = ""
+weights = """
+| Grading item                           | Weight |
+|----------------------------------------|--------|
+| Cycle 1 project deliverables            |    15%    |
+| Cycle 2 project deliverables              | 15%    |
+| Rhythm portfolio (weekly Canvas)         |  10%    |
+| Participation Quizzes                     | 5%     |
+| Peer / process evaluation (twice)         | 5%     |
+| Verification Exam 1 (in class)            | 25%    |
+| Final Group Project                       | 25%    |
 
-late_policy  = ""   # TODO
-regrade      = ""   # TODO
+"""
+
+late_policy  = """
+Need to reach out to instructor via email before deadline and provide reasoning and expected new deadline. Approval is at instructor discretion. 
+"""  
+regrade      = """
+Regrades are welcome when you find a grading error.
+Email the instructor within 7 days of the grade being posted on Canvas. 
+The request must identify the assignment and the specific
+question(s), and include evidence: your submitted work, the rubric or posted
+solution, and a brief explanation of why the original mark is incorrect.
+"""   
+[accommodation]
+accommodation_policy = """
+ students who have accommodations that include assessments and exams must register accommodation requests with the BBA Program Office. The form to do so can be found at:  https://forms.office.com/pages/responsepage.aspx?id=nPsE4KSwT0K80DImBtXfOEa4NBn7LQxElCAtqooi0aNURFoyS0VGTTdVNDMxQTdBWENYMVoxMEQ3VC4u 
+ If a student does not register their request at least 2 weeks prior to the exam, they should expect to take the exam with the class in the regularly scheduled time allotted. For equity reasons, students cannot be accommodated if they do not meet this timeline. 
+"""
 
 
 [materials]
-body = ""   # TODO: textbook / required materials
+body = """
+- Everything is housed on canvas
+- Four suggested textbooks:
+    - Charles Severance “Python for Everybody” (ISBN-10: 1530051126) Free: https://www.py4e.com/book.php  
+    - Daniel Chen “Pandas for Everyone” (ISBN-10: 0134546938) https://amzn.to/2U4juto  
+    - Alan Beaulieu, “Learning SQL: Generate, Manipulate, and Retrieve Data” (ISBN-10: 1492057614) https://amzn.to/38C0p5x  
+    - Al Sweigart, “Automate the Boring Stuff with Python” 2nd Edition (ISBN-10: 1593279922) Free: https://automatetheboringstuff.com/  
+"""
 
 
 [software]
 # The software route answers coding how-to from the model's own knowledge,
 # grounded by this block. For 352 this is the Python/SQL toolchain, not menus.
 # TODO: confirm versions and environment for Fall 2026.
-python   = ""   # e.g. "Python 3.11 via Anaconda / Google Colab"
-notebook = ""   # e.g. "Jupyter notebooks distributed through Canvas"
-database = ""   # e.g. "MySQL 8 via ..."
+python   = "Python 3.11 or above"
+notebook = "Jupyter notebooks via Google colab" 
+database = "AWS MySQL provided by instructor"   
 
 # Course conventions the tutor must respect when writing code answers.
-# These replace the old hard-coded prompt rules from the previous app
-# (e.g. "statsmodels, not scikit-learn, unless asked").
 conventions = """
-- TODO: which libraries are in scope (pandas, matplotlib/seaborn, statsmodels ...)
-- TODO: libraries to avoid unless asked (e.g. scikit-learn)
-- TODO: any house style (variable naming, notebook structure)
+- libraries in scope (pandas, matplotlib/seaborn, statsmodels, beautifulsoup, scikit-learn)
+- libraries to avoid unless asked (numpy )
+- prefer notebook over .py file
 """

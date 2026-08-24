@@ -51,8 +51,8 @@ def show_help_dialog():
         "- :blue-badge[Class recaps and assignment briefs] — announcements and "
         "assignment pages written by your instructor\n"
         "- :blue-badge[Class materials] — the indexed course content\n"
-        "- :violet-badge[JMP / Excel guidance] — general knowledge of the software, "
-        "grounded by this course's versions and conventions\n"
+        "- :violet-badge[Python / Colab guidance] — general knowledge of Python, "
+        "pandas, and Colab, grounded by this course's environment and conventions\n"
         "- :green-badge[Practice question] / :green-badge[Practice coaching] / "
         ":green-badge[Feedback on your attempt] — generated for you, not taken "
         "from past exams\n"
@@ -66,7 +66,7 @@ def show_help_dialog():
         "- State your assumptions so the tutor can correct them early\n"
         "- Ask for hints when you want guided practice rather than the answer\n"
         "- Attach a .txt, .csv, or .pdf and I will read it. Screenshots of "
-        "your JMP or Excel output work too — I will read the values back to "
+        "your notebook output work too — I will read the values back to "
         "you first so you can catch a misread"
     )
     st.subheader("Good to know")
@@ -105,7 +105,7 @@ def save_chat_history():
     
     # Create formatted chat history
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    chat_content = f"DDA Virtual TA - Chat History\n"
+    chat_content = f"ISOM 352 Virtual TA - Chat History\n"
     chat_content += f"Saved on: {timestamp}\n"
     chat_content += f"Total Messages: {len(st.session_state.chat_history)}\n"
     chat_content += "=" * 50 + "\n\n"
@@ -145,7 +145,7 @@ def _render_outline() -> None:
                 st.markdown(f"**{module['label']}**")
         st.caption(
             "Plus due dates, class recaps, assignment instructions, and "
-            "JMP / Excel steps."
+            "Python / Colab coding steps."
         )
 
 
@@ -209,7 +209,7 @@ def sidebar():
             help=(
                 "On: concept and assignment answers end with a short ordered "
                 "plan for applying them. Off: just the answer and one thing to "
-                "check. Deadlines, policies, and JMP / Excel steps are always "
+                "check. Deadlines, policies, and coding steps are always "
                 "answered directly either way."
             ),
         )

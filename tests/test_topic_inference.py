@@ -37,7 +37,7 @@ def test_curriculum_topics_are_module_labels():
     assert topics[0] == "Describing one variable"
     assert "Simple regression" in topics and "Sensitivity analysis" in topics
     # Nothing the index cannot answer from.
-    assert "Probability" not in topics and "SAS JMP / Excel workflows" not in topics
+    assert "Probability" not in topics and "Python / Colab workflows" not in topics
 
 
 def test_subtopics_resolve_by_label_or_id():
@@ -87,7 +87,7 @@ def test_taxonomy_reads_follow_the_file(tmp_path):
         ("what does this coefficient mean", "Multiple regression"),
         ("How do I interpret the mean and median of salaries?", "Describing one variable"),
         ("Is multicollinearity a problem here?", "Multiple regression"),
-        ("How do I run a regression in JMP?", "Simple regression"),
+        ("How do I run a regression in Python?", "Simple regression"),
         ("What is a p-value?", "Simple regression"),
         ("is 0.03 significant", "Hypothesis testing"),
         ("what is a z-score", "Describing one variable"),
@@ -105,11 +105,11 @@ def test_infer_curriculum_topic(query, expected):
 
 
 def test_learning_objective_buckets_software_and_logistics():
-    assert infer_learning_objective("how do I install the treeplan add-in") == "JMP / Excel workflows"
+    assert infer_learning_objective("how do I open a notebook in colab") == "Python / Colab workflows"
     assert infer_learning_objective("when is the deadline") == "Course schedule and due date logistics"
     assert infer_learning_objective("hello there") == "General data and decision analytics reasoning"
     # A concept question that mentions the tool is still about the concept.
-    assert infer_learning_objective("what does the R-squared in JMP output mean") == "Simple regression"
+    assert infer_learning_objective("what does the R-squared in my Python output mean") == "Simple regression"
 
 
 def test_topic_from_history_prefers_latest_student_turn(chat_history):

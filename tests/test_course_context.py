@@ -34,7 +34,7 @@ SCHEDULE = {
         {"title": "Class 9 (10/1) Future", "posted_utc": "2026-10-02T01:00:00Z",
          "url": "https://canvas.example/d/9"},
     ],
-    "pages": [{"title": "JMP Regression", "url": "https://canvas.example/p/1"}],
+    "pages": [{"title": "Python Regression Walkthrough", "url": "https://canvas.example/p/1"}],
 }
 
 FACTS = {
@@ -44,7 +44,7 @@ FACTS = {
                    "office_hours": "Wed 1-2 PM"},
     "tas": [{"name": "TBD", "email": ""}],
     "grading": {"weights": "| item | w |"},
-    "software": {"jmp": "JMP 18"},
+    "software": {"python": "Python 3.11"},
 }
 
 
@@ -95,8 +95,8 @@ def test_ended_advisory_once_every_deadline_is_past():
 
 def test_software_context_lists_versions_and_walkthroughs():
     block = cc.render_software_context(SCHEDULE, FACTS)
-    assert "JMP: JMP 18" in block
-    assert "JMP Regression: https://canvas.example/p/1" in block
+    assert "Python: Python 3.11" in block
+    assert "Python Regression Walkthrough: https://canvas.example/p/1" in block
 
 
 def test_course_date_span_covers_announcements_and_deadlines():
