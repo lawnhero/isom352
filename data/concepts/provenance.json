@@ -1,12 +1,12 @@
 {
-  "built_at": "2026-08-24T04:23:02Z",
-  "bytes": 34247,
+  "built_at": "2026-08-24T11:18:41Z",
+  "bytes": 54530,
   "chromadb_version": "1.5.9",
   "course": "isom352",
   "kind": "concepts",
   "model": "text-embedding-3-small",
-  "n_chunks": 46,
-  "sha256": "77301295b4251b1df2ea9c12530330b5ba657479e924dea33351394a304a53ca",
+  "n_chunks": 68,
+  "sha256": "a60c0dd222258bee82afc3ac463110d74174040bf10592e65463ec54518989b3",
   "source": "course_data/concepts.csv",
-  "source_mtime": "2026-08-23T20:12:49Z"
+  "source_mtime": "2026-08-24T11:15:05Z"
 }

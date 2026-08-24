@@ -1,9 +1,10 @@
 # CLAUDE.md — ISOM 352 Virtual TA (Peyton)
 
 Virtual TA for **ISOM 352: Applied Data Analytics with Coding**, Emory BBA, Fall 2026.
-Streamlit app, forked from the ISOM 550 tutor. Architecture (router → 7 tools →
-streamed chains → 3 knowledge tiers) is documented in `docs/dev_reference.md` and
-is accurate for this repo.
+Streamlit app, forked from the ISOM 550 tutor. Architecture (router → 8 tools →
+streamed chains → 3 knowledge tiers, plus the router-free drill door) is
+documented in `docs/dev_reference.md` (written pre-fork; the tool list there
+predates `read_code` and the drill door).
 
 **Read before designing anything:**
 - `docs/course_alignment_investigation.md` — repo-vs-course gap analysis
@@ -118,9 +119,19 @@ prompts rewritten, each verified answerable from current course data; synced
 Start Pulse Check" in Canvas carries a stale 2025 due date — fix in Canvas,
 re-sync.
 
-**Phase 1 (by s3):** `read_code` tool (two-tier reading, cut-list policy, Excel
-anchors); rebuild `concepts.csv` from the 352 concept map + disease taxonomy with
-a `debut_session` column; re-index Tier B.
+**Phase 1 (done 2026-08-24, one gap):** `concepts.csv` replaced with the
+instructor's 352 concept map (68 rows: course-frame / ask / python-reading /
+acquire / analyze-describe / analyze-inference / analyze-prediction / answer;
+statuses core·recipe·out-of-scope, all `dz-*` disease rows present); Tier B
+re-indexed; thresholds retuned (strong ≤ 1.30, abstain ≥ 1.50, margin 0.334)
+and the probe sets rewritten for the 352 surface. `read_code` tool shipped:
+two-tier Understand/Recipe 🔧 reading, cut-list flagging with in-scope
+translation, Excel anchors, traceback-read-from-the-bottom, never-invent-an-
+API, "Worth checking" closer; routes from pastes/attachments/screenshots.
+**Gap:** the new CSV has no `debut_session` column — concept retrieval is not
+session-gated (drills gate per-drill, so B3 holds where it is graded). Ask
+the instructor whether to add the column or derive from the "(sN)" topic
+tags.
 
 **Phase 2 (infrastructure done 2026-08-24; content awaits session builds):**
 drill door shipped — modal, router-free (`utils/drills.py`, drill chains in

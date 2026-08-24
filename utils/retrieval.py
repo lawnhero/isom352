@@ -57,8 +57,15 @@ def _tokenize(text: str) -> List[str]:
 # Re-derive with scripts/calibrate_retrieval.py after changing the embedding
 # model, the chunker, or the collection's hnsw:space -- these numbers are
 # meaningless under a different distance metric.
-STRONG_MAX_DISTANCE = 1.40
-ABSTAIN_MIN_DISTANCE = 1.58
+#
+# Retuned 2026-08-24 against the 352 concept map (68 rows): probe put the
+# worst in-domain question at 1.187 and the best out-of-domain at ~1.52, so
+# the old 1.40/1.58 pair let "how do I make sourdough" through as a weak
+# answer. 550-era decision-analysis questions still land near 352's
+# decision-TREE rows (d≈0.94) -- no threshold separates those; the concept
+# prompt's out-of-scope rule is what has to carry them.
+STRONG_MAX_DISTANCE = 1.30
+ABSTAIN_MIN_DISTANCE = 1.50
 
 # A distinctive-token match can carry a query the embedding misses: Tier C is
 # full of literals ("Pilgrim Bank", "BTG", "Store24") that vector search ranks

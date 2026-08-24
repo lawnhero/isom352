@@ -53,6 +53,8 @@ def show_help_dialog():
         "- :blue-badge[Class materials] — the indexed course content\n"
         "- :violet-badge[Python / Colab guidance] — general knowledge of Python, "
         "pandas, and Colab, grounded by this course's environment and conventions\n"
+        "- :violet-badge[Code reading] — paste a cell, an output, or an error "
+        "and get it read back line by line in business English\n"
         "- :green-badge[Practice question] / :green-badge[Practice coaching] / "
         ":green-badge[Feedback on your attempt] — generated for you, not taken "
         "from past exams\n"

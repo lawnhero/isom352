@@ -557,6 +557,46 @@ def build_ta_tools(
             )
         )
 
+    def read_code(query: str) -> str:
+        """Read pasted code, output, or a traceback aloud in business English.
+
+        Args:
+            query: The student's own question or message about the code. When
+                the code arrived as an attachment it is handed to the reader
+                automatically -- never copy it into this argument.
+        """
+        step = artifacts.new_step("read_code")
+
+        # No retrieval, same reasoning as answer_software: the model knows
+        # pandas; the course's reading policy (two tiers, Excel anchors, the
+        # cut list) lives in the chain prompt. The paste often arrives as an
+        # attached file or a screenshot; both ride along the same way
+        # check_attempt's do.
+        full_query = _merge_attachment(query, attachment_text)
+        step.covers = query or "reading the pasted code"
+        step.stream_spec = _stream_spec(
+            "read_code_chain",
+            {
+                "software_context": software_context or "",
+                "chat_history": _history_text(),
+                "query": full_query,
+            },
+            images,
+        )
+        step.trace = {
+            "tool": "read_code", "chain": step.stream_spec.chain_key,
+            "retrieval": False, "attachment_chars": len(attachment_text),
+            "images": len(images),
+        }
+        return _serialize_tool_result(
+            ToolExecutionResult(
+                answer="Prepared the code reading for streaming.",
+                tool_name="read_code",
+                stream_ready=True,
+                step_id=step.step_id,
+            )
+        )
+
     def answer_course_documents(
         query: str = "",
         doc_type: str = "",
@@ -1016,13 +1056,30 @@ def build_ta_tools(
             parse_docstring=True,
         ),
         StructuredTool.from_function(
+            func=read_code,
+            name="read_code",
+            description=(
+                "READ code the student pasted, attached, or screenshotted: what "
+                "each line does in business English, what an error traceback "
+                "says, whether the cell does what they think. Use whenever the "
+                "student shows existing code, notebook output, or an error and "
+                "asks what it means or why it fails. Pass the student's message "
+                "as query, keeping any code they typed inline verbatim -- but "
+                "blocks marked '--- Attached file:' are handed over "
+                "automatically, never copy those. Use answer_software instead "
+                "for 'how do I write/do X'; use answer_concept for what a "
+                "statistic MEANS."
+            ),
+            parse_docstring=True,
+        ),
+        StructuredTool.from_function(
             func=answer_concept,
             name="answer_concept",
             description=(
                 "Explain what a statistic MEANS, interpretation, and analytics concepts "
                 "using the Tier B concept index. Always set `module` to the ONE topic id "
                 "from the module list in your instructions that best matches the question "
-                "(e.g. simple-regression, inference, sensitivity-analysis). "
+                "(e.g. python-reading, acquire, analyze-inference, analyze-prediction). "
                 "Do NOT use for assignment task lists or class recaps — use "
                 "answer_course_documents. Do NOT use for Python/Colab how-to — use answer_software."
             ),

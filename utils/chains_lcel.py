@@ -220,16 +220,22 @@ def infer_curriculum_topic(query: str) -> str:
 
 
 def infer_learning_objective(query: str) -> str:
-    """Infer a course objective tag from query keywords."""
-    topic = infer_curriculum_topic(query)
-    if topic:
-        return topic
+    """Infer a course objective tag from query keywords.
+
+    Logistics keywords are checked BEFORE topic inference on purpose: the 352
+    concept map has a row titled "Variables, assignment, and types", so "when
+    is the assignment due" would otherwise be filed under Python reading.
+    Deadline words are unambiguous; concept keywords are not.
+    """
     lowered = (query or "").lower()
-    if any(keyword in lowered for keyword in _SOFTWARE_KEYWORDS):
-        return SOFTWARE_OBJECTIVE
     for keyword, objective in _LOGISTICS_KEYWORDS.items():
         if keyword in lowered:
             return objective
+    topic = infer_curriculum_topic(query)
+    if topic:
+        return topic
+    if any(keyword in lowered for keyword in _SOFTWARE_KEYWORDS):
+        return SOFTWARE_OBJECTIVE
     return "General data and decision analytics reasoning"
 
 
@@ -874,6 +880,100 @@ Response:"""
     return setup | prompt | llm | output_parser
 
 
+def read_code_chain(llm: BaseLanguageModel, vision: bool = False):
+    """Read pasted code (or a traceback) aloud in business English.
+
+    The course's defining tool. ISOM 352 treats Python as a READING language:
+    agents write the code, and the student's job is to understand it well
+    enough to verify and sign the result. So this chain never writes fresh
+    code and never silently returns a corrected cell -- a TA that hands back
+    fixed code trains paste-and-pray, which is the exact habit the course
+    exists to break.
+
+    No retrieval, like software_chain: the model knows pandas; what it needs
+    is the course's reading policy (two tiers, Excel anchors, the cut list),
+    which lives in the prompt, plus the conventions block.
+    """
+    template = (
+        PEYTON_PERSONA
+        + """
+
+The student pasted code, output, or an error they need to READ, not write.
+In this course Python is a reading language: agents and instructors write
+the code; the student's job is to understand it well enough to verify the
+result and put their name on it.
+
+"""
+        + SHARED_POLICY
+        + """
+
+Reading contract (strict):
+1) Open with **What this does** — one or two plain-English sentences naming
+   what the whole cell accomplishes in business terms (what question it
+   answers), never a mechanical restatement ("loops over the rows").
+2) Then **Line by line** — walk the code in order. Group trivial lines;
+   anything a student could stumble on gets its own bullet, in business
+   English.
+3) Anchor to Excel where a true twin exists, once per twin: a boolean mask
+   is Excel's filter; groupby-aggregate is a pivot table; merge is a
+   VLOOKUP; a fitted regression line is the chart trendline, with receipts.
+   Never force an anchor where the twin is only approximate.
+4) Two tiers, and say which is which:
+   - Understand tier — variables, types, booleans, for loops, dicts,
+     functions, pandas selection/masks/groupby/merge: explain fully; the
+     student is expected to read these unaided by the exam.
+   - Recipe tier — boilerplate the course does not expect them to parse
+     (sklearn fit/predict scaffolding, statsmodels incantations, plotting
+     setup): label it "Recipe 🔧 — you're not expected to read every
+     character", say what it accomplishes and what to CHECK about its
+     output, not how it works inside.
+5) The cut list — while, try/except, classes/OOP, .loc/.iloc,
+   comprehensions, lambda — is code this course deliberately does not
+   teach, but agent-written pastes will be full of it. When one appears:
+   name it as outside the course subset, translate it to the in-scope
+   equivalent when one exists (a comprehension is a for loop in one line —
+   show the loop), and treat it as Recipe 🔧 when none does.
+6) Tracebacks are read from the BOTTOM. Name the failing line, say in plain
+   English what the message claims, then the likeliest cause in THIS code.
+   Name the one change and why -- do not print a corrected version of the
+   cell; the student makes the edit.
+7) NEVER invent an API, argument, or behaviour. If you are not certain what
+   a call does, say which part you are unsure of.
+8) When the code computes a course statistic (R-squared, a p-value, a
+   confusion matrix), read the CODE here in one sentence and leave the
+   interpretation to the concept route -- do not write a statistics lesson.
+9) Close with **Worth checking** — the one thing a careful reader verifies
+   before trusting this cell's output (a row count, a type, what a filter
+   kept). This is the habit the course grades.
+10) Length follows the paste: a three-line cell gets a short read. Stay
+    under 300 words unless the paste is genuinely long.
+
+{software_context}
+
+{turn_context}
+
+Recent chat:
+{chat_history}
+
+What the student pasted, and their question:
+{query}
+
+Response:"""
+    )
+    prompt = ChatPromptTemplate.from_template(template)
+    setup = RunnableParallel(
+        {
+            "software_context": itemgetter("software_context"),
+            "chat_history": itemgetter("chat_history"),
+            "turn_context": _turn_context,
+            "query": itemgetter("query"),
+        }
+    )
+    if vision:
+        return _with_vision(setup, prompt, llm)
+    return setup | prompt | llm | output_parser
+
+
 def drill_grade_chain(llm: BaseLanguageModel):
     """Debrief a verification-drill submission against the engineered key.
 
@@ -1023,6 +1123,9 @@ def get_all_chains(main_llm, light_llm, vision_llm=None):
         # this is high-traffic (92 JMP questions in the logged history).
         "software_chain": software_chain(light_llm),
         "concept_chain": concept_chain(main_llm),
+        # Code reading is the course's signature skill and the tool's whole
+        # judgment is in the prose -- main model.
+        "read_code_chain": read_code_chain(main_llm),
         "practice_chain": practice_chain(main_llm),
         "check_chain": check_chain(main_llm),
         # Coaching a stuck student is tutoring judgement, not lookup -- main
@@ -1040,4 +1143,7 @@ def get_all_chains(main_llm, light_llm, vision_llm=None):
         "check_chain_vision": check_chain(vision_llm, vision=True),
         "software_chain_vision": software_chain(vision_llm, vision=True),
         "concept_chain_vision": concept_chain(vision_llm, vision=True),
+        # A screenshot of a notebook cell is the most natural way to hand
+        # over code you cannot read.
+        "read_code_chain_vision": read_code_chain(vision_llm, vision=True),
     }

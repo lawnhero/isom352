@@ -1,9 +1,13 @@
 """The curriculum taxonomy is derived from course_data/concepts.csv: pills,
 topic inference and the `learning_objective` analytics label all read it.
-These tests run against the real CSV, so they double as a check that the
-file still yields a usable pill tree."""
+These tests run against the real CSV — the 352 concept map (Ask → Acquire →
+Analyze → Answer plus the Python reading doses) — so they double as a check
+that the file still yields a usable pill tree."""
+
+import re
 
 import pytest
+from langchain_core.messages import AIMessage, HumanMessage
 
 from utils import concept_taxonomy as tax
 from utils.chains_lcel import (
@@ -20,49 +24,48 @@ from utils.chains_lcel import (
 # ---- pills -----------------------------------------------------------------
 def test_outline_is_modules_in_teaching_order_with_written_topics():
     out = tax.outline()
-    assert [m["id"] for m in out][:4] == [
-        "describing-one-variable", "describing-two-variables", "hypothesis-testing", "simple-regression",
-    ]
+    ids = [m["id"] for m in out]
+    # The cycle plus the reading language, in the order the file teaches them.
+    assert ids[:1] == ["course-frame"]
+    for module in ("ask", "python-reading", "acquire",
+                   "analyze-describe", "analyze-inference",
+                   "analyze-prediction", "answer"):
+        assert module in ids
     by_id = {m["id"]: m for m in out}
-    assert [t["label"] for t in by_id["simple-regression"]["topics"]] == [
-        "p-values", "Slope", "R-squared and model fit",
-    ]
-    # Three central-tendency concepts collapse into one pill.
-    central = next(t for t in by_id["describing-one-variable"]["topics"] if t["label"] == "Central tendency")
-    assert central["n_concepts"] == 3
+    labels = [t["label"] for t in by_id["python-reading"]["topics"]]
+    assert "Python: dose 1 (s3)" in labels and "Python: dose 5 (s10)" in labels
 
 
 def test_curriculum_topics_are_module_labels():
     topics = curriculum_topics()
-    assert topics[0] == "Describing one variable"
-    assert "Simple regression" in topics and "Sensitivity analysis" in topics
-    # Nothing the index cannot answer from.
-    assert "Probability" not in topics and "Python / Colab workflows" not in topics
+    assert "Acquire" in topics and "Analyze prediction" in topics
+    # Nothing the index cannot answer from, and no 550 leftovers.
+    assert "Sensitivity analysis" not in topics and "Decision basics" not in topics
 
 
 def test_subtopics_resolve_by_label_or_id():
-    assert get_subtopics("Simple regression") == ["p-values", "Slope", "R-squared and model fit"]
-    assert tax.subtopics("simple-regression") == get_subtopics("Simple regression")
-    assert get_subtopics("Hypothesis testing") == ["Hypothesis testing"]
+    subs = get_subtopics("Acquire")
+    assert "Joins" in subs and "LLM-as-extractor" in subs
+    assert tax.subtopics("acquire") == subs
     assert get_subtopics("Probability") == []
 
 
 def test_topic_labels_read_as_labels():
-    # The lint in vat-research enforces this at build time; here it guards the
-    # checked-in file. A hyphenated id-looking topic becomes an ugly pill.
+    # Labels are instructor-written and varied ("Python: dose 1 (s3)",
+    # "SQL-specific", "2-variable comparison"); the one thing that must never
+    # leak through is a raw hyphenated module id posing as a pill.
     for module in tax.outline():
         for topic in module["topics"]:
             label = topic["label"]
-            assert " " in label or "-" not in label or label[1] == "-", label
-            assert label[0].isupper() or label.startswith(("p-", "z-", "t-")), label
+            assert label == label.strip() and label
+            assert not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)+", label), label
 
 
 def test_split_focus_recovers_the_module_from_a_pill_focus():
-    assert format_topic_focus("Simple regression", "Slope") == "Simple regression: Slope"
-    assert tax.split_focus("Simple regression: Slope") == ("simple-regression", "Slope")
-    assert tax.split_focus("Simple regression") == ("simple-regression", "Simple regression")
+    assert format_topic_focus("Acquire", "Joins") == "Acquire: Joins"
+    assert tax.split_focus("Acquire: Joins") == ("acquire", "Joins")
+    assert tax.split_focus("Analyze inference") == ("analyze-inference", "Analyze inference")
     assert tax.split_focus("Interpreting R-squared") == ("", "Interpreting R-squared")
-    assert tax.split_focus("Regression") == ("", "Regression")
 
 
 def test_taxonomy_reads_follow_the_file(tmp_path):
@@ -83,21 +86,18 @@ def test_taxonomy_reads_follow_the_file(tmp_path):
 @pytest.mark.parametrize(
     "query, expected",
     [
-        ("What does an R-squared of 0.62 mean?", "Simple regression"),
-        ("what does this coefficient mean", "Multiple regression"),
-        ("How do I interpret the mean and median of salaries?", "Describing one variable"),
-        ("Is multicollinearity a problem here?", "Multiple regression"),
-        ("How do I run a regression in Python?", "Simple regression"),
-        ("What is a p-value?", "Simple regression"),
-        ("is 0.03 significant", "Hypothesis testing"),
-        ("what is a z-score", "Describing one variable"),
-        ("how do I fold back a decision tree", "Decision basics"),
-        ("what is the value of information", "Sensitivity analysis"),
-        ("is there an association between gender and churn", "Describing two variables"),
-        ("when should I use logistic regression", "Logistic regression"),
-        ("When is the next assignment due?", ""),
-        ("what is bayes theorem", ""),
+        ("Why does my merge have more rows than before?", "Acquire"),
+        ("how do I clean a csv file", "Acquire"),
+        ("What is a boolean mask?", "Python reading"),
+        ("what is a checking sentence", "Python reading"),
+        ("what does this coefficient mean", "Analyze inference"),
+        ("when should I use logistic regression", "Analyze prediction"),
+        ("what is overfitting", "Analyze prediction"),
+        ("tell me about the confusion matrix", "Analyze prediction"),
+        ("What is train/test leakage?", "Analyze prediction"),
+        ("what makes a good analytics question", "Course frame"),
         ("hello", ""),
+        ("what is bayes theorem", ""),
     ],
 )
 def test_infer_curriculum_topic(query, expected):
@@ -106,14 +106,24 @@ def test_infer_curriculum_topic(query, expected):
 
 def test_learning_objective_buckets_software_and_logistics():
     assert infer_learning_objective("how do I open a notebook in colab") == "Python / Colab workflows"
-    assert infer_learning_objective("when is the deadline") == "Course schedule and due date logistics"
     assert infer_learning_objective("hello there") == "General data and decision analytics reasoning"
-    # A concept question that mentions the tool is still about the concept.
-    assert infer_learning_objective("what does the R-squared in my Python output mean") == "Simple regression"
+    # Logistics outranks topic inference: the concept map has a row titled
+    # "Variables, assignment, and types", and a deadline question must not be
+    # filed under Python reading because of the word "assignment".
+    assert infer_learning_objective("when is the deadline") == "Course schedule and due date logistics"
+    assert (
+        infer_learning_objective("when is the next assignment due")
+        == "Course schedule and due date logistics"
+    )
 
 
-def test_topic_from_history_prefers_latest_student_turn(chat_history):
-    assert infer_topic_from_history(chat_history) == "Simple regression"
+def test_topic_from_history_prefers_latest_student_turn():
+    history = [
+        AIMessage("Hi, I'm Peyton, your virtual TA."),
+        HumanMessage("What is train/test leakage?"),
+        AIMessage("Leakage is when information from the test set reaches training."),
+    ]
+    assert infer_topic_from_history(history) == "Analyze prediction"
 
 
 @pytest.mark.parametrize(

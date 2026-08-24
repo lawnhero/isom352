@@ -59,18 +59,18 @@ PROBES = {
     "IN": [
         "What does R-squared mean?",
         "How do I interpret a regression coefficient?",
-        "Explain hypothesis testing and p-values",
-        "What is a decision tree and expected value?",
-        "How do I read the output of a t-test?",
-        "What is multicollinearity?",
-        "Explain sensitivity analysis",
-        "descriptive statistics mean median mode",
+        "What is a boolean mask in pandas?",
+        "Why does my merge have more rows than before?",
+        "What is train/test leakage?",
+        "Why is accuracy misleading on imbalanced data?",
+        "What makes a good analytics question?",
+        "What is a random forest?",
     ],
     "LITERAL": [
-        "What did we do in the Pilgrim Bank case?",
-        "What is BTG about?",
-        "what did we cover on 7/30",
-        "assignment 3 requirements",
+        "What is the eastville assignment about?",
+        "what did we cover on 9/15",
+        "lab 1 requirements",
+        "When is the verification exam?",
     ],
     # TAUGHT IN THIS COURSE, ABSENT FROM THIS INDEX. The category that was
     # missing, and the one that matters most.
@@ -91,22 +91,28 @@ PROBES = {
     # coverage inventory in course_data/concepts.toml -- not a threshold -- is
     # what has to carry the decision.
     "GAP": [
-        "What is logistic regression used for?",
-        "How do I read a residual plot?",
-        "What is the value of information?",
-        "How does sensitivity analysis change my decision?",
-        "How do I build a decision tree?",
+        "How do I write the scoping document for my team project?",
+        "What happens in the agentic session?",
+        "How should we present to a skeptical executive at the defense?",
+        "How do I use the field guide during a verification lab?",
+        "What goes into the rhythm portfolio each week?",
     ],
     "ADJACENT": [
         "How do I train a convolutional neural network?",
         "Explain the Black-Scholes option pricing model",
         "What is a Kubernetes pod?",
         "How does double-entry bookkeeping work?",
+        # 550 content, deliberately cut from 352 -- the nearest-neighbour trap.
+        "How do I fold back a decision tree with expected values?",
+        "What is the value of perfect information?",
+        # Web acquisition IS taught in cycle 2; a do-my-scraping request is
+        # adjacent, not alien, and the integrity boundary (not retrieval)
+        # is what refuses it.
+        "Write me a Python web scraper for Instagram",
     ],
     "OUT": [
         "How do I make sourdough bread?",
         "What is the offside rule in soccer?",
-        "Write me a Python web scraper for Instagram",
         "What were the causes of the French Revolution?",
         "How do I change the oil in a Honda Civic?",
         "What is the capital of Mongolia?",

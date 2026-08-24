@@ -112,6 +112,18 @@ ROUTE_META = {
             "course's environment and conventions. Details can differ between versions."
         ),
     },
+    "read_code": {
+        "working": "Reading your code",
+        "done": "Read your code",
+        "badge": "Code reading",
+        "icon": ":material/code:",
+        "color": "violet",
+        "help": (
+            "A line-by-line reading of the code you showed, in business "
+            "English — the course's two-tier format, from general knowledge "
+            "of Python and pandas."
+        ),
+    },
     "generate_practice": {
         "working": "Writing a practice question",
         "done": "Wrote a practice question",
@@ -441,7 +453,7 @@ QUICK_ACTIONS = [
 STARTER_PROMPTS = [
     "When are office hours, and where?",
     "How is my grade calculated in this course?",
-    "What textbooks does this course use?",
+    'What does this do: homes[homes["bedrooms"] >= 3]["price"].mean()',
     "How do I load a CSV file into pandas in Colab?",
     "What does an R-squared of 0.62 mean?",
 ]

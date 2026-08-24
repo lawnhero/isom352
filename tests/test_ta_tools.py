@@ -157,12 +157,12 @@ def test_coach_practice_escalates_after_max_hints():
 def test_generate_practice_carries_previous_question_and_flags_misroute():
     session = practice.start("Q: old question", "Regression")
     practice.record_hint(session)
-    history = [HumanMessage("explain multicollinearity"), AIMessage("...")]
+    history = [HumanMessage("explain train/test leakage"), AIMessage("...")]
     tools, artifacts = _tools(practice_session=session, chat_history=history)
     tools["generate_practice"].invoke({"topic": "", "difficulty": "HARDER"})
     step = _only_step(artifacts)
     payload = step.stream_spec.payload
-    assert payload["topic"] == "Multiple regression"   # inferred from history
+    assert payload["topic"] == "Analyze prediction"   # inferred from history
     assert payload["difficulty"] == "harder"
     assert payload["previous_question"] == "Q: old question"
     assert step.trace["probable_misroute"] is True
@@ -228,3 +228,29 @@ def test_every_tool_records_what_its_section_covers():
     assert "practice question on Decision basics" in covers["generate_practice"]
     assert "practice question on screen" in covers["coach_practice"]
     assert "attempt" in covers["check_attempt"]
+
+
+# ---- read_code ----------------------------------------------------------------
+def test_read_code_merges_the_attached_paste_into_the_query():
+    tools, artifacts = _tools(
+        attachment_text="--- Attached file: cell.py ---\nhomes = pd.read_csv('x.csv')",
+        software_context="SOFTWARE THIS COURSE USES\n  Python: Python 3.11",
+    )
+    tools["read_code"].invoke({"query": "What does this cell do?"})
+    step = _only_step(artifacts)
+    payload = step.stream_spec.payload
+    assert step.stream_spec.chain_key == "read_code_chain"
+    assert "What does this cell do?" in payload["query"]
+    assert "homes = pd.read_csv" in payload["query"]
+    assert payload["software_context"].startswith("SOFTWARE THIS COURSE USES")
+    assert step.trace["retrieval"] is False
+
+
+def test_read_code_routes_screenshots_to_the_vision_build():
+    tools, artifacts = _tools(
+        images=[{"data_url": "data:image/png;base64,xyz", "name": "cell.png"}],
+    )
+    tools["read_code"].invoke({"query": "Why does this cell fail?"})
+    step = _only_step(artifacts)
+    assert step.stream_spec.chain_key == "read_code_chain_vision"
+    assert len(step.stream_spec.images) == 1

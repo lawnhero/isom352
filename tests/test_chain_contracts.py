@@ -71,7 +71,7 @@ CONCEPTS = [
     Document(
         page_content="Interpreting R-squared\n\nR-squared is the share of variation explained.",
         metadata={"concept_id": "r-squared", "title": "Interpreting R-squared",
-                  "module": "simple-regression", "body": "R-squared is the share of variation explained.",
+                  "module": "analyze-inference", "body": "R-squared is the share of variation explained.",
                   "managerial_phrasing": "Say what share of the variation the model explains.",
                   "common_mistake": "Treating a high R-squared as proof of causation."},
     ),
@@ -116,9 +116,10 @@ def tools():
 CALLS = [
     ("answer_course_facts", {"query": "When is quiz 1 due?"}, "facts_chain"),
     ("answer_software", {"query": "How do I fit a line in Python?"}, "software_chain"),
+    ("read_code", {"query": "What does this cell do?"}, "read_code_chain"),
     ("answer_course_documents", {"query": "Eastville", "doc_type": "assignment"}, "doc_chain"),
     ("answer_course_documents", {"query": "", "days_back": 30}, "doc_chain"),
-    ("answer_concept", {"query": "what does r-squared mean", "module": "simple-regression"}, "concept_chain"),
+    ("answer_concept", {"query": "what does r-squared mean", "module": "analyze-inference"}, "concept_chain"),
     ("generate_practice", {"topic": "Regression", "difficulty": "harder"}, "practice_chain"),
     ("coach_practice", {"query": "I'm stuck", "request": "clarify"}, "coach_chain"),
     ("check_attempt", {"attempt_text": "62% of variation is explained"}, "check_chain"),
@@ -196,19 +197,20 @@ def test_concept_answer_names_the_retrieved_concept_as_practice_topic(tools):
 def test_weak_concept_match_falls_back_to_the_hit_module():
     artifacts = TurnArtifacts()
     built = {t.name: t for t in build_ta_tools(
-        contents_db=_StubIndex(CONCEPTS, distance=1.5), documents_db=None, chains_dict={},
+        # 1.4 sits in the weak band (strong <= 1.30, abstain >= 1.50).
+        contents_db=_StubIndex(CONCEPTS, distance=1.4), documents_db=None, chains_dict={},
         chat_history=[], response_mode="Direct answer", artifacts=artifacts,
     )}
     built["answer_concept"].invoke({"query": "what does r-squared mean", "module": ""})
     step = next(iter(artifacts.steps.values()))
     assert step.retrieval_quality == "weak"
-    assert step.practice_topic == "Simple regression"
+    assert step.practice_topic == "Analyze inference"
 
 
 def test_pill_focus_grounds_inside_its_module(all_chains):
     class _Filtering(_StubIndex):
         def similarity_search_with_score(self, query, k=4, filter=None):
-            assert filter == {"module": {"$eq": "simple-regression"}}
+            assert filter == {"module": {"$eq": "analyze-inference"}}
             return super().similarity_search_with_score(query, k, filter)
 
     artifacts = TurnArtifacts()
@@ -216,10 +218,10 @@ def test_pill_focus_grounds_inside_its_module(all_chains):
         contents_db=_Filtering(CONCEPTS, distance=1.1), documents_db=None, chains_dict={},
         chat_history=[], response_mode="Direct answer", artifacts=artifacts,
     )}
-    built["generate_practice"].invoke({"topic": "Simple regression: R-squared and model fit"})
+    built["generate_practice"].invoke({"topic": "Analyze inference: Correlation/simple regression"})
     step = next(iter(artifacts.steps.values()))
     # 1.1 is over the unfiltered bar (1.0) but inside the in-module bar (1.2).
-    assert step.trace["module"] == "simple-regression"
+    assert step.trace["module"] == "analyze-inference"
     assert step.trace["grounded_on"] == "Interpreting R-squared"
 
 
@@ -279,7 +281,7 @@ def test_empty_module_filter_widens_instead_of_abstaining(all_chains):
     build, or simply the wrong guess) must not hide a concept the index holds."""
     class _ModuleAware(_StubIndex):
         def similarity_search_with_score(self, query, k=4, filter=None):
-            if filter == {"module": {"$eq": "hypothesis-testing"}}:
+            if filter == {"module": {"$eq": "ask"}}:
                 return []   # nothing filed there
             return super().similarity_search_with_score(query, k, filter)
 
@@ -288,10 +290,10 @@ def test_empty_module_filter_widens_instead_of_abstaining(all_chains):
         contents_db=_ModuleAware(CONCEPTS, distance=1.0), documents_db=None, chains_dict={},
         chat_history=[], response_mode="Direct answer", artifacts=artifacts,
     )}
-    built["answer_concept"].invoke({"query": "what does a p-value of 0.03 mean", "module": "hypothesis-testing"})
+    built["answer_concept"].invoke({"query": "what does a p-value of 0.03 mean", "module": "ask"})
     step = next(iter(artifacts.steps.values()))
     assert not step.abstained
-    assert step.trace["widened_from_module"] == "hypothesis-testing"
+    assert step.trace["widened_from_module"] == "ask"
     assert step.sources == ["Interpreting R-squared"]
 
 
