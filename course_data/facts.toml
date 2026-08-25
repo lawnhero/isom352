@@ -23,11 +23,10 @@ stale_after_days = 12
 # Drives the verification-drill gate (course rule B3: never drill a disease
 # that has not been taught yet). utils/drills.py counts class meetings from
 # first_class at the class_days cadence to get the current session number.
-# UNSET, the app conservatively assumes session 1 and serves almost nothing.
-# TODO: uncomment and confirm the first class date for Fall 2026.
-# [schedule]
-# first_class = 2026-08-25
-# class_days  = ["tue", "thu"]
+# If unset, the app conservatively assumes session 1 and serves almost nothing.
+[schedule]
+first_class = 2026-08-27   # Thursday; the Tue slot before it does not meet
+class_days  = ["tue", "thu"]
 
 
 [course]
