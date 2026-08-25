@@ -128,10 +128,14 @@ and the probe sets rewritten for the 352 surface. `read_code` tool shipped:
 two-tier Understand/Recipe 🔧 reading, cut-list flagging with in-scope
 translation, Excel anchors, traceback-read-from-the-bottom, never-invent-an-
 API, "Worth checking" closer; routes from pastes/attachments/screenshots.
-**Gap:** the new CSV has no `debut_session` column — concept retrieval is not
-session-gated (drills gate per-drill, so B3 holds where it is graded). Ask
-the instructor whether to add the column or derive from the "(sN)" topic
-tags.
+**Decided (2026-08-24, instructor):** no `debut_session` column — concept
+retrieval stays ungated BY DESIGN. B3 governs graded flaw-finding, not
+explanations; the ask lane is a help channel and a refusal there reads as
+"we don't teach that." Session gating lives only where it is graded: per
+drill, via each drill's own `debut_session` + `[schedule]` in facts.toml.
+If the weekly report later shows confusion from ahead-of-calendar answers,
+the remedy is a "this arrives around session N" label in concept_chain,
+never a gate. Do not reopen this as a gap.
 
 **Phase 2 (infrastructure done 2026-08-24; content awaits session builds):**
 drill door shipped — modal, router-free (`utils/drills.py`, drill chains in
