@@ -20,10 +20,22 @@ output. That is how the course rules are kept:
 `demo/demo_homes.csv`; students never see them (`load_bank` excludes them
 unless instructor diagnostics are unlocked via `?debug=1`).
 
-To build real drills once a session's dirt-script trap exists:
+## The eastville spine
+
+`spine: "eastville"` drills run against **`eastville_teaching.csv`** — the
+file students actually load in sessions 3–10, produced from the clean
+108-home master by the course's `dirt_injection.py` (price-as-text, biased
+missing ages, three relisted homes → 111 rows). Both the clean master and
+the dirt script live in `course_data/drills/masters/`, which is
+**gitignored on purpose**: this repo is public, and those two files are the
+answer key to the session traps. Keep local copies; they are re-obtainable
+from the instructor's course project.
+
+To rebuild after adding a recipe:
 
 ```bash
-python scripts/build_drills.py --spine eastville --master path/to/eastville.csv
+python scripts/build_drills.py --spine eastville \
+    --master course_data/drills/masters/eastville_teaching.csv
 ```
 
 Add a recipe per disease per spine in `drill_recipes/`; the module contract

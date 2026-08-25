@@ -1,5 +1,5 @@
 {
-  "id": "describe-one-mean-under-skew-demo-01",
+  "id": "demo-mean-under-skew-01",
   "disease": "describe-one-mean-under-skew",
   "disease_label": "1-variable description — Mean under skew",
   "status": "dirty",
@@ -19,6 +19,6 @@
   "provenance": {
     "recipe": "drill_recipes/demo_mean_under_skew.py",
     "master": "course_data/drills/demo/demo_homes.csv",
-    "built_at": "2026-08-24T04:42:22Z"
+    "built_at": "2026-08-25T20:54:02Z"
   }
 }

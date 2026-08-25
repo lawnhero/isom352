@@ -160,7 +160,10 @@ def main():
     built, failed = 0, 0
     for path, module in recipes:
         for variant in module.variants():
-            drill_id = f"{module.DISEASE}-{spine}-{variant['id_suffix']}"
+            # Keyed to the recipe FILE, not the disease: a clean control
+            # shares its disease with the dirty drill it pairs with, and a
+            # disease-based id made the two overwrite each other.
+            drill_id = f"{path.stem.replace('_', '-')}-{variant['id_suffix']}"
             try:
                 output = execute(variant["code"], master, module.DISPLAY_FILENAME)
             except Exception as exc:

@@ -1,0 +1,27 @@
+{
+  "id": "eastville-clean-by-zone-01",
+  "disease": "dz-duplicate-rows",
+  "disease_label": "Cleaning/manipulation — Duplicate rows (clean control)",
+  "status": "clean",
+  "debut_session": 4,
+  "spine": "eastville",
+  "artifact": {
+    "code": "import pandas as pd\n\nhomes = pd.read_csv(\"eastville_teaching.csv\")\nhomes[\"price\"] = pd.to_numeric(\n    homes[\"price\"].str.replace(\"$\", \"\", regex=False).str.replace(\",\", \"\", regex=False)\n)\n\nprint(\"Rows in the file:\", len(homes))\nprint(\"Distinct homes:\", homes[\"house\"].nunique())\n\n# Keep one listing per home before counting or averaging\nhomes = homes.drop_duplicates(subset=\"house\")\n\nprint()\nprint(\"Homes per school zone:\")\nprint(homes.groupby(\"school\")[\"price\"].count())\nprint()\nprint(\"Average price by school zone:\")\nprint(homes.groupby(\"school\")[\"price\"].mean().round(0))",
+    "output": "Rows in the file: 111\nDistinct homes: 108\n\nHomes per school zone:\nschool\nApple Valley    65\nPlum Ridge      43\nName: price, dtype: int64\n\nAverage price by school zone:\nschool\nApple Valley    367869.0\nPlum Ridge      301375.0\nName: price, dtype: float64"
+  },
+  "answer_key": {
+    "verdict": "sign",
+    "flaw": "",
+    "mechanism": "Every trap this file carries is handled in the open: price is converted to numbers before any arithmetic, the row-versus-distinct-homes check is printed so the reader sees the relisted homes exist, duplicates are removed by house id before counting, and each zone average sits next to the group size it rests on.",
+    "consequence": "",
+    "caveats": [
+      "An average per zone still hides the spread within a zone; two zones with similar means can hold very different markets.",
+      "The age column has missing values, so any follow-up that uses age must handle them deliberately rather than with a blanket dropna()."
+    ]
+  },
+  "provenance": {
+    "recipe": "drill_recipes/eastville_clean_by_zone.py",
+    "master": "course_data/drills/masters/eastville_teaching.csv",
+    "built_at": "2026-08-25T20:54:02Z"
+  }
+}

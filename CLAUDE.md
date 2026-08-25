@@ -148,12 +148,16 @@ E1); bank format + validation in `course_data/drills/README.md`; factory is
 clean master, real output stored, B3 enforced structurally. Three demo drills
 (spine "demo", students never see them; visible under `?debug=1`) verified
 end-to-end in the browser: serve, hint, correct-locate debrief, miss debrief,
-ledger writes. **Blocked on content:** the eastville master + per-session
-dirt recipes (each session's trap exports 1–2 variants + a clean control),
-and `first_class` in facts.toml `[schedule]` (commented template; unset, the
-gate conservatively assumes session 1 and serves nothing). Phase 1
-(`read_code`, concepts.csv rebuild) was deliberately skipped past — still
-open.
+ledger writes. **Content seeded (2026-08-25):** instructor supplied the clean eastville
+master, `eastville_teaching.csv`, and `dirt_injection.py` (all in
+`course_data/drills/masters/`, gitignored — answer-key material, repo is
+public). Five eastville drills built and committed, keyed to the teaching
+file's own traps: type-confusion (s3, dirty + clean-median control),
+silent-row-loss (s4, dirty), duplicate-rows (s4, dirty + clean-by-zone
+control). Drill ids come from recipe filenames (disease-based ids collided
+on clean/dirty pairs). Still open: `first_class` in facts.toml `[schedule]`
+(commented; unset, the gate assumes session 1 and serves nothing — correct
+pre-term), and per-session recipes for s5+ as those sessions are built.
 
 **Phase 3 (by s15):** `attack_spec` adversary tool — ends by exporting a
 transcript artifact the *team* attaches to scoping materials (export, don't

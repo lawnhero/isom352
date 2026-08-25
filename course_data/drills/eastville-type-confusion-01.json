@@ -1,0 +1,24 @@
+{
+  "id": "eastville-type-confusion-01",
+  "disease": "dz-type-confusion",
+  "disease_label": "Loading files — Type confusion",
+  "status": "dirty",
+  "debut_session": 3,
+  "spine": "eastville",
+  "artifact": {
+    "code": "import pandas as pd\n\nhomes = pd.read_csv(\"eastville_teaching.csv\")\n\nprint(\"Homes in the file:\", len(homes))\nprint()\nprint(\"Price summary for the Eastville market:\")\nprint(homes[\"price\"].describe())",
+    "output": "Homes in the file: 111\n\nPrice summary for the Eastville market:\ncount          111\nunique         108\ntop       $356,700\nfreq             2\nName: price, dtype: object"
+  },
+  "answer_key": {
+    "verdict": "dont_sign",
+    "flaw": "The price column was never converted to numbers -- the dollar signs and commas make it text -- so describe() returned text statistics: count, unique, top, freq. There is no mean, no min, no max anywhere in this 'price summary', and 'top' is the most FREQUENTLY LISTED price string, not the highest price.",
+    "mechanism": "pandas chooses what describe() reports from the column's type. A column of strings gets frequency statistics; only a numeric column gets averages and ranges. Nothing errors -- the type decides silently, which is why the output looks like a finished summary.",
+    "consequence": "Anyone quoting a 'top' or 'typical' price from this block is reading string bookkeeping, not market figures. Every downstream number that should have come from this summary -- a budget, a comparison, a listing strategy -- has no numeric basis at all.",
+    "caveats": []
+  },
+  "provenance": {
+    "recipe": "drill_recipes/eastville_type_confusion.py",
+    "master": "course_data/drills/masters/eastville_teaching.csv",
+    "built_at": "2026-08-25T20:54:02Z"
+  }
+}

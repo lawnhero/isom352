@@ -1,0 +1,27 @@
+{
+  "id": "eastville-clean-median-01",
+  "disease": "dz-type-confusion",
+  "disease_label": "Loading files — Type confusion (clean control)",
+  "status": "clean",
+  "debut_session": 3,
+  "spine": "eastville",
+  "artifact": {
+    "code": "import pandas as pd\n\nhomes = pd.read_csv(\"eastville_teaching.csv\")\nprices = pd.to_numeric(\n    homes[\"price\"].str.replace(\"$\", \"\", regex=False).str.replace(\",\", \"\", regex=False)\n)\n\nprint(\"Rows in the file:\", len(homes))\nprint(\"Typical Eastville price (median):\", round(prices.median()))\nprint(\"Range:\", round(prices.min()), \"to\", round(prices.max()))",
+    "output": "Rows in the file: 111\nTypical Eastville price (median): 333020\nRange: 197300 to 675030"
+  },
+  "answer_key": {
+    "verdict": "sign",
+    "flaw": "",
+    "mechanism": "The price text is converted to numbers before any statistic is computed -- both the dollar sign and the comma are removed, so to_numeric parses every value. 'Typical' is claimed from the median, which a handful of expensive homes cannot drag, and the range is printed beside it so the reader can see the spread the median summarizes.",
+    "consequence": "",
+    "caveats": [
+      "The count is rows in the file, and a row is a listing -- if any home was relisted it is counted twice. The median barely moves for a few repeats, but the row count should not be quoted as a count of homes.",
+      "A single market-wide figure hides the gap between school zones; a by-zone read would tell a buyer more."
+    ]
+  },
+  "provenance": {
+    "recipe": "drill_recipes/eastville_clean_median.py",
+    "master": "course_data/drills/masters/eastville_teaching.csv",
+    "built_at": "2026-08-25T20:54:02Z"
+  }
+}

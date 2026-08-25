@@ -1,5 +1,5 @@
 {
-  "id": "cleaning-silent-row-loss-demo-01",
+  "id": "demo-silent-row-loss-01",
   "disease": "cleaning-silent-row-loss",
   "disease_label": "Cleaning/manipulation — Silent row loss",
   "status": "dirty",
@@ -19,6 +19,6 @@
   "provenance": {
     "recipe": "drill_recipes/demo_silent_row_loss.py",
     "master": "course_data/drills/demo/demo_homes.csv",
-    "built_at": "2026-08-24T04:42:22Z"
+    "built_at": "2026-08-25T20:54:02Z"
   }
 }

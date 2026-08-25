@@ -1,0 +1,24 @@
+{
+  "id": "eastville-duplicate-rows-01",
+  "disease": "dz-duplicate-rows",
+  "disease_label": "Cleaning/manipulation — Duplicate rows",
+  "status": "dirty",
+  "debut_session": 4,
+  "spine": "eastville",
+  "artifact": {
+    "code": "import pandas as pd\n\nhomes = pd.read_csv(\"eastville_teaching.csv\")\nhomes[\"price\"] = pd.to_numeric(\n    homes[\"price\"].str.replace(\"$\", \"\", regex=False).str.replace(\",\", \"\", regex=False)\n)\n\nprint(\"Homes on the Eastville market:\", len(homes))\nprint()\nprint(\"Homes per school zone:\")\nprint(homes.groupby(\"school\")[\"price\"].count())\nprint()\nprint(\"Average price by school zone:\")\nprint(homes.groupby(\"school\")[\"price\"].mean().round(0))",
+    "output": "Homes on the Eastville market: 111\n\nHomes per school zone:\nschool\nApple Valley    67\nPlum Ridge      44\nName: price, dtype: int64\n\nAverage price by school zone:\nschool\nApple Valley    368178.0\nPlum Ridge      302190.0\nName: price, dtype: float64"
+  },
+  "answer_key": {
+    "verdict": "dont_sign",
+    "flaw": "len(homes) counts ROWS, and this file's rows are listings: several homes were relisted and appear twice. The headline 'homes on the market' figure, the per-zone counts, and the zone averages all weight those relisted homes double. Nothing in the code checked rows against distinct house ids before claiming a count of homes.",
+    "mechanism": "A row is a record, not necessarily a thing. When the same house appears under two listings, every count and every average silently treats it as two houses. The one-line check -- compare len(homes) with homes['house'].nunique() -- was never run.",
+    "consequence": "The market looks bigger than it is and the double-counted homes pull the zone averages toward their own prices. Inventory reports, market-share claims, and zone comparisons built on these figures are all quietly wrong.",
+    "caveats": []
+  },
+  "provenance": {
+    "recipe": "drill_recipes/eastville_duplicate_rows.py",
+    "master": "course_data/drills/masters/eastville_teaching.csv",
+    "built_at": "2026-08-25T20:54:02Z"
+  }
+}

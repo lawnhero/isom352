@@ -22,3 +22,9 @@ trial.ipynb
 
 # Exported analytics CSVs
 analytics/*.csv
+
+# Instructor-only drill inputs: the clean eastville master and the
+# dirt-injection script are answer-key material for the session traps and
+# must never reach this public repo. Drill JSONs (engineered artifacts with
+# their own keys) are formative-only and are committed; these inputs are not.
+course_data/drills/masters/

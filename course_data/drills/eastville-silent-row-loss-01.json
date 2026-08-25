@@ -1,0 +1,24 @@
+{
+  "id": "eastville-silent-row-loss-01",
+  "disease": "dz-silent-row-loss",
+  "disease_label": "Cleaning/manipulation — Silent row loss",
+  "status": "dirty",
+  "debut_session": 4,
+  "spine": "eastville",
+  "artifact": {
+    "code": "import pandas as pd\n\nhomes = pd.read_csv(\"eastville_teaching.csv\")\nhomes[\"price\"] = pd.to_numeric(\n    homes[\"price\"].str.replace(\"$\", \"\", regex=False).str.replace(\",\", \"\", regex=False)\n)\nprint(\"Homes loaded:\", len(homes))\n\n# Drop incomplete records before analysis\nhomes = homes.dropna()\nprint(\"Homes analyzed:\", len(homes))\n\nprint(\"Average age of an Eastville home:\", round(homes[\"age\"].mean(), 1), \"years\")\nprint(\"Average price:\", round(homes[\"price\"].mean()))",
+    "output": "Homes loaded: 111\nHomes analyzed: 100\nAverage age of an Eastville home: 10.7 years\nAverage price: 345941"
+  },
+  "answer_key": {
+    "verdict": "dont_sign",
+    "flaw": "The dropna() line. Compare 'Homes loaded' with 'Homes analyzed': homes vanished between the two lines, and the conclusion still claims to describe the Eastville market. The homes that are missing an age are not a random sample -- in this file they are mostly the OLDER homes -- so dropping them skews the average age young.",
+    "mechanism": "dropna() removes any row with a missing value in any column. When missingness is concentrated in one kind of row -- here, older homes -- the surviving sample is systematically different from the market, and every statistic computed on it inherits that tilt. The price average also quietly loses those same homes, though price itself was complete for every row.",
+    "consequence": "The market reads younger than it is, and any decision keyed to home age -- renovation demand, insurance, comparable selection -- starts from a biased figure that nobody chose to bias.",
+    "caveats": []
+  },
+  "provenance": {
+    "recipe": "drill_recipes/eastville_silent_row_loss.py",
+    "master": "course_data/drills/masters/eastville_teaching.csv",
+    "built_at": "2026-08-25T20:54:02Z"
+  }
+}

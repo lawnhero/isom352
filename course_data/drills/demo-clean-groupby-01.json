@@ -1,5 +1,5 @@
 {
-  "id": "aggregation-small-group-extremes-demo-01",
+  "id": "demo-clean-groupby-01",
   "disease": "aggregation-small-group-extremes",
   "disease_label": "Aggregation/groupby — Small-group extremes",
   "status": "clean",
@@ -22,6 +22,6 @@
   "provenance": {
     "recipe": "drill_recipes/demo_clean_groupby.py",
     "master": "course_data/drills/demo/demo_homes.csv",
-    "built_at": "2026-08-24T04:42:22Z"
+    "built_at": "2026-08-25T20:54:02Z"
   }
 }
