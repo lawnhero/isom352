@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T04:33:10Z",
+  "generated_at": "2026-08-26T03:15:22Z",
   "source": "canvas",
   "course": {
     "canvas_id": "165126",
@@ -71,24 +71,24 @@
   ],
   "assignments": [
     {
-      "name": "End of Semester Pulse Check",
-      "group": "Participation",
+      "name": "Semester Start Attestations",
+      "group": "Quizzes",
       "kind": "assignment",
-      "due_utc": null,
-      "due_local": null,
+      "due_utc": "2026-09-01T14:00:00Z",
+      "due_local": "Tue Sep 1, 2026, 10:00 AM EDT",
       "points": 5.0,
-      "url": "https://canvas.emory.edu/courses/165126/assignments/1292158",
-      "instructions": "This survey specifically focuses on course contents and deliveries. Please share your experiences as well as your suggestions on how to make things better. The results will be used by me for instructional design and improvement purpose only. NO personal information will be shared with anyone. \n\nThe survey will take you 5 mins (tops). Please answer all the questions to the best of your abilities. Constructive feedbacks are most appreciated."
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1298699",
+      "instructions": "Four short attestations. Read each one carefully and sign your name in the space provided. Credit is for completion.\n\nThis is not the Pulse Check. The Pulse Check is a separate, anonymous survey about your background. Please complete both."
     },
     {
       "name": "Semester Start Pulse Check",
-      "group": "Participation",
+      "group": "Quizzes",
       "kind": "assignment",
-      "due_utc": null,
-      "due_local": null,
-      "points": 5.0,
-      "url": "https://canvas.emory.edu/courses/165126/assignments/1292156",
-      "instructions": ""
+      "due_utc": "2026-09-01T14:00:00Z",
+      "due_local": "Tue Sep 1, 2026, 10:00 AM EDT",
+      "points": 10.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1298704",
+      "instructions": "This survey tells me who is actually in the room, so I can pitch the course correctly. It takes about five minutes.\n\nRead this before you answer:\n\nCredit is for completing the survey. There are no right answers, and nothing here is scored on content.\n\nNothing you say here will ever be used in an academic integrity context or held against you in any way.\n\nPlease answer honestly, especially about AI. An accurate picture of how this class actually works helps me build a course worth your time. A flattering one does not."
     }
   ],
   "pages": [
