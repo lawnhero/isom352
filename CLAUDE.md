@@ -143,7 +143,9 @@ drill door shipped — modal, router-free (`utils/drills.py`, drill chains in
 click so verdict-correct / false-alarm / miss are computed in Python, never
 parsed from model prose; lab/exam conditions toggle (exam = no hints);
 handle-based ledger as `event_type: "drill"` Mongo events (formative only,
-E1); bank format + validation in `course_data/drills/README.md`; factory is
+E1; **instructor decision 2026-08-25: handles must be anonymous** — the door
+tells students to invent a nickname, never name/NetID/email, and warns on
+email-shaped input); bank format + validation in `course_data/drills/README.md`; factory is
 `scripts/build_drills.py` + `drill_recipes/*.py` — executes recipe code on a
 clean master, real output stored, B3 enforced structurally. Three demo drills
 (spine "demo", students never see them; visible under `?debug=1`) verified

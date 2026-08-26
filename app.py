@@ -608,9 +608,27 @@ def _render_drill_chooser() -> None:
             "Drill handle (optional — keeps your practice record across visits)",
             value=st.session_state.get("drill_handle", ""),
             key="drill_handle_input",
-            placeholder="any name or your NetID",
+            placeholder="make one up — e.g. mossy-otter42",
+            help=(
+                "Pick a random nickname and reuse it. Do NOT use your real "
+                "name, NetID, or email: drills are practice, never grading, "
+                "and your record should not identify you."
+            ),
         )
         st.session_state.drill_handle = (handle or "").strip()
+        st.caption(
+            "Use a made-up nickname — never your real name, NetID, or email. "
+            "Drill records are anonymous practice data, not grades."
+        )
+        # The one identifiable pattern detectable from shape alone. Names and
+        # NetIDs look like any other string, so the copy above has to carry
+        # those; an email we can actually catch.
+        if "@" in st.session_state.drill_handle:
+            st.warning(
+                "That looks like an email address. Please use a made-up "
+                "nickname instead — this record is meant to be anonymous.",
+                icon=":material/privacy_tip:",
+            )
         with st.container(horizontal=True):
             lab = st.button(
                 "Lab conditions", icon=":material/science:",
