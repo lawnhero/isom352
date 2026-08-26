@@ -178,6 +178,24 @@ def eligible(bank: List[Dict[str, Any]], session: int) -> List[Dict[str, Any]]:
 # --------------------------------------------------------------------------
 # Selection
 # --------------------------------------------------------------------------
+def merge_history(
+    remote: List[Dict[str, Any]], local: List[Dict[str, Any]]
+) -> List[Dict[str, Any]]:
+    """The durable ledger plus whatever it does not know about, oldest first.
+
+    `remote` is the handle's graded-drill history read back from MongoDB;
+    `local` is this browser session's rows. Every graded drill is written to
+    both, so remote is normally a superset -- but a row graded while the
+    handle was blank, or whose Mongo write failed, exists only locally, and
+    counting a drill twice would skew the practised-disease counts and the
+    clean-control rotation. Rows are matched on the Mongo event id the app
+    stamps at grade time; local rows without one (failed write) are kept.
+    """
+    seen = {r.get("event_id") for r in remote if r.get("event_id")}
+    return list(remote) + [r for r in local if r.get("event_id") not in seen]
+
+
+
 def select(
     bank: List[Dict[str, Any]],
     session: int,

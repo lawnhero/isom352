@@ -212,3 +212,31 @@ def test_answer_key_block_carries_the_key():
     assert "DO NOT SIGN" in block and "dropna" in block
     clean_block = drills.answer_key_block(_clean())
     assert "SIGN" in clean_block and "Averages hide spread." in clean_block
+
+
+# ---- ledger merge ----------------------------------------------------------
+def test_merge_history_dedupes_on_event_id():
+    remote = [
+        {"event_id": "a", "drill_id": "d1", "disease": "x", "status": "dirty"},
+        {"event_id": "b", "drill_id": "d2", "disease": "y", "status": "clean"},
+    ]
+    local = [
+        {"event_id": "b", "drill_id": "d2", "disease": "y", "status": "clean"},
+        {"event_id": "c", "drill_id": "d3", "disease": "z", "status": "dirty"},
+    ]
+    merged = drills.merge_history(remote, local)
+    assert [r["event_id"] for r in merged] == ["a", "b", "c"]
+
+
+def test_merge_history_keeps_local_rows_with_no_event_id():
+    """A row whose Mongo write failed exists only locally and must count."""
+    remote = [{"event_id": "a", "drill_id": "d1", "disease": "x", "status": "dirty"}]
+    local = [{"event_id": "", "drill_id": "d2", "disease": "y", "status": "clean"}]
+    merged = drills.merge_history(remote, local)
+    assert len(merged) == 2 and merged[-1]["drill_id"] == "d2"
+
+
+def test_merge_history_with_no_remote_is_the_local_history():
+    local = [{"event_id": "", "drill_id": "d1", "disease": "x", "status": "dirty"}]
+    assert drills.merge_history([], local) == local
+    assert drills.merge_history([], []) == []

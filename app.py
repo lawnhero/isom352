@@ -487,15 +487,57 @@ def _log_drill_event(route: str, metadata: dict, *, query: str = "") -> str:
         return ""
 
 
+def _mongo_drill_history(handle: str) -> list:
+    """The handle's graded drills read back from the ledger, oldest first.
+
+    This is the read half of what the handle exists for: without it,
+    selection only remembers the current browser session, and a returning
+    student restarts from zero. Read-only, bounded, and failure degrades to
+    session-local history -- a Mongo hiccup must never block a drill.
+    """
+    if not handle:
+        return []
+    try:
+        cursor = (
+            collection.find(
+                {
+                    "event_type": "drill",
+                    "route_label": "drill_grade",
+                    "metadata.handle": handle,
+                },
+                {"metadata": 1, "timestamp": 1},
+            )
+            .sort("timestamp", -1)
+            .limit(200)
+        )
+        rows = []
+        for doc in reversed(list(cursor)):
+            meta = doc.get("metadata") or {}
+            rows.append(
+                {
+                    "event_id": str(doc.get("_id", "")),
+                    "drill_id": meta.get("drill_id", ""),
+                    "disease": meta.get("disease", ""),
+                    "status": meta.get("status", ""),
+                }
+            )
+        return rows
+    except Exception:
+        traceback.print_exc()
+        return []
+
+
 def _serve_drill(conditions: str) -> None:
     """Pick from the bank and put the artifact on screen, or say why not."""
     bank, problems = drills.load_bank(include_demo=diagnostics_unlocked())
     for line in problems:
         print(f"[drills] skipped: {line}")
     session_number = drills.current_session(get_course_facts())
-    picked = drills.select(
-        bank, session_number, history=st.session_state.get("drill_history") or []
+    history = drills.merge_history(
+        _mongo_drill_history(st.session_state.get("drill_handle", "")),
+        st.session_state.get("drill_history") or [],
     )
+    picked = drills.select(bank, session_number, history=history)
     if picked is None:
         st.session_state.drill_session = None
         _drill_turn("Give me a verification drill", NO_DRILLS_MESSAGE,
@@ -588,7 +630,10 @@ def _grade_drill(attempt_text: str) -> None:
 
     interaction_id = _log_drill_event("drill_grade", outcome, query=attempt_text)
     history = st.session_state.setdefault("drill_history", [])
-    history.append(outcome)
+    # The Mongo event id is what merge_history dedupes on when this row
+    # comes back from the ledger on a later serve; "" (failed write) means
+    # the local row is the only record and is always kept.
+    history.append({**outcome, "event_id": interaction_id})
     st.session_state.drill_session = None
     _drill_turn(verdict_label + attempt_text, text, route="drill_grade",
                 interaction_id=interaction_id)
