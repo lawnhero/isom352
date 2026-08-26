@@ -35,7 +35,7 @@ title      = "Applied Data Analytics with Coding"
 # One Canvas shell for the whole course: 165126. Section 1102 (Canvas 165131)
 # is cross-listed into it -- sync 165126 only, never 165131.
 canvas_url = "https://canvas.emory.edu/courses/165126"
-meeting    = "Tues and TH at 10 AM (1101) and 11:30 AM (1102) in GBS 130"   
+meeting    = "Tues and TH at 10 AM (1101) and 11:30 AM (1102) in GFC W330"   
 
 
 [instructor]
