@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-26T03:15:22Z",
+  "generated_at": "2026-08-27T04:33:41Z",
   "source": "canvas",
   "course": {
     "canvas_id": "165126",
     "code": "FA26_ISOM_352_1101",
-    "name": "ISOM-352-1101: Appld.Data Analytics w/Coding - Fall 2026",
+    "name": "ISOM352-ADA-Fall26",
     "term": "Fall 2026",
     "timezone": "America/New_York",
     "url": "https://canvas.emory.edu/courses/165126"
@@ -71,11 +71,21 @@
   ],
   "assignments": [
     {
+      "name": "Rhythm Portfolio · Week 01",
+      "group": "Rhythm Portfolio",
+      "kind": "assignment",
+      "due_utc": "2026-08-31T03:59:00Z",
+      "due_local": "Sun Aug 30, 2026, 11:59 PM EDT",
+      "points": 10.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1292604",
+      "instructions": "Portfolio Entry 0 — The number you signed\n\nCovers class 1 (Thu 8/27). Canvas text entry. AI off — this is your judgment, not the agent's.\n\nOn Thursday a client asked: what is a fireplace worth in Eastville? An AI agent answered $52,776, and you were asked to sign off on that number before it went into the client memo.\n\nAnswer three things. Short is fine; a sentence each is the target.\n\nWhat you signed. Paste the output of your signature cell exactly as it printed in class — name, Y or N, and your reason. Do not edit it. Signing \"Y\" is not penalized; most of the room did. What matters is that the record is honest.\n\nWhat the $52,776 actually measured. In business English, no jargon: what was the agent really comparing when it compared homes with and without a fireplace?\n\nWhat you would have needed to see to sign. Describe the evidence, table, or comparison that would have let you put your name on a fireplace number with confidence. You don't need to know how to produce it yet.\n\nYou will reopen this entry in Session 10 and rewrite line 3 with a number you computed yourself.\n\nHow the portfolio is graded — read this once, it applies every week: presence and seriousness, never correctness. A crossed-out wrong answer left visible scores higher than a suspiciously clean one. You are graded for doing the thinking, not for being right.\n\n10 — complete and serious: all three lines answered in your own words, signature unedited\n\n5 — present but token or partial\n\n0 — missing\n\nLight weeks (exam week, break weeks) are expected to be thin — submit what the sessions produced."
+    },
+    {
       "name": "Semester Start Attestations",
       "group": "Quizzes",
       "kind": "assignment",
-      "due_utc": "2026-09-01T14:00:00Z",
-      "due_local": "Tue Sep 1, 2026, 10:00 AM EDT",
+      "due_utc": "2026-09-01T03:59:00Z",
+      "due_local": "Mon Aug 31, 2026, 11:59 PM EDT",
       "points": 5.0,
       "url": "https://canvas.emory.edu/courses/165126/assignments/1298699",
       "instructions": "Four short attestations. Read each one carefully and sign your name in the space provided. Credit is for completion.\n\nThis is not the Pulse Check. The Pulse Check is a separate, anonymous survey about your background. Please complete both."
@@ -84,8 +94,8 @@
       "name": "Semester Start Pulse Check",
       "group": "Quizzes",
       "kind": "assignment",
-      "due_utc": "2026-09-01T14:00:00Z",
-      "due_local": "Tue Sep 1, 2026, 10:00 AM EDT",
+      "due_utc": "2026-09-01T03:59:00Z",
+      "due_local": "Mon Aug 31, 2026, 11:59 PM EDT",
       "points": 10.0,
       "url": "https://canvas.emory.edu/courses/165126/assignments/1298704",
       "instructions": "This survey tells me who is actually in the room, so I can pitch the course correctly. It takes about five minutes.\n\nRead this before you answer:\n\nCredit is for completing the survey. There are no right answers, and nothing here is scored on content.\n\nNothing you say here will ever be used in an academic integrity context or held against you in any way.\n\nPlease answer honestly, especially about AI. An accurate picture of how this class actually works helps me build a course worth your time. A flattering one does not."
@@ -121,5 +131,20 @@
       "url": "https://canvas.emory.edu/courses/165126/pages/ta-team"
     }
   ],
-  "announcements": []
+  "announcements": [
+    {
+      "title": "Reminder: updated classroom — GFC W330",
+      "posted_utc": "2026-08-26T20:09:53Z",
+      "posted_local": "Wed Aug 26, 2026, 4:09 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1390304",
+      "body": "A reminder that ISOM 352 now meets in GFC W330 (West wing of GBS).\n\nOur first class is Thursday, August 27:\n\nSection 1101: 10:00 AM – 11:15 AM\n\nSection 1102: 11:30 AM – 12:45 PM\n\nPlease leave a few extra minutes to find the room — GFC W330 is in the west wing of Goizueta.\n\nSee you tomorrow.\n\nBest,\n\nProf. Wen Gu"
+    },
+    {
+      "title": "Welcome to ISOM 352 ADA",
+      "posted_utc": "2026-08-26T04:14:25Z",
+      "posted_local": "Wed Aug 26, 2026, 12:14 AM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1389421",
+      "body": "Hello and welcome to ISOM 352 Applied Data Analytics with Coding (ADA)!\n\nI hope you had a great summer break. My name is Prof. Wen Gu, an Associate Professor in the ISOM area of Goizueta. As we start the new term, I'm excited to dive into the world of coding with all of you and explore the world of data and its role in business decision-making. This course will cover a wide range of topics, including Python programming, data visualization and analytics, querying data with SQL, and an introduction to machine learning and artificial intelligence. We will also discuss how to implement analytics and how to effectively communicate findings.\n\nOur first class meeting is on Thursday 8/27 in Goizueta Room W330 (West Wing).\n\nSection 1101: 10:00 AM – 11:15 AM\n\nSection 1102: 11:30 AM – 12:45 PM\n\nPlease do the following before class.\n\n1) Read the syllabus (https://canvas.emory.edu/courses/165126/files/16826021) and tentative schedule (https://canvas.emory.edu/courses/165126/files/16792308). Both are also on the Syllabus tab (https://canvas.emory.edu/courses/165126/assignments/syllabus).\n2) Have a valid Google account (we use Google Colab).\n3) Update your OS: MacOS (https://support.apple.com/en-us/108382) or Windows (https://support.microsoft.com/en-us/windows/get-the-latest-windows-update-7d20e88c-0568-483a-37bc-c3885390d212).\n\nThis week, please also complete two short Canvas items (due dates are on each assignment):\n\nSemester Start Pulse Check (https://canvas.emory.edu/courses/165126/assignments/1298704)\n\nSemester Start Attestations (https://canvas.emory.edu/courses/165126/assignments/1298699)\n\nThe course homepage is the hub: Start Here (https://canvas.emory.edu/courses/165126/modules) for intro and setup. Peyton, the Virtual TA, lives on the home page — assistant, never author, and some class beats are screens-down.\n\nIn addition, here are the 4 strongly recommended textbooks (Don't worry. They are either free or very reasonably priced)\n\n[cs] Charles Severance “Python for Everybody” (ISBN-10: 1530051126)\n\nFree: https://www.py4e.com/book.php (https://www.py4e.com/book.php)\n\n[dc] Daniel Chen “Pandas for Everyone” (ISBN-10: 0134546938)\n\nhttps://amzn.to/2U4juto (https://amzn.to/2U4juto)\n\n[ab] Alan Beaulieu, “Learning SQL: Generate, Manipulate, and Retrieve Data” (ISBN-10: 1492057614)\n\nhttps://amzn.to/38C0p5x (https://amzn.to/38C0p5x)\n\n[as] Al Sweigart, “Automate the Boring Stuff with Python” 2nd Edition (ISBN-10: 1593279922)\n\nFree: https://automatetheboringstuff.com/ (https://automatetheboringstuff.com/)\n\nI'm looking forward to a productive and engaging term with all of you. Let's get started!\n\nBest,\n\nProf. Wen Gu"
+    }
+  ]
 }
