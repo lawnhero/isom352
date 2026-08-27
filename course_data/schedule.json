@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T04:33:41Z",
+  "generated_at": "2026-08-27T21:00:03Z",
   "source": "canvas",
   "course": {
     "canvas_id": "165126",
@@ -132,6 +132,13 @@
     }
   ],
   "announcements": [
+    {
+      "title": "Class 1: What is a fireplace worth in Eastville?",
+      "posted_utc": "2026-08-27T20:46:29Z",
+      "posted_local": "Thu Aug 27, 2026, 4:46 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1391312",
+      "body": "Today you ran an AI agent's analysis, signed off on its $52,776 fireplace premium, and then couldn't find what was wrong with it. Homes with a fireplace are simply bigger — the number answers a question nobody asked. That's the course: the agent writes the code; you're accountable for the number.\n\nNext class (Tue 9/1): What is a basement worth? Bring a pen.\n\nHere is the after class Notes, scripts, and recordings (https://canvas.emory.edu/courses/165126/pages/notes-scripts-and-recordings) \n\nAfter class assignments:\n\nRhythm Portfolio · Week 01 (https://canvas.emory.edu/courses/165126/assignments/1292604) — Entry 0 — due Sun 8/30, 11:59 PM. Three short lines, AI off.\n\nSemester Start Attestations (https://canvas.emory.edu/courses/165126/assignments/1298699) — due Mon 8/31, 11:59 PM.\n\nSemester Start Pulse Check (https://canvas.emory.edu/courses/165126/assignments/1298704) — due Mon 8/31, 11:59 PM. Five minutes, used for team formation.\n\nBest,\n\nProf. Wen Gu"
+    },
     {
       "title": "Reminder: updated classroom — GFC W330",
       "posted_utc": "2026-08-26T20:09:53Z",
