@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T21:00:03Z",
+  "generated_at": "2026-09-02T02:24:08Z",
   "source": "canvas",
   "course": {
     "canvas_id": "165126",
@@ -71,18 +71,8 @@
   ],
   "assignments": [
     {
-      "name": "Rhythm Portfolio · Week 01",
-      "group": "Rhythm Portfolio",
-      "kind": "assignment",
-      "due_utc": "2026-08-31T03:59:00Z",
-      "due_local": "Sun Aug 30, 2026, 11:59 PM EDT",
-      "points": 10.0,
-      "url": "https://canvas.emory.edu/courses/165126/assignments/1292604",
-      "instructions": "Portfolio Entry 0 — The number you signed\n\nCovers class 1 (Thu 8/27). Canvas text entry. AI off — this is your judgment, not the agent's.\n\nOn Thursday a client asked: what is a fireplace worth in Eastville? An AI agent answered $52,776, and you were asked to sign off on that number before it went into the client memo.\n\nAnswer three things. Short is fine; a sentence each is the target.\n\nWhat you signed. Paste the output of your signature cell exactly as it printed in class — name, Y or N, and your reason. Do not edit it. Signing \"Y\" is not penalized; most of the room did. What matters is that the record is honest.\n\nWhat the $52,776 actually measured. In business English, no jargon: what was the agent really comparing when it compared homes with and without a fireplace?\n\nWhat you would have needed to see to sign. Describe the evidence, table, or comparison that would have let you put your name on a fireplace number with confidence. You don't need to know how to produce it yet.\n\nYou will reopen this entry in Session 10 and rewrite line 3 with a number you computed yourself.\n\nHow the portfolio is graded — read this once, it applies every week: presence and seriousness, never correctness. A crossed-out wrong answer left visible scores higher than a suspiciously clean one. You are graded for doing the thinking, not for being right.\n\n10 — complete and serious: all three lines answered in your own words, signature unedited\n\n5 — present but token or partial\n\n0 — missing\n\nLight weeks (exam week, break weeks) are expected to be thin — submit what the sessions produced."
-    },
-    {
       "name": "Semester Start Attestations",
-      "group": "Quizzes",
+      "group": "Participation",
       "kind": "assignment",
       "due_utc": "2026-09-01T03:59:00Z",
       "due_local": "Mon Aug 31, 2026, 11:59 PM EDT",
@@ -92,16 +82,40 @@
     },
     {
       "name": "Semester Start Pulse Check",
-      "group": "Quizzes",
+      "group": "Participation",
       "kind": "assignment",
       "due_utc": "2026-09-01T03:59:00Z",
       "due_local": "Mon Aug 31, 2026, 11:59 PM EDT",
       "points": 10.0,
       "url": "https://canvas.emory.edu/courses/165126/assignments/1298704",
       "instructions": "This survey tells me who is actually in the room, so I can pitch the course correctly. It takes about five minutes.\n\nRead this before you answer:\n\nCredit is for completing the survey. There are no right answers, and nothing here is scored on content.\n\nNothing you say here will ever be used in an academic integrity context or held against you in any way.\n\nPlease answer honestly, especially about AI. An accurate picture of how this class actually works helps me build a course worth your time. A flattering one does not."
+    },
+    {
+      "name": "Rhythm Portfolio · Week 01",
+      "group": "Rhythm Portfolio",
+      "kind": "assignment",
+      "due_utc": "2026-09-01T03:59:59Z",
+      "due_local": "Mon Aug 31, 2026, 11:59 PM EDT",
+      "points": 10.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1292604",
+      "instructions": "Portfolio Entry 0 — The number you signed\n\nCovers class 1 (Thu 8/27). Canvas text entry. AI off — this is your judgment, not the agent's.\n\nOn Thursday a client asked: what is a fireplace worth in Eastville? An AI agent answered $52,776, and you were asked to sign off on that number before it went into the client memo.\n\nAnswer three things. Short is fine; a sentence each is the target.\n\nWhat you signed. Paste the output of your signature cell exactly as it printed in class — name, Y or N, and your reason. Do not edit it. Signing \"Y\" is not penalized; most of the room did. What matters is that the record is honest.\n\nWhat the $52,776 actually measured. In business English, no jargon: what was the agent really comparing when it compared homes with and without a fireplace?\n\nWhat you would have needed to see to sign. Describe the evidence, table, or comparison that would have let you put your name on a fireplace number with confidence. You don't need to know how to produce it yet.\n\nYou will reopen this entry in Session 10 and rewrite line 3 with a number you computed yourself.\n\nHow the portfolio is graded — read this once, it applies every week: presence and seriousness, never correctness. A crossed-out wrong answer left visible scores higher than a suspiciously clean one. You are graded for doing the thinking, not for being right.\n\n10 — complete and serious: all three lines answered in your own words, signature unedited\n\n5 — present but token or partial\n\n0 — missing\n\nLight weeks (exam week, break weeks) are expected to be thin — submit what the sessions produced."
+    },
+    {
+      "name": "Item F · Adversary Check (Session 2 spec)",
+      "group": "Cycle 1 Deliverables",
+      "kind": "assignment",
+      "due_utc": "2026-09-03T12:00:00Z",
+      "due_local": "Thu Sep 3, 2026, 8:00 AM EDT",
+      "points": 10.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1303925",
+      "instructions": "The adversary check. Individual — one submission per student, even though the spec was written in pairs.\n\nPhotograph or retype your pair's spec (§1–6). Prompt an AI:\n\n\"Here is our data spec: [paste §1–6]. Attack it: what would make this comparison unfair? What data are we assuming exists that might not?\"\n\nSubmit one page: the best attack it produced, and your fix — or why you're rejecting the attack. Include the prompt you used and the AI's response (a screenshot or paste is fine).\n\nThe rules: an AI may not write your spec. An AI must attack it. Disclosure is never penalized; non-disclosure is an integrity issue.\n\nUpload a PDF or Word file, or paste your page in the text box. Goes in the portfolio."
     }
   ],
   "pages": [
+    {
+      "title": "3 Questions",
+      "url": "https://canvas.emory.edu/courses/165126/pages/3-questions"
+    },
     {
       "title": "A bit about me!",
       "url": "https://canvas.emory.edu/courses/165126/pages/a-bit-about-me"
@@ -132,6 +146,13 @@
     }
   ],
   "announcements": [
+    {
+      "title": "Class 2: What is a basement worth?",
+      "posted_utc": "2026-09-01T19:41:38Z",
+      "posted_local": "Tue Sep 1, 2026, 3:41 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1393647",
+      "body": "Today was the Ask stage — before any data, and where most questions die. What you ask is the whole game: question → decision → data, in that order — a decider, an outcome column, and an \"otherwise-similar\" list. You went screens-down on the basement, wrote your own spec, and audited a neighbor's. From now on, every No names the check that would change it.\n\nNext class (Thu 9/3): the file — 108 homes.\n\nSlides and recording are on the Notes, scripts, and recordings (https://canvas.emory.edu/courses/165126/pages/notes-scripts-and-recordings) page.\n\nAfter class assignments:\n\nS2 after class (https://canvas.emory.edu/courses/165126/assignments/1303925) — due Thu 9/3, 8:00 AM. An AI attacks your spec; send back the best attack and your fix."
+    },
     {
       "title": "Class 1: What is a fireplace worth in Eastville?",
       "posted_utc": "2026-08-27T20:46:29Z",
