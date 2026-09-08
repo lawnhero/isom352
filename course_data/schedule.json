@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T02:24:08Z",
+  "generated_at": "2026-09-08T20:33:33Z",
   "source": "canvas",
   "course": {
     "canvas_id": "165126",
@@ -10,10 +10,6 @@
     "url": "https://canvas.emory.edu/courses/165126"
   },
   "grading_weights": [
-    {
-      "group": "Quizzes",
-      "weight": 0.0
-    },
     {
       "group": "Rhythm Portfolio",
       "weight": 10.0
@@ -109,6 +105,56 @@
       "points": 10.0,
       "url": "https://canvas.emory.edu/courses/165126/assignments/1303925",
       "instructions": "The adversary check. Individual — one submission per student, even though the spec was written in pairs.\n\nPhotograph or retype your pair's spec (§1–6). Prompt an AI:\n\n\"Here is our data spec: [paste §1–6]. Attack it: what would make this comparison unfair? What data are we assuming exists that might not?\"\n\nSubmit one page: the best attack it produced, and your fix — or why you're rejecting the attack. Include the prompt you used and the AI's response (a screenshot or paste is fine).\n\nThe rules: an AI may not write your spec. An AI must attack it. Disclosure is never penalized; non-disclosure is an integrity issue.\n\nUpload a PDF or Word file, or paste your page in the text box. Goes in the portfolio."
+    },
+    {
+      "name": "Rhythm Portfolio · Week 02",
+      "group": "Rhythm Portfolio",
+      "kind": "assignment",
+      "due_utc": "2026-09-07T03:59:00Z",
+      "due_local": "Sun Sep 6, 2026, 11:59 PM EDT",
+      "points": 10.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1292608",
+      "instructions": "Rhythm Portfolio — Week 02: The file arrived\n\nThree short entries. Business English, no code. AI is forbidden for this entry. Graded for presence and seriousness, not correctness.\n\nYour §2, repaired. Rewrite the decision line of your spec so it names the decider — who acts on the basement number, doing what differently. (Thursday's discussion; check #3 on the Ask Card.) One or two sentences.\n\nLedger row s3, in your words. What was found, what was fixed, what is still unknown — and for whom. No code words. If your Thursday line said \"the data was dirty,\" this is the rewrite.\n\nThe 111. Your two hypotheses for where three extra rows came from, and which one you would test first and how you would know. Describe the check in plain English; don't write it.\n\nA specific wrong hypothesis scores full marks. A vague right one does not.\n\nType your answers here. No file upload."
+    },
+    {
+      "name": "Cycle 1 Groups",
+      "group": "Participation",
+      "kind": "assignment",
+      "due_utc": "2026-09-08T14:00:00Z",
+      "due_local": "Tue Sep 8, 2026, 10:00 AM EDT",
+      "points": 5.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1305422",
+      "instructions": "Cycle 1 working groups\n\nRandom groups of 4 or 5, formed within your section. Used for every Cycle 1 group activity.\n\nI will post your group members' names and emails in a comment on this assignment.\n\nOnce you see that comment:\n\nRead the names and emails.\n\nReach out to your group so you can find each other.\n\nType Received (or a short note) in the text box below and submit.\n\nThis assignment is 5 points. The submission is how I know you have the information."
+    },
+    {
+      "name": "S4 homework — The missing age",
+      "group": "Cycle 1 Deliverables",
+      "kind": "quiz",
+      "due_utc": "2026-09-10T14:00:00Z",
+      "due_local": "Thu Sep 10, 2026, 10:00 AM EDT",
+      "points": 3.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1306247",
+      "instructions": "In class you made a first call on the 11 homes missing age, on one piece of evidence: they are about $39K cheaper than the other 97. Tonight you test that call against more evidence and commit to it.\n\nWork in today's notebook. Start from this cell — it is Tuesday and Thursday's fixes in one place, so you do not need anything you saved in class:\nimport pandas as pd\n\ndf = pd.read_csv('eastville_teaching.csv')\ndf['price'] = df['price'].str.replace('$','',regex=False).str.replace(',','',regex=False).astype(int)\ndf = df.drop_duplicates()\nlen(df) # 108\n\nThen reuse the comparison code from today. About 20 minutes.\n\nAI: permitted, with disclosure. One line on anything AI helped with — what did you check before trusting it? Disclosure is never penalized; not disclosing is an integrity issue.\n\nGraded on presence, not on which choice you made. Changing your mind since class is a good answer — say what changed it."
+    },
+    {
+      "name": "Prediction card — Session 3",
+      "group": "Participation",
+      "kind": "quiz",
+      "due_utc": null,
+      "due_local": null,
+      "points": 2.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1304964",
+      "instructions": "Screens down. One card per pair — both names in your answer to question 1. Write before you talk. Graded for presence, not correctness."
+    },
+    {
+      "name": "Prediction card — Session 4",
+      "group": "Participation",
+      "kind": "quiz",
+      "due_utc": null,
+      "due_local": null,
+      "points": 3.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1305990",
+      "instructions": "Screens down. One card per pair — both names in your answer to question 1. Write before you talk. Graded for presence, not correctness."
     }
   ],
   "pages": [
@@ -143,9 +189,27 @@
     {
       "title": "TA Team",
       "url": "https://canvas.emory.edu/courses/165126/pages/ta-team"
+    },
+    {
+      "title": "The Ask Card — Field Guide, page 1",
+      "url": "https://canvas.emory.edu/courses/165126/pages/the-ask-card-field-guide-page-1"
     }
   ],
   "announcements": [
+    {
+      "title": "Class 4: Three rows were lying",
+      "posted_utc": "2026-09-08T20:31:44Z",
+      "posted_local": "Tue Sep 8, 2026, 4:31 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1397008",
+      "body": "Class 4: Three rows were lying\n\nThursday the vendor said 108 homes; the file said 111. Three houses were listed twice — drop the copies, you're at 108. Then the harder call: 11 homes are missing age and run about $39K cheaper. You made the drop-or-keep call in class. We didn't reach STOP 3, so run the rest of the notebook — including saving eastville_clean.csv — before the homework.\n\nNext class (Thu 9/10): how do you describe a whole neighborhood with one number — and know when that number lies?\n\nSlides, notebook, and recording are on the notes and recordings page (https://canvas.emory.edu/courses/165126/pages/notes-scripts-and-recordings).\n\nAfter class assignments\n\nS4 homework — The missing age (https://canvas.emory.edu/courses/165126/assignments/1306247) — due Thu 9/10, 10:00 AM. Test today's drop-or-keep call against more evidence."
+    },
+    {
+      "title": "Class 3: Does the file clear the gate?",
+      "posted_utc": "2026-09-03T18:13:24Z",
+      "posted_local": "Thu Sep 3, 2026, 2:13 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1395033",
+      "body": "Class 3: Does the file clear the gate?\n\nThe Eastville file arrived and immediately refused: price came in as text, so a one-line average crashed. You fixed it and proved the fix with dtype — the typical home is worth about $333K (median; the mean is ~$342K, pulled up by a few expensive houses). Then you checked the other columns: quantity or label?\n\nNext class (Tue 9/8): the three extra rows have names. Which ones?\n\nNotes and recording are on the notes and recordings page (https://canvas.emory.edu/courses/165126/pages/notes-scripts-and-recordings).\n\nAfter class assignments\n\nRhythm Portfolio · Week 02 (https://canvas.emory.edu/courses/165126/assignments/1292608) — due Sun 9/6, 11:59 PM. Three short entries, AI off.\n\nComplete and implement all codes in the s3 notebook."
+    },
     {
       "title": "Class 2: What is a basement worth?",
       "posted_utc": "2026-09-01T19:41:38Z",
@@ -172,7 +236,7 @@
       "posted_utc": "2026-08-26T04:14:25Z",
       "posted_local": "Wed Aug 26, 2026, 12:14 AM EDT",
       "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1389421",
-      "body": "Hello and welcome to ISOM 352 Applied Data Analytics with Coding (ADA)!\n\nI hope you had a great summer break. My name is Prof. Wen Gu, an Associate Professor in the ISOM area of Goizueta. As we start the new term, I'm excited to dive into the world of coding with all of you and explore the world of data and its role in business decision-making. This course will cover a wide range of topics, including Python programming, data visualization and analytics, querying data with SQL, and an introduction to machine learning and artificial intelligence. We will also discuss how to implement analytics and how to effectively communicate findings.\n\nOur first class meeting is on Thursday 8/27 in Goizueta Room W330 (West Wing).\n\nSection 1101: 10:00 AM – 11:15 AM\n\nSection 1102: 11:30 AM – 12:45 PM\n\nPlease do the following before class.\n\n1) Read the syllabus (https://canvas.emory.edu/courses/165126/files/16826021) and tentative schedule (https://canvas.emory.edu/courses/165126/files/16792308). Both are also on the Syllabus tab (https://canvas.emory.edu/courses/165126/assignments/syllabus).\n2) Have a valid Google account (we use Google Colab).\n3) Update your OS: MacOS (https://support.apple.com/en-us/108382) or Windows (https://support.microsoft.com/en-us/windows/get-the-latest-windows-update-7d20e88c-0568-483a-37bc-c3885390d212).\n\nThis week, please also complete two short Canvas items (due dates are on each assignment):\n\nSemester Start Pulse Check (https://canvas.emory.edu/courses/165126/assignments/1298704)\n\nSemester Start Attestations (https://canvas.emory.edu/courses/165126/assignments/1298699)\n\nThe course homepage is the hub: Start Here (https://canvas.emory.edu/courses/165126/modules) for intro and setup. Peyton, the Virtual TA, lives on the home page — assistant, never author, and some class beats are screens-down.\n\nIn addition, here are the 4 strongly recommended textbooks (Don't worry. They are either free or very reasonably priced)\n\n[cs] Charles Severance “Python for Everybody” (ISBN-10: 1530051126)\n\nFree: https://www.py4e.com/book.php (https://www.py4e.com/book.php)\n\n[dc] Daniel Chen “Pandas for Everyone” (ISBN-10: 0134546938)\n\nhttps://amzn.to/2U4juto (https://amzn.to/2U4juto)\n\n[ab] Alan Beaulieu, “Learning SQL: Generate, Manipulate, and Retrieve Data” (ISBN-10: 1492057614)\n\nhttps://amzn.to/38C0p5x (https://amzn.to/38C0p5x)\n\n[as] Al Sweigart, “Automate the Boring Stuff with Python” 2nd Edition (ISBN-10: 1593279922)\n\nFree: https://automatetheboringstuff.com/ (https://automatetheboringstuff.com/)\n\nI'm looking forward to a productive and engaging term with all of you. Let's get started!\n\nBest,\n\nProf. Wen Gu"
+      "body": "Hello and welcome to ISOM 352 Applied Data Analytics with Coding (ADA)!\n\nI hope you had a great summer break. My name is Prof. Wen Gu, an Associate Professor in the ISOM area of Goizueta. As we start the new term, I'm excited to dive into the world of coding with all of you and explore the world of data and its role in business decision-making. This course will cover a wide range of topics, including Python programming, data visualization and analytics, querying data with SQL, and an introduction to machine learning and artificial intelligence. We will also discuss how to implement analytics and how to effectively communicate findings.\n\nOur first class meeting is on Thursday 8/27 in Goizueta Room W330 (West Wing).\n\nSection 1101: 10:00 AM – 11:15 AM\n\nSection 1102: 11:30 AM – 12:45 PM\n\nPlease do the following before class.\n\n1) Read the syllabus (https://canvas.emory.edu/courses/165126/files/16826021) and tentative schedule (https://canvas.emory.edu/courses/165126/files/16897867). Both are also on the Syllabus tab (https://canvas.emory.edu/courses/165126/assignments/syllabus).\n2) Have a valid Google account (we use Google Colab).\n3) Update your OS: MacOS (https://support.apple.com/en-us/108382) or Windows (https://support.microsoft.com/en-us/windows/get-the-latest-windows-update-7d20e88c-0568-483a-37bc-c3885390d212).\n\nThis week, please also complete two short Canvas items (due dates are on each assignment):\n\nSemester Start Pulse Check (https://canvas.emory.edu/courses/165126/assignments/1298704)\n\nSemester Start Attestations (https://canvas.emory.edu/courses/165126/assignments/1298699)\n\nThe course homepage is the hub: Start Here (https://canvas.emory.edu/courses/165126/modules) for intro and setup. Peyton, the Virtual TA, lives on the home page — assistant, never author, and some class beats are screens-down.\n\nIn addition, here are the 4 strongly recommended textbooks (Don't worry. They are either free or very reasonably priced)\n\n[cs] Charles Severance “Python for Everybody” (ISBN-10: 1530051126)\n\nFree: https://www.py4e.com/book.php (https://www.py4e.com/book.php)\n\n[dc] Daniel Chen “Pandas for Everyone” (ISBN-10: 0134546938)\n\nhttps://amzn.to/2U4juto (https://amzn.to/2U4juto)\n\n[ab] Alan Beaulieu, “Learning SQL: Generate, Manipulate, and Retrieve Data” (ISBN-10: 1492057614)\n\nhttps://amzn.to/38C0p5x (https://amzn.to/38C0p5x)\n\n[as] Al Sweigart, “Automate the Boring Stuff with Python” 2nd Edition (ISBN-10: 1593279922)\n\nFree: https://automatetheboringstuff.com/ (https://automatetheboringstuff.com/)\n\nI'm looking forward to a productive and engaging term with all of you. Let's get started!\n\nBest,\n\nProf. Wen Gu"
     }
   ]
 }
