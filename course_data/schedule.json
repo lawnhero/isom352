@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T20:33:33Z",
+  "generated_at": "2026-09-10T21:15:14Z",
   "source": "canvas",
   "course": {
     "canvas_id": "165126",
@@ -137,6 +137,16 @@
       "instructions": "In class you made a first call on the 11 homes missing age, on one piece of evidence: they are about $39K cheaper than the other 97. Tonight you test that call against more evidence and commit to it.\n\nWork in today's notebook. Start from this cell — it is Tuesday and Thursday's fixes in one place, so you do not need anything you saved in class:\nimport pandas as pd\n\ndf = pd.read_csv('eastville_teaching.csv')\ndf['price'] = df['price'].str.replace('$','',regex=False).str.replace(',','',regex=False).astype(int)\ndf = df.drop_duplicates()\nlen(df) # 108\n\nThen reuse the comparison code from today. About 20 minutes.\n\nAI: permitted, with disclosure. One line on anything AI helped with — what did you check before trusting it? Disclosure is never penalized; not disclosing is an integrity issue.\n\nGraded on presence, not on which choice you made. Changing your mind since class is a good answer — say what changed it."
     },
     {
+      "name": "Team startup — one call, one ledger",
+      "group": "Cycle 1 Deliverables",
+      "kind": "assignment",
+      "due_utc": "2026-09-15T14:00:00Z",
+      "due_local": "Tue Sep 15, 2026, 10:00 AM EDT",
+      "points": 5.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1306701",
+      "instructions": "Objective\n\nYour team now has one shared position: one set of decisions, one ledger. Five of you made the age call individually last week. At least one of you probably decided differently from the others. Reconciling that — in writing, with a number — is the work.\n\nFrom here on, every Cycle 1 deliverable is built on the decisions and the ledger you produce today.\n\nInstructions\n\n1 · Agree on the spine. Put all five individual age decisions on the table. Decide as a team: keep all 108 homes, or drop to 97. Then, in two sentences, record the decision — one of them citing a specific number — and name who changed their mind and what changed it. \"We all agreed\" is a red flag, not an answer; if nobody moved, say why the evidence didn't move anyone.\n\n2 · House 108. Four Eastville homes sell above $500,000. The largest is house 108 — $675,030, 3,222 sqft, Apple Valley. Report the mean price with and without it. Then decide: is house 108 part of \"a typical Eastville home,\" or not? One line, and say what you would need to know to be sure. This is your second exclusion decision in a week. Notice that it has the same shape as the first one.\n\n3 · Write the team ledger. Rows s2 through s5, merged from your five individual ledgers into one. One line per row, business English, your words. At the top, name the decider your team writes to for the rest of Cycle 1 — buyer, seller, or agent.\n\nAI: permitted, with disclosure. One line on anything AI helped with: what did you check before trusting it?\n\nWhat to submit\n\nOne submission per team. Paste into the text box, in this order:\n\nTeam number and all five names\n\nThe spine decision — two sentences, one number, and who changed their mind\n\nHouse 108 — both means, your call, one line\n\nYour decider, then the four ledger rows (s2, s3, s4, s5)\n\nYour AI disclosure line, if any\n\nGraded on presence, not on which way you decided. A team that switched positions and said why scores full marks."
+    },
+    {
       "name": "Prediction card — Session 3",
       "group": "Participation",
       "kind": "quiz",
@@ -154,6 +164,16 @@
       "due_local": null,
       "points": 3.0,
       "url": "https://canvas.emory.edu/courses/165126/assignments/1305990",
+      "instructions": "Screens down. One card per pair — both names in your answer to question 1. Write before you talk. Graded for presence, not correctness."
+    },
+    {
+      "name": "Prediction card — Session 5",
+      "group": "Participation",
+      "kind": "assignment",
+      "due_utc": null,
+      "due_local": null,
+      "points": 3.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1306702",
       "instructions": "Screens down. One card per pair — both names in your answer to question 1. Write before you talk. Graded for presence, not correctness."
     }
   ],
@@ -196,6 +216,13 @@
     }
   ],
   "announcements": [
+    {
+      "title": "Class 5: What is a typical Eastville home worth?",
+      "posted_utc": "2026-09-10T21:14:29Z",
+      "posted_local": "Thu Sep 10, 2026, 5:14 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1398176",
+      "body": "Today you wrote the first sentence of a memo and found the hard part is the word, not the number. Price's mean ($341,395) sits $9,680 above the median — four homes over $500K drag it up — while square footage has no tail, so its mean and median agree. Same statistic, honest once and misleading once. For categories, \"most common\" names the biggest group — \"most\" claims more than half, so check the share first. Look before you choose.\n\nNext class (Tue 9/15): two variables — what moves with what?\n\nSlides, notebook, and recording are on the notes and recordings page (https://canvas.emory.edu/courses/165126/pages/notes-scripts-and-recordings).\n\nAfter class assignments\n\nTeam startup — one call, one ledger (https://canvas.emory.edu/courses/165126/assignments/1306701) — due Tue 9/15, 10:00 AM. One submission per team, all five names.\n\nGroup members: check Cycle 1 Groups (https://canvas.emory.edu/courses/165126/assignments/1305422) to find your team."
+    },
     {
       "title": "Class 4: Three rows were lying",
       "posted_utc": "2026-09-08T20:31:44Z",
