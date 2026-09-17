@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T21:15:14Z",
+  "generated_at": "2026-09-17T21:10:32Z",
   "source": "canvas",
   "course": {
     "canvas_id": "165126",
@@ -147,6 +147,26 @@
       "instructions": "Objective\n\nYour team now has one shared position: one set of decisions, one ledger. Five of you made the age call individually last week. At least one of you probably decided differently from the others. Reconciling that — in writing, with a number — is the work.\n\nFrom here on, every Cycle 1 deliverable is built on the decisions and the ledger you produce today.\n\nInstructions\n\n1 · Agree on the spine. Put all five individual age decisions on the table. Decide as a team: keep all 108 homes, or drop to 97. Then, in two sentences, record the decision — one of them citing a specific number — and name who changed their mind and what changed it. \"We all agreed\" is a red flag, not an answer; if nobody moved, say why the evidence didn't move anyone.\n\n2 · House 108. Four Eastville homes sell above $500,000. The largest is house 108 — $675,030, 3,222 sqft, Apple Valley. Report the mean price with and without it. Then decide: is house 108 part of \"a typical Eastville home,\" or not? One line, and say what you would need to know to be sure. This is your second exclusion decision in a week. Notice that it has the same shape as the first one.\n\n3 · Write the team ledger. Rows s2 through s5, merged from your five individual ledgers into one. One line per row, business English, your words. At the top, name the decider your team writes to for the rest of Cycle 1 — buyer, seller, or agent.\n\nAI: permitted, with disclosure. One line on anything AI helped with: what did you check before trusting it?\n\nWhat to submit\n\nOne submission per team. Paste into the text box, in this order:\n\nTeam number and all five names\n\nThe spine decision — two sentences, one number, and who changed their mind\n\nHouse 108 — both means, your call, one line\n\nYour decider, then the four ledger rows (s2, s3, s4, s5)\n\nYour AI disclosure line, if any\n\nGraded on presence, not on which way you decided. A team that switched positions and said why scores full marks."
     },
     {
+      "name": "S6 homework — Hold one thing equal",
+      "group": "Cycle 1 Deliverables",
+      "kind": "quiz",
+      "due_utc": "2026-09-17T14:00:00Z",
+      "due_local": "Thu Sep 17, 2026, 10:00 AM EDT",
+      "points": 3.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1308163",
+      "instructions": "In class the basement gap was $65,160 on the whole file. Held to 3-bedroom homes it was $35K; held to 4-bedroom homes, $99K — and one side of that comparison had three homes. Tonight you run the slices yourself and decide how small is too small.\n\nWork in today's notebook. Start from this cell — Tuesday and Thursday's fixes in one place, so you do not need anything you saved in class:\nimport pandas as pd\n\ndf = pd.read_csv('eastville_teaching.csv')\ndf['price'] = df['price'].str.replace('$','',regex=False).str.replace(',','',regex=False).astype(int)\ndf = df.drop_duplicates()\nlen(df) # 108\n\nEvery slice below is the same two lines — a filter, then today's groupby. .agg(['mean', 'count']) gives the average and the number of homes in one call:\nhomes = df[df['beds'] == 3] # ← the slice\nhomes.groupby('basement')['price'].agg(['mean', 'count']).round(0)\n\nAbout 20 minutes. Answers, not code.\n\nAI: permitted, with disclosure. One line on anything AI helped with — what did you check before trusting it? Disclosure is never penalized; not disclosing is an integrity issue.\n\nGraded on presence, not on which call you made. \"Report the average of eight homes\" is a legitimate answer if it says eight."
+    },
+    {
+      "name": "S7 homework — The fireplace, three ways",
+      "group": "Cycle 1 Deliverables",
+      "kind": "quiz",
+      "due_utc": "2026-09-22T14:00:00Z",
+      "due_local": "Tue Sep 22, 2026, 10:00 AM EDT",
+      "points": 3.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1308915",
+      "instructions": "Objective\n\nIn session 1 most of you signed the $53K fireplace gap, and the room could not say what was wrong with it. Session 6 gave you the way to find out — run the same groupby on everything else. Session 7 gave you the picture, and the sentence that goes under it. This week you do all three on the fireplace: the gap, the reasons, the chart.\n\nInstructions\n\nWork in the session 7 notebook. Start from this cell — sessions 3 and 4's fixes plus session 7's price_chart, so you do not need anything you saved in class:\nimport pandas as pd\n\ndf = pd.read_csv('eastville_teaching.csv')\ndf['price'] = df['price'].str.replace('$','',regex=False).str.replace(',','',regex=False).astype(int)\ndf = df.drop_duplicates()\n\ndef price_chart(by):\n means = df.groupby(by)['price'].mean()\n means.plot.bar(title=f\"Average price by {by}\")\n return means\n\nThree questions, about 20 minutes in total. Answers, not code. Report numbers you computed — not ones shown in class.\n\nAI policy\n\nPermitted, with disclosure. One line on anything AI helped with — what did you check before trusting it? Disclosure is never penalized; not disclosing is an integrity issue.\n\nGrading\n\nGraded on presence, not on which chart or which caption you chose. A caption that names a specific number the chart hides is a good caption whichever chart it sits under."
+    },
+    {
       "name": "Prediction card — Session 3",
       "group": "Participation",
       "kind": "quiz",
@@ -174,6 +194,26 @@
       "due_local": null,
       "points": 3.0,
       "url": "https://canvas.emory.edu/courses/165126/assignments/1306702",
+      "instructions": "Screens down. One card per pair — both names in your answer to question 1. Write before you talk. Graded for presence, not correctness."
+    },
+    {
+      "name": "Prediction card — Session 6",
+      "group": "Participation",
+      "kind": "assignment",
+      "due_utc": null,
+      "due_local": null,
+      "points": 4.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1307987",
+      "instructions": "Screens down. One card per pair — both names in your answer to question 1. Write before you talk. Graded for presence, not correctness."
+    },
+    {
+      "name": "Prediction card — Session 7",
+      "group": "Rhythm Portfolio",
+      "kind": "assignment",
+      "due_utc": null,
+      "due_local": null,
+      "points": null,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1308723",
       "instructions": "Screens down. One card per pair — both names in your answer to question 1. Write before you talk. Graded for presence, not correctness."
     }
   ],
@@ -216,6 +256,20 @@
     }
   ],
   "announcements": [
+    {
+      "title": "Class 7: Which picture is telling the truth?",
+      "posted_utc": "2026-09-17T21:09:22Z",
+      "posted_local": "Thu Sep 17, 2026, 5:09 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1401068",
+      "body": "Class 7: Which picture is telling the truth?\nToday the agent drew the buyer's “which zone” answer, then “tidied” one chart by starting its axis at $280,000 instead of $0 — small gaps looked enormous. You refused the captions that didn't survive the check, fixed the chart in as few lines as you could, and chose bar or box for the memo. Keep the two words that start every honest answer: it depends — mean or median? On the skewness. Mild or heavy? Each “depends” is a step, not a stall.\nNext class (Tue 9/22): 500 more square feet is worth what?\nSlides, notebook, and recording are on the notes and recordings page (https://canvas.emory.edu/courses/165126/pages/notes-scripts-and-recordings).\nAfter class assignments\n\nS7 homework — The fireplace, three ways (https://canvas.emory.edu/courses/165126/quizzes/296453) — due Tue 9/22, 10:00 AM. The gap, the reasons, and the chart for the fireplace; AI on, with disclosure."
+    },
+    {
+      "title": "Class 6: Is it the basement, or is it the house?",
+      "posted_utc": "2026-09-15T22:11:20Z",
+      "posted_local": "Tue Sep 15, 2026, 6:11 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1400119",
+      "body": "Today you ran the basement's number the way the agent ran the fireplace's — same groupby, and it came back $65,160 more for basement homes on the mean. Then the one-line check that would have caught day one: run the groupby on everything else. The homes aren't otherwise-similar — 3.7 vs 3.3 bedrooms, 2.7 vs 2.4 baths, twice as likely in Apple Valley. You sign \"sell for more,\" not \"adds\" — the $65K is the basement and everything that comes with it.\n\nNext class (Thu 9/17): the picture version — what does a chart catch that the table hides?\n\nSlides, notebook, and recording are on the notes and recordings page (https://canvas.emory.edu/courses/165126/pages/notes-scripts-and-recordings).\n\nAfter class assignments\n\nS6 homework — Hold one thing equal (https://canvas.emory.edu/courses/165126/quizzes/296380) — due Thu 9/17, 10:00 AM. Run the slices yourself and decide how small is too small."
+    },
     {
       "title": "Class 5: What is a typical Eastville home worth?",
       "posted_utc": "2026-09-10T21:14:29Z",
