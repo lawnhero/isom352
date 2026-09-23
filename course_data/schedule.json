@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-17T21:10:32Z",
+  "generated_at": "2026-09-23T03:50:33Z",
   "source": "canvas",
   "course": {
     "canvas_id": "165126",
@@ -167,6 +167,16 @@
       "instructions": "Objective\n\nIn session 1 most of you signed the $53K fireplace gap, and the room could not say what was wrong with it. Session 6 gave you the way to find out — run the same groupby on everything else. Session 7 gave you the picture, and the sentence that goes under it. This week you do all three on the fireplace: the gap, the reasons, the chart.\n\nInstructions\n\nWork in the session 7 notebook. Start from this cell — sessions 3 and 4's fixes plus session 7's price_chart, so you do not need anything you saved in class:\nimport pandas as pd\n\ndf = pd.read_csv('eastville_teaching.csv')\ndf['price'] = df['price'].str.replace('$','',regex=False).str.replace(',','',regex=False).astype(int)\ndf = df.drop_duplicates()\n\ndef price_chart(by):\n means = df.groupby(by)['price'].mean()\n means.plot.bar(title=f\"Average price by {by}\")\n return means\n\nThree questions, about 20 minutes in total. Answers, not code. Report numbers you computed — not ones shown in class.\n\nAI policy\n\nPermitted, with disclosure. One line on anything AI helped with — what did you check before trusting it? Disclosure is never penalized; not disclosing is an integrity issue.\n\nGrading\n\nGraded on presence, not on which chart or which caption you chose. A caption that names a specific number the chart hides is a good caption whichever chart it sits under."
     },
     {
+      "name": "S8 homework — Whose homes is the line standing on?",
+      "group": "Rhythm Portfolio",
+      "kind": "quiz",
+      "due_utc": "2026-09-24T14:00:00Z",
+      "due_local": "Thu Sep 24, 2026, 10:00 AM EDT",
+      "points": 2.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1309882",
+      "instructions": "Objective\n\nIn class the line stood on all 108 homes and said $143 a square foot. Tonight you take homes away from it — first one, then eleven — and see whether the sentence survives. Both are session 4's question back again: whose homes is the number standing on?\n\nInstructions\n\nWork in the session 8 notebook. Start from this cell — sessions 3 and 4's fixes plus today's line, so you do not need anything you saved in class:\nimport pandas as pd\nimport statsmodels.api as sm\n\ndf = pd.read_csv('eastville_teaching.csv')\ndf['price'] = df['price'].str.replace('$','',regex=False).str.replace(',','',regex=False).astype(int)\ndf = df.drop_duplicates(subset=['house'])\n\ny = df['price']\nX = sm.add_constant(df[['sqft']])\nline = sm.OLS(y, X).fit()\nline.params # const 56,487 · sqft 142.8 — the numbers you are NOT allowed to report\n\nTwo questions, about 20 minutes in total. Answers, not code. Report numbers you computed — $142.8 and $71,424 are barred.\n\nAI policy\n\nPermitted, with disclosure. One line on anything AI helped with — what did you check before trusting it? Disclosure is never penalized; not disclosing is an integrity issue.\n\nGrading\n\nGraded on presence, not on which call you made. \"The sentence did not change\" is a legitimate answer if it says by how much the number did."
+    },
+    {
       "name": "Prediction card — Session 3",
       "group": "Participation",
       "kind": "quiz",
@@ -215,6 +225,16 @@
       "points": null,
       "url": "https://canvas.emory.edu/courses/165126/assignments/1308723",
       "instructions": "Screens down. One card per pair — both names in your answer to question 1. Write before you talk. Graded for presence, not correctness."
+    },
+    {
+      "name": "Prediction card — Session 8",
+      "group": "Rhythm Portfolio",
+      "kind": "assignment",
+      "due_utc": null,
+      "due_local": null,
+      "points": 3.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1309748",
+      "instructions": "Screens down. One card per pair — both names in your answer to question 3. Write before you talk. Graded for presence, not correctness."
     }
   ],
   "pages": [
@@ -256,6 +276,13 @@
     }
   ],
   "announcements": [
+    {
+      "title": "Class 8: What is a square foot worth?",
+      "posted_utc": "2026-09-22T18:40:08Z",
+      "posted_local": "Tue Sep 22, 2026, 2:40 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1402812",
+      "body": "Class 8: What is a square foot worth?\nToday you drew a line through Eastville's prices and read off $143 — what one more square foot is worth, not the $171 a whole home averages per square foot. Then you refused to let that line speak for a 4,000-square-foot home it had never seen. A number is only right for the question it was asked.\nNext class (Thu 9/24): add the controls — the baths, fireplaces, and bigger Apple Valley homes that come bundled with a square foot.\nSlides, notebook, and recording are on the notes and recordings page (https://canvas.emory.edu/courses/165126/pages/notes-scripts-and-recordings).\nAfter class assignments\n\nS8 homework — Whose homes is the line standing on? (https://canvas.emory.edu/courses/165126/quizzes/296644) — due Thu 9/24, 10:00 AM. Refit the line without House 108, then check the eleven homes missing an age."
+    },
     {
       "title": "Class 7: Which picture is telling the truth?",
       "posted_utc": "2026-09-17T21:09:22Z",
