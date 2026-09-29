@@ -1,12 +1,12 @@
 {
-  "built_at": "2026-09-23T03:50:38Z",
-  "bytes": 33126,
+  "built_at": "2026-09-29T20:43:40Z",
+  "bytes": 42029,
   "chromadb_version": "1.5.9",
   "course": "isom352",
   "kind": "documents",
   "model": "text-embedding-3-small",
-  "n_chunks": 30,
-  "sha256": "620413edb5d9a3e56e1bfd214f30a430a6d44e7db2feb146147e395967e7eeb3",
+  "n_chunks": 39,
+  "sha256": "74beabd8b21d83f58153e5184292fca1f8f0678d21185818949e1335af46795f",
   "source": "course_data/schedule.json",
-  "source_mtime": "2026-09-23T03:50:33Z"
+  "source_mtime": "2026-09-29T20:43:36Z"
 }

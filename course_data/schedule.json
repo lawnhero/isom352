@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T03:50:33Z",
+  "generated_at": "2026-09-29T20:43:36Z",
   "source": "canvas",
   "course": {
     "canvas_id": "165126",
@@ -168,13 +168,43 @@
     },
     {
       "name": "S8 homework — Whose homes is the line standing on?",
-      "group": "Rhythm Portfolio",
+      "group": "Cycle 1 Deliverables",
       "kind": "quiz",
       "due_utc": "2026-09-24T14:00:00Z",
       "due_local": "Thu Sep 24, 2026, 10:00 AM EDT",
       "points": 2.0,
       "url": "https://canvas.emory.edu/courses/165126/assignments/1309882",
       "instructions": "Objective\n\nIn class the line stood on all 108 homes and said $143 a square foot. Tonight you take homes away from it — first one, then eleven — and see whether the sentence survives. Both are session 4's question back again: whose homes is the number standing on?\n\nInstructions\n\nWork in the session 8 notebook. Start from this cell — sessions 3 and 4's fixes plus today's line, so you do not need anything you saved in class:\nimport pandas as pd\nimport statsmodels.api as sm\n\ndf = pd.read_csv('eastville_teaching.csv')\ndf['price'] = df['price'].str.replace('$','',regex=False).str.replace(',','',regex=False).astype(int)\ndf = df.drop_duplicates(subset=['house'])\n\ny = df['price']\nX = sm.add_constant(df[['sqft']])\nline = sm.OLS(y, X).fit()\nline.params # const 56,487 · sqft 142.8 — the numbers you are NOT allowed to report\n\nTwo questions, about 20 minutes in total. Answers, not code. Report numbers you computed — $142.8 and $71,424 are barred.\n\nAI policy\n\nPermitted, with disclosure. One line on anything AI helped with — what did you check before trusting it? Disclosure is never penalized; not disclosing is an integrity issue.\n\nGrading\n\nGraded on presence, not on which call you made. \"The sentence did not change\" is a legitimate answer if it says by how much the number did."
+    },
+    {
+      "name": "Team ledger, part 2 — the basement, held fixed",
+      "group": "Cycle 1 Deliverables",
+      "kind": "assignment",
+      "due_utc": "2026-09-29T14:00:00Z",
+      "due_local": "Tue Sep 29, 2026, 10:00 AM EDT",
+      "points": 5.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1310653",
+      "instructions": "Objective\n\nOn Thursday the agent's model put the basement at $17,765. Tuesday's model, with size alone held fixed, put it at $50,701. Same homes, same basement, two numbers. Your team's job is to find out what moved it, decide what the memo can say about the basement, and bring your ledger up to date.\n\nFrom here on, the ledger is the draft of your Cycle 1 memo.\n\nInstructions\n\n1 · Five models, one basement. Start from the s9 notebook's sqft + basement model and use d (the frame with the 0/1 style columns). Assign one change to each member, by name. Each member makes their change on their own laptop and reports the basement number and its interval:\n\nadd av\n\nadd style_Ranch and style_Two-story\n\nadd garage\n\nadd fire\n\ntake the agent's full column list and remove garage\n\nKeep the three named lines — y = ..., X = ..., sm.OLS(y, X).fit() — and change only the column list.\n\n2 · Line them up. Put your five numbers in order, between $50,701 (two columns) and $17,765 (all ten). Which change moved the basement most? Then run one groupby that shows why: what do basement homes have more of? Hint: the mean of a 0/1 column is a share.\n\n3 · The agent's line. The agent wrote: \"The basement fell from $50,701 to $17,765 once we held the house fixed — it lost two-thirds of its value.\" Sign it or don't, in one team sentence that uses your answer to step 2.\n\n4 · Update the team ledger. Rows s6, s7, s8 and s9, merged from your five individual ledgers into one. One line per row, business English, your words. The s9 row must cite an interval, not just a point. Name who drafted s9 and what the team changed in it. If nobody changed anything, say why the draft already held.\n\nAI policy\n\nAI: permitted, with disclosure. One line on anything AI helped with: what did you check before trusting it?\n\nWhat to submit\n\nOne submission per team. Paste into the text box, in this order:\n\nTeam number and all five names\n\nStep 1 — for each member: name, their change, the basement number and its interval\n\nStep 2 — the five in order, the change that moved it most, your groupby line and what it showed\n\nStep 3 — your sentence\n\nThe four ledger rows (s6, s7, s8, s9), then who drafted s9 and what changed\n\nYour AI disclosure line, if any\n\nGrading\n\nGraded on presence, not on which way you decided. Each member's step-1 number must be one they computed. A team that disagreed and said how it resolved it scores full marks."
+    },
+    {
+      "name": "S10 homework — The school zone, four ways",
+      "group": "Cycle 1 Deliverables",
+      "kind": "quiz",
+      "due_utc": "2026-10-01T14:00:00Z",
+      "due_local": "Thu Oct 1, 2026, 10:00 AM EDT",
+      "points": 2.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1311755",
+      "instructions": "Objective\n\nIn class the basement moved from $18K to $30K across four defensible models, and three of the four could not tell it from zero. Tonight you do the same reading for Apple Valley and decide whether it is a number you sign or a range you report.\n\nInstructions\n\nWork in the session 10 notebook. Run §1 (setup) and the four models under STOP 2 — you do not need anything you saved in class. Read the av row — coefficient and both interval columns — off each of A, B, C and D.\n\nAbout 20 minutes. Answers, not code. Report numbers you computed — the basement numbers are barred.\n\nAI policy\n\nPermitted, with disclosure. One line on anything AI helped with — what did you check before trusting it? Disclosure is never penalized; not disclosing is an integrity issue.\n\nGrading\n\nGraded on presence, not on which model you defend. \"Fragile, and here is the range\" is a full-marks answer if the range is yours and the reason names the data."
+    },
+    {
+      "name": "Prediction card — Session 10",
+      "group": "Rhythm Portfolio",
+      "kind": "assignment",
+      "due_utc": null,
+      "due_local": null,
+      "points": 3.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1311754",
+      "instructions": "Screens down. One card per pair — both names in your answer to question 3. Write before you talk. Graded for presence, not correctness."
     },
     {
       "name": "Prediction card — Session 3",
@@ -235,6 +265,16 @@
       "points": 3.0,
       "url": "https://canvas.emory.edu/courses/165126/assignments/1309748",
       "instructions": "Screens down. One card per pair — both names in your answer to question 3. Write before you talk. Graded for presence, not correctness."
+    },
+    {
+      "name": "Prediction card — Session 9",
+      "group": "Rhythm Portfolio",
+      "kind": "assignment",
+      "due_utc": null,
+      "due_local": null,
+      "points": 3.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1310657",
+      "instructions": "Screens down. One card per pair — both names in your answer to question 3. Write before you talk. Graded for presence, not correctness."
     }
   ],
   "pages": [
@@ -276,6 +316,27 @@
     }
   ],
   "announcements": [
+    {
+      "title": "Class 10: Which model do you sign?",
+      "posted_utc": "2026-09-29T18:24:36Z",
+      "posted_local": "Tue Sep 29, 2026, 2:24 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1405705",
+      "body": "Class 10: Which model do you sign?\n\nToday you stopped letting the agent pick. Backward elimination dropped the basement (p = .142) and called it done — but removed is not zero. You built your own from four models: 108 or 97 rows, garage in or out. The basement came back $18K to $30K — three of four can't tell it from zero — while a square foot held at $110 to $145 in every one.\n\nNext class (Thu 10/1): an agent's notebook on a file you've never seen — and you, alone.\n\nSlides, notebook, and recording are on the notes and recordings page (https://canvas.emory.edu/courses/165126/pages/notes-scripts-and-recordings).\n\nAfter class assignments\n\nS10 homework — The school zone, four ways (https://canvas.emory.edu/courses/165126/quizzes/296869) — due Thu 10/1, 10:00 AM. Read Apple Valley off each of the four models and write the memo sentence."
+    },
+    {
+      "title": "Paid fellowship — help redesign ISOM 352 for the AI era",
+      "posted_utc": "2026-09-28T05:44:12Z",
+      "posted_local": "Mon Sep 28, 2026, 1:44 AM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1404750",
+      "body": "Paid fellowship — help redesign ISOM 352 for the AI era\n\nISOM 352 is being rebuilt around one question: when an AI agent can run the Python → pandas → regression stack for you, what's left for a human to be good at? My answer is specification and audit literacy — framing a problem precisely, and knowing when the agent's answer is wrong.\n\nI'm looking for one BBA student to co-design and pilot the new materials as a Robson Fellow — a paid role (stipend funded by the Robson Innovation in Research and Teaching Grant). You'd help build agent-based exercises where the AI deliberately produces plausible-but-wrong output and students learn to catch it.\n\nYou're a fit if you're comfortable in Python, use AI tools heavily (especially if you've hit that \"the agent gave me an answer and I'm not sure it's right\" feeling), and want to reshape how business education works in an AI world. Any background is welcome — you just need to be a BBA student.\n\nTo apply (short is fine), email wenjun.gu@emory.edu (mailto:wenjun.gu@emory.edu) with the subject line \"Robson Fellow application\":\n\nName, program, year\n\n2–3 sentences on why this interests you\n\nA line on your Python comfort and how you actually use AI in your work\n\nResume/CV (required)\n\nDeadline: end of day Tuesday, September 29. I have to name the Fellow in a grant packet this week, so I can't consider late entries."
+    },
+    {
+      "title": "Class 9: Which premium survives?",
+      "posted_utc": "2026-09-24T18:39:09Z",
+      "posted_local": "Thu Sep 24, 2026, 2:39 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1403901",
+      "body": "Class 9: Which premium survives?\nToday you held the house fixed and watched the premiums collapse. The fireplace's $52K became $8K and vanished. The basement's $65K shrank to $18K — but its interval still touched $0, so you couldn't sign it. Only Apple Valley survived, at $27K. A number has a give-or-take, and the give-or-take is what you sign.\nNext class (Tue 9/29): five models, one basement — does its fate depend on the model?\nSlides, notebook, and recording are on the notes and recordings page (https://canvas.emory.edu/courses/165126/pages/notes-scripts-and-recordings).\nAfter class assignments\n\nTeam ledger, part 2 — the basement, held fixed (https://canvas.emory.edu/courses/165126/assignments/1310653) — due Tue 9/29, 10:00 AM. Five models, one basement; one team submission."
+    },
     {
       "title": "Class 8: What is a square foot worth?",
       "posted_utc": "2026-09-22T18:40:08Z",
