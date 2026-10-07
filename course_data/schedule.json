@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T20:43:36Z",
+  "generated_at": "2026-10-07T13:46:55Z",
   "source": "canvas",
   "course": {
     "canvas_id": "165126",
@@ -197,6 +197,56 @@
       "instructions": "Objective\n\nIn class the basement moved from $18K to $30K across four defensible models, and three of the four could not tell it from zero. Tonight you do the same reading for Apple Valley and decide whether it is a number you sign or a range you report.\n\nInstructions\n\nWork in the session 10 notebook. Run §1 (setup) and the four models under STOP 2 — you do not need anything you saved in class. Read the av row — coefficient and both interval columns — off each of A, B, C and D.\n\nAbout 20 minutes. Answers, not code. Report numbers you computed — the basement numbers are barred.\n\nAI policy\n\nPermitted, with disclosure. One line on anything AI helped with — what did you check before trusting it? Disclosure is never penalized; not disclosing is an integrity issue.\n\nGrading\n\nGraded on presence, not on which model you defend. \"Fragile, and here is the range\" is a full-marks answer if the range is yours and the reason names the data."
     },
     {
+      "name": "Lab 1 · After class — audit the agent",
+      "group": "Rhythm Portfolio",
+      "kind": "assignment",
+      "due_utc": "2026-10-08T14:00:00Z",
+      "due_local": "Thu Oct 8, 2026, 10:00 AM EDT",
+      "points": 5.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1313276",
+      "instructions": "You know the answers to Stage B from class. Now find out whether an AI does. AI on. About 15 minutes. Graded on presence; disclosure is never penalized.\n\nCopy everything between the two lines below into your AI tool, with this prompt in front of it:\n\nYou are reviewing an analyst's work for a bank. For each of the two claims, say whether you would sign it and why. Point to the numbers you used.\n\nColumns\n\nprofit: annual profit the bank earned on the customer, in dollars (negative = the bank lost money)\n\nonline: 1 = uses online banking, 0 = does not\n\ntenure: years as a customer\n\nage: bracket code. 1 = under 15, 2 = 15–24, 3 = 25–34, 4 = 35–44, 5 = 45–54, 6 = 55–64, 7 = 65 and older\n\nincome: bracket code. 1 = under $15k, 2 = $15–19k, 3 = $20–29k, 4 = $30–39k, 5 = $40–49k, 6 = $50–74k, 7 = $75–99k, 8 = $100–124k, 9 = $125k and over\n\ndistrict: the bank's code for the customer's region: 1100, 1200 or 1300\n\nIn [6] · CODE\ndf.groupby('online')['profit'].agg(['mean', 'count']).round(2)\n\nOut [6] · OUTPUT\n mean count\nonline \n0 126.52 19858\n1 131.52 2954\n\nClaim 1: Online customers earn $131.52 on average against $126.52 for offline customers. The two groups are about equally profitable, so the bank has no profit reason to care which channel a customer uses.\n\nIn [7] · CODE\ndf.groupby(['age', 'online'])['profit'].agg(['mean', 'count']).round(1)\n\nOut [7] · OUTPUT\n mean count\nage online \n1 0 8.0 501\n 1 -4.3 123\n2 0 55.7 2741\n 1 72.3 775\n3 0 112.0 4439\n 1 143.3 824\n4 0 132.9 4594\n 1 163.3 716\n5 0 141.6 2894\n 1 196.7 305\n6 0 161.0 2144\n 1 172.7 113\n7 0 193.7 2545\n 1 188.9 98\n\nClaim 2: Among customers 65 and older (age bracket 7), online users are less profitable than offline users ($188.9 against $193.7). Recommendation: stop promoting online banking to customers 65 and older."
+    },
+    {
+      "name": "Lab 1 · Read-back",
+      "group": "Rhythm Portfolio",
+      "kind": "assignment",
+      "due_utc": null,
+      "due_local": null,
+      "points": 3.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1313275",
+      "instructions": "Two quick questions about the Stage C code. AI off. Work alone. Graded on presence.\n\nIn [8] · CODE\ny = df['profit']\nX = pd.get_dummies(df[['online', 'tenure', 'district', 'age', 'income']],\n columns=['age', 'income'], drop_first=True, dtype=int)\nX = sm.add_constant(X)\nmodel = sm.OLS(y, X).fit()\nprint(model.summary())"
+    },
+    {
+      "name": "Lab 1 · Stage A — load, clean, describe",
+      "group": "Rhythm Portfolio",
+      "kind": "assignment",
+      "due_utc": null,
+      "due_local": null,
+      "points": 3.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1313272",
+      "instructions": "A regional bank asked an AI agent: are customers who use online banking more profitable? The agent's work is below, one stage at a time. Your job is to decide what you would sign.\n\nAI off. Work alone. Graded on presence, not on whether you are right.\n\nColumns\n\nprofit: annual profit the bank earned on the customer, in dollars (negative = the bank lost money)\n\nonline: 1 = uses online banking, 0 = does not\n\ntenure: years as a customer\n\nage: bracket code. 1 = under 15, 2 = 15–24, 3 = 25–34, 4 = 35–44, 5 = 45–54, 6 = 55–64, 7 = 65 and older\n\nincome: bracket code. 1 = under $15k, 2 = $15–19k, 3 = $20–29k, 4 = $30–39k, 5 = $40–49k, 6 = $50–74k, 7 = $75–99k, 8 = $100–124k, 9 = $125k and over\n\ndistrict: the bank's code for the customer's region: 1100, 1200 or 1300\n\nStage A: load, clean, describe\n\nBlue bar = code the agent wrote. Grey bar = what the code printed.\n\nIn [1] · CODE\nimport pandas as pd\nimport statsmodels.api as sm\n\ndf = pd.read_csv('bank_customers.csv')\ndf.shape\n\nOut [1] · OUTPUT\n(31634, 7)\n\nIn [3] · CODE\ndf.info()\n\nOut [3] · OUTPUT\n<class 'pandas.DataFrame'>\nRangeIndex: 31634 entries, 0 to 31633\nData columns (total 7 columns):\n # Column Non-Null Count Dtype \n--- ------ -------------- ----- \n 0 id 31634 non-null int64 \n 1 profit 31634 non-null int64 \n 2 online 31634 non-null int64 \n 3 tenure 31634 non-null float64\n 4 age 23345 non-null float64\n 5 income 23373 non-null float64\n 6 district 31634 non-null int64 \ndtypes: float64(3), int64(4)\nmemory usage: 1.7 MB\n\nIn [4] · CODE\ndf = df.dropna()\ndf[['age', 'income']] = df[['age', 'income']].astype(int)\nlen(df)\n\nOut [4] · OUTPUT\n22812\n\nAgent, claim 1: Removed incomplete records. 22,812 customers are ready for analysis.\n\nIn [5] · CODE\ndf['profit'].describe().round(2)\n\nOut [5] · OUTPUT\ncount 22812.00\nmean 127.17\nstd 282.86\nmin -221.00\n25% -34.00\n50% 22.00\n75% 197.00\nmax 2071.00\nName: profit, dtype: float64\n\nAgent, claim 2: The typical customer earns the bank about $127 a year.\n\nAgent, claim 3: At least one in four of these customers loses the bank money."
+    },
+    {
+      "name": "Lab 1 · Stage B — online vs offline",
+      "group": "Rhythm Portfolio",
+      "kind": "assignment",
+      "due_utc": null,
+      "due_local": null,
+      "points": 3.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1313273",
+      "instructions": "A regional bank asked an AI agent: are customers who use online banking more profitable? The agent's work is below, one stage at a time. Your job is to decide what you would sign.\n\nAI off. Work alone. Graded on presence, not on whether you are right.\n\nColumns\n\nprofit: annual profit the bank earned on the customer, in dollars (negative = the bank lost money)\n\nonline: 1 = uses online banking, 0 = does not\n\ntenure: years as a customer\n\nage: bracket code. 1 = under 15, 2 = 15–24, 3 = 25–34, 4 = 35–44, 5 = 45–54, 6 = 55–64, 7 = 65 and older\n\nincome: bracket code. 1 = under $15k, 2 = $15–19k, 3 = $20–29k, 4 = $30–39k, 5 = $40–49k, 6 = $50–74k, 7 = $75–99k, 8 = $100–124k, 9 = $125k and over\n\ndistrict: the bank's code for the customer's region: 1100, 1200 or 1300\n\nStage B: online vs offline\n\nSet the removed customers aside. You saw in Stage A what the agent did to them. From here on, judge each claim as a claim about the 22,812 customers the agent kept.\n\nBlue bar = code the agent wrote. Grey bar = what the code printed.\n\nIn [6] · CODE\ndf.groupby('online')['profit'].agg(['mean', 'count']).round(2)\n\nOut [6] · OUTPUT\n mean count\nonline \n0 126.52 19858\n1 131.52 2954\n\nAgent, claim 1: Online customers earn $131.52 on average against $126.52 for offline customers. The two groups are about equally profitable, so the bank has no profit reason to care which channel a customer uses.\n\nIn [7] · CODE\ndf.groupby(['age', 'online'])['profit'].agg(['mean', 'count']).round(1)\n\nOut [7] · OUTPUT\n mean count\nage online \n1 0 8.0 501\n 1 -4.3 123\n2 0 55.7 2741\n 1 72.3 775\n3 0 112.0 4439\n 1 143.3 824\n4 0 132.9 4594\n 1 163.3 716\n5 0 141.6 2894\n 1 196.7 305\n6 0 161.0 2144\n 1 172.7 113\n7 0 193.7 2545\n 1 188.9 98\n\nAgent, claim 2: Among customers 65 and older (age bracket 7), online users are less profitable than offline users ($188.9 against $193.7). Recommendation: stop promoting online banking to customers 65 and older."
+    },
+    {
+      "name": "Lab 1 · Stage C — the model",
+      "group": "Rhythm Portfolio",
+      "kind": "assignment",
+      "due_utc": null,
+      "due_local": null,
+      "points": 3.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1313274",
+      "instructions": "A regional bank asked an AI agent: are customers who use online banking more profitable? The agent's work is below, one stage at a time. Your job is to decide what you would sign.\n\nAI off. Work alone. Graded on presence, not on whether you are right.\n\nColumns\n\nprofit: annual profit the bank earned on the customer, in dollars (negative = the bank lost money)\n\nonline: 1 = uses online banking, 0 = does not\n\ntenure: years as a customer\n\nage: bracket code. 1 = under 15, 2 = 15–24, 3 = 25–34, 4 = 35–44, 5 = 45–54, 6 = 55–64, 7 = 65 and older\n\nincome: bracket code. 1 = under $15k, 2 = $15–19k, 3 = $20–29k, 4 = $30–39k, 5 = $40–49k, 6 = $50–74k, 7 = $75–99k, 8 = $100–124k, 9 = $125k and over\n\ndistrict: the bank's code for the customer's region: 1100, 1200 or 1300\n\nStage C: the model\n\nSet the removed customers aside. You saw in Stage A what the agent did to them. From here on, judge each claim as a claim about the 22,812 customers the agent kept.\n\nBlue bar = code the agent wrote. Grey bar = what the code printed.\n\nIn [8] · CODE\ny = df['profit']\nX = pd.get_dummies(df[['online', 'tenure', 'district', 'age', 'income']],\n columns=['age', 'income'], drop_first=True, dtype=int)\nX = sm.add_constant(X)\nmodel = sm.OLS(y, X).fit()\nprint(model.summary())\n\nOut [8] · OUTPUT\n OLS Regression Results \n==============================================================================\nDep. Variable: profit R-squared: 0.064\nModel: OLS Adj. R-squared: 0.064\nMethod: Least Squares F-statistic: 92.33\nDate: Mon, 05 Oct 2026 Prob (F-statistic): 0.00\nTime: 23:06:16 Log-Likelihood: -1.6038e+05\nNo. Observations: 22812 AIC: 3.208e+05\nDf Residuals: 22794 BIC: 3.209e+05\nDf Model: 17 \nCovariance Type: nonrobust \n==============================================================================\n coef std err t P>|t| [0.025 0.975]\n------------------------------------------------------------------------------\nconst -64.2796 47.696 -1.348 0.178 -157.767 29.208\nonline 17.6618 5.496 3.214 0.001 6.890 28.433\ntenure 4.0900 0.235 17.370 0.000 3.628 4.552\ndistrict 0.0170 0.038 0.443 0.658 -0.058 0.092\nage_2 30.3934 11.934 2.547 0.011 7.002 53.785\nage_3 69.7286 11.712 5.954 0.000 46.772 92.685\nage_4 74.1214 11.796 6.284 0.000 51.001 97.242\nage_5 79.1232 12.253 6.458 0.000 55.107 103.139\nage_6 99.5352 12.707 7.833 0.000 74.628 124.442\nage_7 135.2707 12.530 10.796 0.000 110.711 159.830\nincome_2 2.4799 11.645 0.213 0.831 -20.346 25.305\nincome_3 14.0313 8.345 1.681 0.093 -2.325 30.388\nincome_4 11.5613 8.552 1.352 0.176 -5.201 28.323\nincome_5 17.4314 8.526 2.044 0.041 0.720 34.143\nincome_6 42.9946 7.406 5.805 0.000 28.478 57.511\nincome_7 64.5857 8.081 7.992 0.000 48.746 80.425\nincome_8 82.8678 9.228 8.980 0.000 64.781 100.954\nincome_9 152.1563 8.213 18.527 0.000 136.059 168.254\n==============================================================================\nOmnibus: 11707.795 Durbin-Watson: 1.987\nProb(Omnibus): 0.000 Jarque-Bera (JB): 86604.074\nSkew: 2.385 Prob(JB): 0.00\nKurtosis: 11.268 Cond. No. 3.21e+04\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n[2] The condition number is large, 3.21e+04. This might indicate that there are\nstrong multicollinearity or other numerical problems.\n\nAgent, claim 1: For otherwise-similar customers, online users are worth about $18 more a year, give or take $11.\n\nAgent, claim 2: Each extra year with the bank is worth about $4 in annual profit, for otherwise-similar customers.\n\nAgent, claim 3: District has no effect on profit: the coefficient is $0.02 and its interval includes zero."
+    },
+    {
       "name": "Prediction card — Session 10",
       "group": "Rhythm Portfolio",
       "kind": "assignment",
@@ -207,8 +257,18 @@
       "instructions": "Screens down. One card per pair — both names in your answer to question 3. Write before you talk. Graded for presence, not correctness."
     },
     {
+      "name": "Prediction card — Session 11",
+      "group": "Rhythm Portfolio",
+      "kind": "assignment",
+      "due_utc": null,
+      "due_local": null,
+      "points": 3.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1312331",
+      "instructions": "Screens down.\n\nOne card per individual— both names in your answer to question 3.\n\nGraded for presence, not correctness."
+    },
+    {
       "name": "Prediction card — Session 3",
-      "group": "Participation",
+      "group": "Rhythm Portfolio",
       "kind": "quiz",
       "due_utc": null,
       "due_local": null,
@@ -218,7 +278,7 @@
     },
     {
       "name": "Prediction card — Session 4",
-      "group": "Participation",
+      "group": "Rhythm Portfolio",
       "kind": "quiz",
       "due_utc": null,
       "due_local": null,
@@ -228,7 +288,7 @@
     },
     {
       "name": "Prediction card — Session 5",
-      "group": "Participation",
+      "group": "Rhythm Portfolio",
       "kind": "assignment",
       "due_utc": null,
       "due_local": null,
@@ -238,7 +298,7 @@
     },
     {
       "name": "Prediction card — Session 6",
-      "group": "Participation",
+      "group": "Rhythm Portfolio",
       "kind": "assignment",
       "due_utc": null,
       "due_local": null,
@@ -252,7 +312,7 @@
       "kind": "assignment",
       "due_utc": null,
       "due_local": null,
-      "points": null,
+      "points": 3.0,
       "url": "https://canvas.emory.edu/courses/165126/assignments/1308723",
       "instructions": "Screens down. One card per pair — both names in your answer to question 1. Write before you talk. Graded for presence, not correctness."
     },
@@ -316,6 +376,20 @@
     }
   ],
   "announcements": [
+    {
+      "title": "Class 12: Are online customers more profitable?",
+      "posted_utc": "2026-10-06T18:43:55Z",
+      "posted_local": "Tue Oct 6, 2026, 2:43 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1408540",
+      "body": "Class 12: Are online customers more profitable?\n\nToday you audited an AI agent's work on a bank's customer file, alone and with no AI: eight claims across three stages, sign or don't sign. The first two stages came down to asking who was removed before trusting what is left, and to a $5 gap that hid a real difference inside each age group. Some claims were fine, and signing those counted too. Stage C stays sealed.\n\nNext class (Thu 10/8): your team settles Stage C before anyone sees the answers. Then the memo, finished at your table. Exam 1 is Thu 10/15.\n\nSlides are on the notes and recordings page (https://canvas.emory.edu/courses/165126/pages/notes-scripts-and-recordings).\n\nAfter class assignments\n\nLab 1 · After class — audit the agent (https://canvas.emory.edu/courses/165126/quizzes/297125) — due Thu 10/8, 10:00 AM. AI on: send Stage B to an AI and grade its answer.\n\nTeam memo — what we tell our decider (https://canvas.emory.edu/courses/165126/assignments/1312557) — due Fri 10/9, 11:59 PM. One per team; bring a draft Thursday."
+    },
+    {
+      "title": "Class 11: One number, three readers",
+      "posted_utc": "2026-10-02T03:36:21Z",
+      "posted_local": "Thu Oct 1, 2026, 11:36 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1406931",
+      "body": "Class 11: One number, three readers\nToday you stopped computing and started telling. The same basement number — $18K, give or take −$8K to $44K — means something different to the buyer, the seller, and the listing agent. It's a comparison between the 91 homes with a basement and the 17 without — not what adding one returns. A number that moves goes to your decider as a range, with which homes and which columns.\nNext class (Tue 10/6): a stranger's notebook on a file you've never seen.\nSlides, notebook, and recording are on the notes and recordings page (https://canvas.emory.edu/courses/165126/pages/notes-scripts-and-recordings).\nAfter class assignments\n\nThe team memo — due Fri 10/9, 11:59 PM. One page to your decider: §2 from s10, §4 from today's STOP 2."
+    },
     {
       "title": "Class 10: Which model do you sign?",
       "posted_utc": "2026-09-29T18:24:36Z",
