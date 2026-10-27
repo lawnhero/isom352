@@ -1,0 +1,10 @@
+{
+ "model": "gpt-6-luna",
+ "prompt_a": "Here is a real-estate listing. Extract the house number, square feet, bedrooms, bathrooms, style, school district, whether it has a basement, and the price.\n\nLISTING:\n{text}",
+ "prompt_b": "Extract these fields from the listing and return only JSON, nothing else:\n{{\"house\": int, \"sqft\": int, \"beds\": int, \"baths\": int, \"style\": str, \"school\": str, \"basement\": 0 or 1, \"price\": int}}\nprice is the current asking price in dollars. basement is 1 if the home has a basement, otherwise 0.\n\nLISTING:\n{text}",
+ "run_at": "2026-10-27 00:38:10",
+ "seconds": 499,
+ "pages": 108,
+ "failures": [],
+ "b_rows_unparsed": []
+}

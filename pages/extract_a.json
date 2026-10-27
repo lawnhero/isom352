@@ -1,0 +1,434 @@
+{
+ "1": {
+  "text": "Eastville Realty · Listing 1 EASTVILLE REALTY 3 bed · 2 bath Cape Cod — Apple Valley $234,280 Listing #1 · 1,610 sq ft Spacious Cape Cod in the Apple Valley school district. Three bedrooms, two baths, 1,610 square feet. Full basement with rec room, one-car garage, oil heat and a wood-burning fireplace. Built about 12 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided\n- **Square feet:** 1,610\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Apple Valley\n- **Basement:** Yes — full basement\n- **Price:** $234,280"
+ },
+ "2": {
+  "text": "Eastville Realty · Listing 2 EASTVILLE REALTY 3 bed · 2 bath Cape Cod — Plum Ridge $246,360 Listing #2 · 2,151 sq ft Spacious Cape Cod in the Plum Ridge school district. Three bedrooms, two baths, 2,151 square feet. Slab foundation, no basement, two-car garage, electric heat and a wood-burning fireplace. Built about 13 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 2 (Listing #2)\n- **Square feet:** 2,151\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** No\n- **Price:** $246,360"
+ },
+ "3": {
+  "text": "Eastville Realty · Listing 3 EASTVILLE REALTY 4 bed · 2 bath Cape Cod — Plum Ridge $265,650 Listing #3 · 1,718 sq ft Well-kept Cape Cod in the Plum Ridge school district. Four bedrooms, two baths, 1,718 square feet. Full basement with rec room, two-car garage, oil heat. Year built not on file. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (Listing #3 is the listing number)\n- **Square feet:** 1,718\n- **Bedrooms:** 4\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** Yes — full basement\n- **Price:** $265,650"
+ },
+ "4": {
+  "text": "Eastville Realty · Listing 4 EASTVILLE REALTY 3 bed · 2 bath Cape Cod — Plum Ridge $237,420 Listing #4 · 1,534 sq ft Classic Cape Cod in the Plum Ridge school district. Three bedrooms, two baths, 1,534 square feet. Full basement with rec room, two-car garage, oil heat and a wood-burning fireplace. Built about 11 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (the listing number is 4)\n- **Square feet:** 1,534\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** Yes, full basement\n- **Price:** $237,420"
+ },
+ "5": {
+  "text": "Eastville Realty · Listing 5 EASTVILLE REALTY 3 bed · 2 bath Cape Cod — Plum Ridge $259,170 Listing #5 · 1,527 sq ft Classic Cape Cod in the Plum Ridge school district. Three bedrooms, two baths, 1,527 square feet. Partial unfinished basement, dirt floor, storage only, one-car garage, oil heat and a wood-burning fireplace. Built about 6 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (the listing number is 5)\n- **Square feet:** 1,527\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** Yes — partial, unfinished\n- **Price:** $259,170"
+ },
+ "6": {
+  "text": "Eastville Realty · Listing 6 EASTVILLE REALTY 3 bed · 2 bath Cape Cod — Plum Ridge $227,600 Listing #6 · 1,410 sq ft Inviting Cape Cod in the Plum Ridge school district. Three bedrooms, two baths, 1,410 square feet. Finished basement, two-car garage, oil heat and a wood-burning fireplace. Built about 17 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (Listing #6 is the listing number)\n- **Square feet:** 1,410\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** Yes, finished\n- **Price:** $227,600"
+ },
+ "7": {
+  "text": "Eastville Realty · Listing 7 EASTVILLE REALTY 3 bed · 2 bath Cape Cod — Plum Ridge $256,440 Listing #7 · 2,122 sq ft Well-kept Cape Cod in the Plum Ridge school district. Three bedrooms, two baths, 2,122 square feet. Finished lower level, two-car garage, oil heat. Year built not on file. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is 7)\n- **Square feet:** 2,122\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** Yes — finished lower level\n- **Price:** $256,440"
+ },
+ "8": {
+  "text": "Eastville Realty · Listing 8 EASTVILLE REALTY 4 bed · 3 bath Cape Cod — Plum Ridge $249,620 Listing #8 · 2,027 sq ft Bright Cape Cod in the Plum Ridge school district. Four bedrooms, three baths, 2,027 square feet. Full basement with rec room, two-car garage, oil heat. Year built not on file. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (Listing #8 is the listing ID)\n- **Square feet:** 2,027\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** Yes, full basement\n- **Price:** $249,620"
+ },
+ "9": {
+  "text": "Eastville Realty · Listing 9 EASTVILLE REALTY 4 bed · 2 bath Cape Cod — Plum Ridge $281,320 $269,490 price reduced Listing #9 · 2,248 sq ft Classic Cape Cod in the Plum Ridge school district. Four bedrooms, two baths, 2,248 square feet. Finished lower level, two-car garage, oil heat. Built about 18 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing #9)\n- **Square feet:** 2,248\n- **Bedrooms:** 4\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** Yes — finished lower level\n- **Price:** $269,490 (reduced from $281,320)"
+ },
+ "10": {
+  "text": "Eastville Realty · Listing 10 EASTVILLE REALTY 3 bed · 2 bath Cape Cod — Plum Ridge $249,310 Listing #10 · 1,470 sq ft Charming Cape Cod in the Plum Ridge school district. Three bedrooms, two baths, 1,470 square feet. Built on a slab, two-car garage, oil heat and a wood-burning fireplace. Built about 13 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (the listing number is 10)\n- **Square feet:** 1,470\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** No — built on a slab\n- **Price:** $249,310"
+ },
+ "11": {
+  "text": "Eastville Realty · Listing 11 EASTVILLE REALTY 3 bed · 2 bath Cape Cod — Apple Valley $228,580 Listing #11 · 1,430 sq ft Inviting Cape Cod in the Apple Valley school district. Three bedrooms, two baths, 1,430 square feet. Walk-out basement, two-car garage, oil heat. Built about 9 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is **11**)\n- **Square feet:** 1,430\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Apple Valley\n- **Basement:** Yes — walk-out basement\n- **Price:** $228,580"
+ },
+ "12": {
+  "text": "Eastville Realty · Listing 12 EASTVILLE REALTY 3 bed · 2 bath Cape Cod — Plum Ridge $223,890 Listing #12 · 1,163 sq ft Classic Cape Cod in the Plum Ridge school district. Three bedrooms, two baths, 1,163 square feet. Crawl space only (unfinished, dirt floor), one-car garage, oil heat. Built about 8 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is 12)\n- **Square feet:** 1,163\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** No — crawl space only\n- **Price:** $223,890"
+ },
+ "13": {
+  "text": "Eastville Realty · Listing 13 EASTVILLE REALTY 4 bed · 2 bath Cape Cod — Apple Valley $255,840 Listing #13 · 2,237 sq ft Classic Cape Cod in the Apple Valley school district. Four bedrooms, two baths, 2,237 square feet. Crawl space only (unfinished, dirt floor), two-car garage, oil heat and a wood-burning fireplace. Built about 13 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (Listing #13 is the listing number)\n- **Square feet:** 2,237\n- **Bedrooms:** 4\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Apple Valley\n- **Basement:** No; crawl space only\n- **Price:** $255,840"
+ },
+ "14": {
+  "text": "Eastville Realty · Listing 14 EASTVILLE REALTY 4 bed · 2 bath Cape Cod — Plum Ridge $292,940 Listing #14 · 2,200 sq ft Updated Cape Cod in the Plum Ridge school district. Four bedrooms, two baths, 2,200 square feet. Finished basement, two-car garage, electric heat and a wood-burning fireplace. Built about 13 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is **14**)\n- **Square feet:** 2,200\n- **Bedrooms:** 4\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** Yes, finished\n- **Price:** $292,940"
+ },
+ "15": {
+  "text": "Eastville Realty · Listing 15 EASTVILLE REALTY 3 bed · 2 bath Cape Cod — Apple Valley $303,960 Listing #15 · 1,859 sq ft Charming Cape Cod in the Apple Valley school district. Three bedrooms, two baths, 1,859 square feet. Slab foundation, no basement, two-car garage, oil heat. Built about 8 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 15 (listing number; street address number not provided)\n- **Square feet:** 1,859\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Apple Valley\n- **Basement:** No\n- **Price:** $303,960"
+ },
+ "16": {
+  "text": "Eastville Realty · Listing 16 EASTVILLE REALTY 4 bed · 2 bath Cape Cod — Plum Ridge $264,360 Listing #16 · 1,961 sq ft Inviting Cape Cod in the Plum Ridge school district. Four bedrooms, two baths, 1,961 square feet. Crawl space only (unfinished, dirt floor), two-car garage, oil heat and a wood-burning fireplace. Year built not on file. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number: 16)\n- **Square feet:** 1,961\n- **Bedrooms:** 4\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** No; crawl space only\n- **Price:** $264,360"
+ },
+ "17": {
+  "text": "Eastville Realty · Listing 17 EASTVILLE REALTY 3 bed · 2 bath Cape Cod — Apple Valley $313,040 Listing #17 · 1,773 sq ft Classic Cape Cod in the Apple Valley school district. Three bedrooms, two baths, 1,773 square feet. Walk-out basement, two-car garage, oil heat and a wood-burning fireplace. Built about 8 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is **17**)\n- **Square feet:** 1,773\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Apple Valley\n- **Basement:** Yes — walk-out\n- **Price:** $313,040"
+ },
+ "18": {
+  "text": "Eastville Realty · Listing 18 EASTVILLE REALTY 3 bed · 3 bath Cape Cod — Plum Ridge $286,570 Listing #18 · 1,937 sq ft Spacious Cape Cod in the Plum Ridge school district. Three bedrooms, three baths, 1,937 square feet. Unfinished cellar with a dirt floor, two-car garage, oil heat and a wood-burning fireplace. Built about 11 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is 18)\n- **Square feet:** 1,937\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** Yes — unfinished cellar with a dirt floor\n- **Price:** $286,570"
+ },
+ "19": {
+  "text": "Eastville Realty · Listing 19 EASTVILLE REALTY 3 bed · 2 bath Cape Cod — Apple Valley $328,700 $312,950 price reduced Listing #19 · 1,707 sq ft Updated Cape Cod in the Apple Valley school district. Three bedrooms, two baths, 1,707 square feet. Finished basement, two-car garage, oil heat. Built about 14 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 19\n- **Square feet:** 1,707\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Apple Valley\n- **Basement:** Yes, finished\n- **Price:** $312,950 (reduced from $328,700)"
+ },
+ "20": {
+  "text": "Eastville Realty · Listing 20 EASTVILLE REALTY 3 bed · 3 bath Cape Cod — Plum Ridge $250,200 Listing #20 · 1,763 sq ft Well-kept Cape Cod in the Plum Ridge school district. Three bedrooms, three baths, 1,763 square feet. Partial unfinished basement, dirt floor, storage only, two-car garage, oil heat and a wood-burning fireplace. Year built not on file. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 20\n- **Square feet:** 1,763\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** Yes — partial, unfinished\n- **Price:** $250,200"
+ },
+ "21": {
+  "text": "Eastville Realty · Listing 21 EASTVILLE REALTY 3 bed · 3 bath Cape Cod — Plum Ridge $268,580 Listing #21 · 2,199 sq ft Move-in ready Cape Cod in the Plum Ridge school district. Three bedrooms, three baths, 2,199 square feet. Full basement with rec room, two-car garage, electric heat and a wood-burning fireplace. Built about 13 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (Listing #21 is the listing number)\n- **Square feet:** 2,199\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** Yes, full basement\n- **Price:** $268,580"
+ },
+ "22": {
+  "text": "Eastville Realty · Listing 22 EASTVILLE REALTY 3 bed · 2 bath Cape Cod — Plum Ridge $296,420 Listing #22 · 1,902 sq ft Updated Cape Cod in the Plum Ridge school district. Three bedrooms, two baths, 1,902 square feet. Slab foundation, no basement, two-car garage, oil heat and a wood-burning fireplace. Built about 9 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (Listing #22 is the listing number)\n- **Square feet:** 1,902\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** No\n- **Price:** $296,420"
+ },
+ "23": {
+  "text": "Eastville Realty · Listing 23 EASTVILLE REALTY 4 bed · 3 bath Cape Cod — Plum Ridge $300,650 Listing #23 · 2,286 sq ft Spacious Cape Cod in the Plum Ridge school district. Four bedrooms, three baths, 2,286 square feet. No basement, two-car garage, oil heat and a wood-burning fireplace. Built about 13 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 23\n- **Square feet:** 2,286\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** No\n- **Price:** $300,650"
+ },
+ "24": {
+  "text": "Eastville Realty · Listing 24 EASTVILLE REALTY 3 bed · 2 bath Cape Cod — Plum Ridge $303,250 Listing #24 · 1,533 sq ft Move-in ready Cape Cod in the Plum Ridge school district. Three bedrooms, two baths, 1,533 square feet. Built on a slab, two-car garage, oil heat and a wood-burning fireplace. Built about 5 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (Listing #24 is the listing number)\n- **Square feet:** 1,533\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** No — built on a slab\n- **Price:** $303,250"
+ },
+ "25": {
+  "text": "Eastville Realty · Listing 25 EASTVILLE REALTY 3 bed · 2 bath Cape Cod — Apple Valley $365,160 Listing #25 · 1,916 sq ft Charming Cape Cod in the Apple Valley school district. Three bedrooms, two baths, 1,916 square feet. Walk-out basement, two-car garage, oil heat and a wood-burning fireplace. Built about 7 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (Listing #25 is the listing number)\n- **Square feet:** 1,916\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Apple Valley\n- **Basement:** Yes — walk-out\n- **Price:** $365,160"
+ },
+ "26": {
+  "text": "Eastville Realty · Listing 26 EASTVILLE REALTY 5 bed · 3 bath Cape Cod — Plum Ridge $276,020 Listing #26 · 1,966 sq ft Updated Cape Cod in the Plum Ridge school district. Five bedrooms, three baths, 1,966 square feet. Built on a slab, two-car garage, oil heat and a wood-burning fireplace. Built about 13 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing #26)\n- **Square feet:** 1,966\n- **Bedrooms:** 5\n- **Bathrooms:** 3\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** No — built on a slab\n- **Price:** $276,020"
+ },
+ "27": {
+  "text": "Eastville Realty · Listing 27 EASTVILLE REALTY 3 bed · 2 bath Cape Cod — Plum Ridge $293,220 Listing #27 · 1,506 sq ft Classic Cape Cod in the Plum Ridge school district. Three bedrooms, two baths, 1,506 square feet. Walk-out basement, two-car garage, oil heat and a wood-burning fireplace. Built about 4 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 27 (listing number; no street address provided)\n- **Square feet:** 1,506\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** Yes, walk-out\n- **Price:** $293,220"
+ },
+ "28": {
+  "text": "Eastville Realty · Listing 28 EASTVILLE REALTY 3 bed · 2 bath Cape Cod — Apple Valley $357,530 Listing #28 · 2,294 sq ft Well-kept Cape Cod in the Apple Valley school district. Three bedrooms, two baths, 2,294 square feet. Slab foundation, no basement, two-car garage, electric heat and a wood-burning fireplace. Built about 10 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (28 is the listing number)\n- **Square feet:** 2,294\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Apple Valley\n- **Basement:** No\n- **Price:** $357,530"
+ },
+ "29": {
+  "text": "Eastville Realty · Listing 29 EASTVILLE REALTY 4 bed · 3 bath Cape Cod — Apple Valley $351,120 Listing #29 · 1,998 sq ft Bright Cape Cod in the Apple Valley school district. Four bedrooms, three baths, 1,998 square feet. Finished basement, two-car garage, oil heat and a wood-burning fireplace. Built about 7 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is 29)\n- **Square feet:** 1,998\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Cape Cod\n- **School district:** Apple Valley\n- **Basement:** Yes, finished\n- **Price:** $351,120"
+ },
+ "30": {
+  "text": "Eastville Realty · Listing 30 EASTVILLE REALTY 3 bed · 2 bath Cape Cod — Apple Valley $369,770 Listing #30 · 1,902 sq ft Charming Cape Cod in the Apple Valley school district. Three bedrooms, two baths, 1,902 square feet. Finished lower level, two-car garage, oil heat and a wood-burning fireplace. Built about 10 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 30 (listing number; no street number provided)\n- **Square feet:** 1,902\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Cape Cod\n- **School district:** Apple Valley\n- **Basement:** Yes — finished lower level\n- **Price:** $369,770"
+ },
+ "31": {
+  "text": "Eastville Realty · Listing 31 EASTVILLE REALTY 4 bed · 3 bath Cape Cod — Apple Valley $322,510 Listing #31 · 2,164 sq ft Inviting Cape Cod in the Apple Valley school district. Four bedrooms, three baths, 2,164 square feet. Finished basement, two-car garage, oil heat and a wood-burning fireplace. Built about 17 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (Listing #31 is the listing number)\n- **Square feet:** 2,164\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Cape Cod\n- **School district:** Apple Valley\n- **Basement:** Yes, finished\n- **Price:** $322,510"
+ },
+ "32": {
+  "text": "Eastville Realty · Listing 32 EASTVILLE REALTY 4 bed · 3 bath Cape Cod — Plum Ridge $339,860 Listing #32 · 2,238 sq ft Updated Cape Cod in the Plum Ridge school district. Four bedrooms, three baths, 2,238 square feet. Finished basement, two-car garage, oil heat and a wood-burning fireplace. Built about 9 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 32\n- **Square feet:** 2,238\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** Yes, finished\n- **Price:** $339,860"
+ },
+ "33": {
+  "text": "Eastville Realty · Listing 33 EASTVILLE REALTY 3 bed · 3 bath Cape Cod — Plum Ridge $335,360 Listing #33 · 1,938 sq ft Updated Cape Cod in the Plum Ridge school district. Three bedrooms, three baths, 1,938 square feet. Full basement with rec room, two-car garage, oil heat and a wood-burning fireplace. Built about 9 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 33\n- **Square feet:** 1,938\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** Yes — full basement\n- **Price:** $335,360"
+ },
+ "34": {
+  "text": "Eastville Realty · Listing 34 EASTVILLE REALTY 4 bed · 3 bath Cape Cod — Apple Valley $363,490 Listing #34 · 1,968 sq ft Charming Cape Cod in the Apple Valley school district. Four bedrooms, three baths, 1,968 square feet. Finished lower level, two-car garage, oil heat and a wood-burning fireplace. Built about 3 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 34 (listing number; no street address given)\n- **Square feet:** 1,968\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Cape Cod\n- **School district:** Apple Valley\n- **Basement:** Yes — finished lower level\n- **Price:** $363,490"
+ },
+ "35": {
+  "text": "Eastville Realty · Listing 35 EASTVILLE REALTY 5 bed · 3 bath Cape Cod — Plum Ridge $375,080 $358,430 price reduced Listing #35 · 2,256 sq ft Bright Cape Cod in the Plum Ridge school district. Five bedrooms, three baths, 2,256 square feet. Full basement with rec room, two-car garage, oil heat and a wood-burning fireplace. Built about 12 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not specified (listing #35)\n- **Square feet:** 2,256\n- **Bedrooms:** 5\n- **Bathrooms:** 3\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** Yes, full basement\n- **Price:** $358,430 (reduced from $375,080)"
+ },
+ "36": {
+  "text": "Eastville Realty · Listing 36 EASTVILLE REALTY 3 bed · 3 bath Cape Cod — Apple Valley $348,830 Listing #36 · 2,134 sq ft Charming Cape Cod in the Apple Valley school district. Three bedrooms, three baths, 2,134 square feet. Finished lower level, two-car garage, oil heat and a wood-burning fireplace. Built about 9 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (36 is the listing number)\n- **Square feet:** 2,134\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Cape Cod\n- **School district:** Apple Valley\n- **Basement:** Yes — finished lower level\n- **Price:** $348,830"
+ },
+ "37": {
+  "text": "Eastville Realty · Listing 37 EASTVILLE REALTY 4 bed · 3 bath Cape Cod — Apple Valley $419,880 $399,710 price reduced Listing #37 · 2,319 sq ft Charming Cape Cod in the Apple Valley school district. Four bedrooms, three baths, 2,319 square feet. Finished basement, three-car garage, electric heat and a wood-burning fireplace. Built about 17 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is **37**)\n- **Square feet:** 2,319\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Cape Cod\n- **School district:** Apple Valley\n- **Basement:** Yes, finished\n- **Price:** $399,710 (reduced from $419,880)"
+ },
+ "38": {
+  "text": "Eastville Realty · Listing 38 EASTVILLE REALTY 4 bed · 3 bath Cape Cod — Apple Valley $405,350 Listing #38 · 2,409 sq ft Move-in ready Cape Cod in the Apple Valley school district. Four bedrooms, three baths, 2,409 square feet. Walk-out basement, two-car garage, oil heat and a wood-burning fireplace. Built about 11 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing #38)\n- **Square feet:** 2,409\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Cape Cod\n- **School district:** Apple Valley\n- **Basement:** Yes — walk-out\n- **Price:** $405,350"
+ },
+ "39": {
+  "text": "Eastville Realty · Listing 39 EASTVILLE REALTY 4 bed · 3 bath Cape Cod — Plum Ridge $618,850 Listing #39 · 2,935 sq ft Classic Cape Cod in the Plum Ridge school district. Four bedrooms, three baths, 2,935 square feet. Full basement with rec room, three-car garage, oil heat and a wood-burning fireplace. Built about 6 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is 39)\n- **Square feet:** 2,935\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Cape Cod\n- **School district:** Plum Ridge\n- **Basement:** Yes, full basement\n- **Price:** $618,850"
+ },
+ "40": {
+  "text": "Eastville Realty · Listing 40 EASTVILLE REALTY 4 bed · 2 bath Two-story — Plum Ridge $253,240 Listing #40 · 1,279 sq ft Charming Two-story in the Plum Ridge school district. Four bedrooms, two baths, 1,279 square feet. Walk-out basement, two-car garage, oil heat and a wood-burning fireplace. Built about 19 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 40\n- **Square feet:** 1,279\n- **Bedrooms:** 4\n- **Bathrooms:** 2\n- **Style:** Two-story\n- **School district:** Plum Ridge\n- **Basement:** Yes — walk-out basement\n- **Price:** $253,240"
+ },
+ "41": {
+  "text": "Eastville Realty · Listing 41 EASTVILLE REALTY 3 bed · 2 bath Two-story — Plum Ridge $197,300 Listing #41 · 861 sq ft Bright Two-story in the Plum Ridge school district. Three bedrooms, two baths, 861 square feet. Walk-out basement, two-car garage, oil heat. Built about 19 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 41 (listing number; no street address is provided)\n- **Square feet:** 861\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Two-story\n- **School district:** Plum Ridge\n- **Basement:** Yes — walk-out\n- **Price:** $197,300"
+ },
+ "42": {
+  "text": "Eastville Realty · Listing 42 EASTVILLE REALTY 5 bed · 2 bath Two-story — Plum Ridge $274,150 Listing #42 · 1,435 sq ft Charming Two-story in the Plum Ridge school district. Five bedrooms, two baths, 1,435 square feet. Finished basement, two-car garage, oil heat. Built about 17 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is 42)\n- **Square feet:** 1,435\n- **Bedrooms:** 5\n- **Bathrooms:** 2\n- **Style:** Two-story\n- **School district:** Plum Ridge\n- **Basement:** Yes, finished\n- **Price:** $274,150"
+ },
+ "43": {
+  "text": "Eastville Realty · Listing 43 EASTVILLE REALTY 4 bed · 2 bath Two-story — Apple Valley $253,880 Listing #43 · 1,139 sq ft Classic Two-story in the Apple Valley school district. Four bedrooms, two baths, 1,139 square feet. Finished basement, two-car garage, oil heat and a wood-burning fireplace. Year built not on file. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (the listing number is 43)\n- **Square feet:** 1,139\n- **Bedrooms:** 4\n- **Bathrooms:** 2\n- **Style:** Two-story\n- **School district:** Apple Valley\n- **Basement:** Yes, finished\n- **Price:** $253,880"
+ },
+ "44": {
+  "text": "Eastville Realty · Listing 44 EASTVILLE REALTY 5 bed · 2 bath Two-story — Plum Ridge $246,440 Listing #44 · 1,216 sq ft Spacious Two-story in the Plum Ridge school district. Five bedrooms, two baths, 1,216 square feet. Walk-out basement, two-car garage, oil heat and a wood-burning fireplace. Built about 17 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 44\n- **Square feet:** 1,216\n- **Bedrooms:** 5\n- **Bathrooms:** 2\n- **Style:** Two-story\n- **School district:** Plum Ridge\n- **Basement:** Yes — walk-out\n- **Price:** $246,440"
+ },
+ "45": {
+  "text": "Eastville Realty · Listing 45 EASTVILLE REALTY 4 bed · 2 bath Two-story — Apple Valley $316,000 Listing #45 · 1,269 sq ft Move-in ready Two-story in the Apple Valley school district. Four bedrooms, two baths, 1,269 square feet. Finished lower level, one-car garage, electric heat. Built about 11 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (45 is the listing number)\n- **Square feet:** 1,269\n- **Bedrooms:** 4\n- **Bathrooms:** 2\n- **Style:** Two-story\n- **School district:** Apple Valley\n- **Basement:** Yes — finished lower level\n- **Price:** $316,000"
+ },
+ "46": {
+  "text": "Eastville Realty · Listing 46 EASTVILLE REALTY 4 bed · 3 bath Two-story — Plum Ridge $296,440 Listing #46 · 1,439 sq ft Move-in ready Two-story in the Plum Ridge school district. Four bedrooms, three baths, 1,439 square feet. Finished basement, two-car garage, oil heat and a wood-burning fireplace. Built about 19 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number: **46**)\n- **Square feet:** 1,439\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Two-story\n- **School district:** Plum Ridge\n- **Basement:** Yes, finished\n- **Price:** $296,440"
+ },
+ "47": {
+  "text": "Eastville Realty · Listing 47 EASTVILLE REALTY 3 bed · 2 bath Two-story — Apple Valley $243,720 Listing #47 · 1,287 sq ft Spacious Two-story in the Apple Valley school district. Three bedrooms, two baths, 1,287 square feet. Finished lower level, two-car garage, oil heat and a wood-burning fireplace. Built about 11 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is **47**)\n- **Square feet:** 1,287\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Two-story\n- **School district:** Apple Valley\n- **Basement:** Yes — finished lower level\n- **Price:** $243,720"
+ },
+ "48": {
+  "text": "Eastville Realty · Listing 48 EASTVILLE REALTY 4 bed · 3 bath Two-story — Plum Ridge $252,750 Listing #48 · 1,369 sq ft Well-kept Two-story in the Plum Ridge school district. Four bedrooms, three baths, 1,369 square feet. Finished lower level, two-car garage, oil heat. Built about 12 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (the listing number is 48)\n- **Square feet:** 1,369\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Two-story\n- **School district:** Plum Ridge\n- **Basement:** Yes — finished lower level\n- **Price:** $252,750"
+ },
+ "49": {
+  "text": "Eastville Realty · Listing 49 EASTVILLE REALTY 4 bed · 2 bath Two-story — Apple Valley $312,340 Listing #49 · 1,222 sq ft Bright Two-story in the Apple Valley school district. Four bedrooms, two baths, 1,222 square feet. Finished basement, two-car garage, oil heat and a wood-burning fireplace. Built about 18 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is 49)\n- **Square feet:** 1,222\n- **Bedrooms:** 4\n- **Bathrooms:** 2\n- **Style:** Two-story\n- **School district:** Apple Valley\n- **Basement:** Yes, finished\n- **Price:** $312,340"
+ },
+ "50": {
+  "text": "Eastville Realty · Listing 50 EASTVILLE REALTY 3 bed · 2 bath Two-story — Plum Ridge $312,450 Listing #50 · 1,626 sq ft Classic Two-story in the Plum Ridge school district. Three bedrooms, two baths, 1,626 square feet. Walk-out basement, two-car garage, oil heat. Built about 8 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 50 (shown as Listing #50; no street address is provided)\n- **Square feet:** 1,626\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Classic two-story\n- **School district:** Plum Ridge\n- **Basement:** Yes, walk-out basement\n- **Price:** $312,450"
+ },
+ "51": {
+  "text": "Eastville Realty · Listing 51 EASTVILLE REALTY 3 bed · 2 bath Two-story — Plum Ridge $277,010 Listing #51 · 1,535 sq ft Well-kept Two-story in the Plum Ridge school district. Three bedrooms, two baths, 1,535 square feet. Full basement with rec room, two-car garage, oil heat and a wood-burning fireplace. Built about 13 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (51 is the listing number)\n- **Square feet:** 1,535\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Two-story\n- **School district:** Plum Ridge\n- **Basement:** Yes, full basement\n- **Price:** $277,010"
+ },
+ "52": {
+  "text": "Eastville Realty · Listing 52 EASTVILLE REALTY 4 bed · 3 bath Two-story — Apple Valley $367,830 Listing #52 · 1,525 sq ft Charming Two-story in the Apple Valley school district. Four bedrooms, three baths, 1,525 square feet. Finished lower level, two-car garage, oil heat. Year built not on file. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is 52)\n- **Square feet:** 1,525\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Two-story\n- **School district:** Apple Valley\n- **Basement:** Yes — finished lower level\n- **Price:** $367,830"
+ },
+ "53": {
+  "text": "Eastville Realty · Listing 53 EASTVILLE REALTY 3 bed · 2 bath Two-story — Plum Ridge $338,420 Listing #53 · 1,585 sq ft Inviting Two-story in the Plum Ridge school district. Three bedrooms, two baths, 1,585 square feet. Full basement with rec room, two-car garage, oil heat and a wood-burning fireplace. Built about 11 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is 53)\n- **Square feet:** 1,585\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Two-story\n- **School district:** Plum Ridge\n- **Basement:** Yes — full basement\n- **Price:** $338,420"
+ },
+ "54": {
+  "text": "Eastville Realty · Listing 54 EASTVILLE REALTY 3 bed · 2 bath Two-story — Apple Valley $338,590 Listing #54 · 1,849 sq ft Inviting Two-story in the Apple Valley school district. Three bedrooms, two baths, 1,849 square feet. Full basement with rec room, two-car garage, oil heat. Built about 10 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 54\n- **Square feet:** 1,849\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Two-story\n- **School district:** Apple Valley\n- **Basement:** Yes, full basement\n- **Price:** $338,590"
+ },
+ "55": {
+  "text": "Eastville Realty · Listing 55 EASTVILLE REALTY 4 bed · 2 bath Two-story — Apple Valley $311,830 Listing #55 · 1,598 sq ft Updated Two-story in the Apple Valley school district. Four bedrooms, two baths, 1,598 square feet. Finished basement, two-car garage, oil heat and a wood-burning fireplace. Built about 14 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number: 55)\n- **Square feet:** 1,598\n- **Bedrooms:** 4\n- **Bathrooms:** 2\n- **Style:** Two-story\n- **School district:** Apple Valley\n- **Basement:** Yes — finished\n- **Price:** $311,830"
+ },
+ "56": {
+  "text": "Eastville Realty · Listing 56 EASTVILLE REALTY 4 bed · 3 bath Two-story — Apple Valley $329,920 Listing #56 · 1,512 sq ft Inviting Two-story in the Apple Valley school district. Four bedrooms, three baths, 1,512 square feet. Finished basement, two-car garage, oil heat and a wood-burning fireplace. Built about 17 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is 56)\n- **Square feet:** 1,512\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Two-story\n- **School district:** Apple Valley\n- **Basement:** Yes, finished\n- **Price:** $329,920"
+ },
+ "57": {
+  "text": "Eastville Realty · Listing 57 EASTVILLE REALTY 4 bed · 3 bath Two-story — Apple Valley $332,740 Listing #57 · 2,270 sq ft Bright Two-story in the Apple Valley school district. Four bedrooms, three baths, 2,270 square feet. Finished basement, two-car garage, oil heat and a wood-burning fireplace. Built about 9 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number **57**)\n- **Square feet:** 2,270\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Two-story\n- **School district:** Apple Valley\n- **Basement:** Yes, finished\n- **Price:** $332,740"
+ },
+ "58": {
+  "text": "Eastville Realty · Listing 58 EASTVILLE REALTY 3 bed · 2 bath Two-story — Apple Valley $343,670 Listing #58 · 1,604 sq ft Updated Two-story in the Apple Valley school district. Three bedrooms, two baths, 1,604 square feet. Full basement with rec room, two-car garage, oil heat and a wood-burning fireplace. Built about 7 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (Listing #58)\n- **Square feet:** 1,604\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Two-story\n- **School district:** Apple Valley\n- **Basement:** Yes — full basement\n- **Price:** $343,670"
+ },
+ "59": {
+  "text": "Eastville Realty · Listing 59 EASTVILLE REALTY 3 bed · 2 bath Two-story — Apple Valley $325,990 Listing #59 · 1,662 sq ft Spacious Two-story in the Apple Valley school district. Three bedrooms, two baths, 1,662 square feet. Full basement with rec room, two-car garage, oil heat. Year built not on file. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number: 59)\n- **Square feet:** 1,662\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Two-story\n- **School district:** Apple Valley\n- **Basement:** Yes — full basement\n- **Price:** $325,990"
+ },
+ "60": {
+  "text": "Eastville Realty · Listing 60 EASTVILLE REALTY 4 bed · 3 bath Two-story — Plum Ridge $313,940 Listing #60 · 1,679 sq ft Classic Two-story in the Plum Ridge school district. Four bedrooms, three baths, 1,679 square feet. Finished lower level, two-car garage, oil heat and a wood-burning fireplace. Built about 13 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 60\n- **Square feet:** 1,679\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Two-story\n- **School district:** Plum Ridge\n- **Basement:** Yes — finished lower level\n- **Price:** $313,940"
+ },
+ "61": {
+  "text": "Eastville Realty · Listing 61 EASTVILLE REALTY 3 bed · 2 bath Two-story — Plum Ridge $337,250 Listing #61 · 2,225 sq ft Well-kept Two-story in the Plum Ridge school district. Three bedrooms, two baths, 2,225 square feet. Walk-out basement, two-car garage, oil heat and a wood-burning fireplace. Built about 14 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (Listing #61 is the listing number)\n- **Square feet:** 2,225\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Two-story\n- **School district:** Plum Ridge\n- **Basement:** Yes — walk-out\n- **Price:** $337,250"
+ },
+ "62": {
+  "text": "Eastville Realty · Listing 62 EASTVILLE REALTY 4 bed · 3 bath Two-story — Apple Valley $359,880 Listing #62 · 2,178 sq ft Spacious Two-story in the Apple Valley school district. Four bedrooms, three baths, 2,178 square feet. Full basement with rec room, two-car garage, oil heat and a wood-burning fireplace. Built about 13 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is **62**)\n- **Square feet:** 2,178\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Two-story\n- **School district:** Apple Valley\n- **Basement:** Yes, full basement\n- **Price:** $359,880"
+ },
+ "63": {
+  "text": "Eastville Realty · Listing 63 EASTVILLE REALTY 5 bed · 3 bath Two-story — Apple Valley $394,350 Listing #63 · 2,304 sq ft Inviting Two-story in the Apple Valley school district. Five bedrooms, three baths, 2,304 square feet. Walk-out basement, two-car garage, electric heat and a wood-burning fireplace. Built about 9 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not stated (listing #63 is the listing number)\n- **Square feet:** 2,304\n- **Bedrooms:** 5\n- **Bathrooms:** 3\n- **Style:** Two-story\n- **School district:** Apple Valley\n- **Basement:** Yes — walk-out\n- **Price:** $394,350"
+ },
+ "64": {
+  "text": "Eastville Realty · Listing 64 EASTVILLE REALTY 5 bed · 3 bath Two-story — Apple Valley $492,990 Listing #64 · 1,985 sq ft Spacious Two-story in the Apple Valley school district. Five bedrooms, three baths, 1,985 square feet. Walk-out basement, three-car garage, oil heat and a wood-burning fireplace. Built about 13 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is **64**)\n- **Square feet:** 1,985\n- **Bedrooms:** 5\n- **Bathrooms:** 3\n- **Style:** Two-story\n- **School district:** Apple Valley\n- **Basement:** Yes — walk-out basement\n- **Price:** $492,990"
+ },
+ "65": {
+  "text": "Eastville Realty · Listing 65 EASTVILLE REALTY 3 bed · 2 bath Ranch — Apple Valley $306,740 Listing #65 · 1,742 sq ft Classic Ranch in the Apple Valley school district. Three bedrooms, two baths, 1,742 square feet. Walk-out basement, two-car garage, electric heat and a wood-burning fireplace. Built about 13 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 65\n- **Square feet:** 1,742\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — walk-out\n- **Price:** $306,740"
+ },
+ "66": {
+  "text": "Eastville Realty · Listing 66 EASTVILLE REALTY 3 bed · 3 bath Ranch — Apple Valley $311,440 Listing #66 · 2,128 sq ft Classic Ranch in the Apple Valley school district. Three bedrooms, three baths, 2,128 square feet. Slab foundation, no basement, two-car garage, oil heat. Built about 7 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number: 66)\n- **Square feet:** 2,128\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** No\n- **Price:** $311,440"
+ },
+ "67": {
+  "text": "Eastville Realty · Listing 67 EASTVILLE REALTY 3 bed · 3 bath Ranch — Apple Valley $304,710 Listing #67 · 1,816 sq ft Spacious Ranch in the Apple Valley school district. Three bedrooms, three baths, 1,816 square feet. Finished basement, two-car garage, oil heat and a wood-burning fireplace. Built about 12 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number: 67)\n- **Square feet:** 1,816\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes, finished\n- **Price:** $304,710"
+ },
+ "68": {
+  "text": "Eastville Realty · Listing 68 EASTVILLE REALTY 3 bed · 2 bath Ranch — Apple Valley $280,360 Listing #68 · 1,825 sq ft Spacious Ranch in the Apple Valley school district. Three bedrooms, two baths, 1,825 square feet. Walk-out basement, two-car garage, oil heat and a wood-burning fireplace. Built about 7 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 68 (listing number; no street address is provided)\n- **Square feet:** 1,825\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — walk-out\n- **Price:** $280,360"
+ },
+ "69": {
+  "text": "Eastville Realty · Listing 69 EASTVILLE REALTY 3 bed · 2 bath Ranch — Apple Valley $271,540 Listing #69 · 1,419 sq ft Spacious Ranch in the Apple Valley school district. Three bedrooms, two baths, 1,419 square feet. Finished basement, two-car garage, oil heat and a wood-burning fireplace. Built about 8 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided\n- **Square feet:** 1,419\n- **Bedrooms:** 3\n- **Bathrooms:** 2\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — finished\n- **Price:** $271,540"
+ },
+ "70": {
+  "text": "Eastville Realty · Listing 70 EASTVILLE REALTY 3 bed · 3 bath Ranch — Apple Valley $316,330 Listing #70 · 1,965 sq ft Classic Ranch in the Apple Valley school district. Three bedrooms, three baths, 1,965 square feet. Finished basement, two-car garage, oil heat and a wood-burning fireplace. Built about 10 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 70\n- **Square feet:** 1,965\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes, finished\n- **Price:** $316,330"
+ },
+ "71": {
+  "text": "Eastville Realty · Listing 71 EASTVILLE REALTY 3 bed · 3 bath Ranch — Apple Valley $333,020 Listing #71 · 1,692 sq ft Charming Ranch in the Apple Valley school district. Three bedrooms, three baths, 1,692 square feet. No basement, two-car garage, oil heat. Built about 1 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (71 is the listing number)\n- **Square feet:** 1,692\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** No\n- **Price:** $333,020"
+ },
+ "72": {
+  "text": "Eastville Realty · Listing 72 EASTVILLE REALTY 4 bed · 4 bath Ranch — Apple Valley $358,630 Listing #72 · 2,153 sq ft Well-kept Ranch in the Apple Valley school district. Four bedrooms, four baths, 2,153 square feet. Finished basement, two-car garage, oil heat and a wood-burning fireplace. Built about 16 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 72 (listing number; no street address provided)\n- **Square feet:** 2,153\n- **Bedrooms:** 4\n- **Bathrooms:** 4\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes, finished\n- **Price:** $358,630"
+ },
+ "73": {
+  "text": "Eastville Realty · Listing 73 EASTVILLE REALTY 3 bed · 3 bath Ranch — Apple Valley $310,970 Listing #73 · 1,728 sq ft Spacious Ranch in the Apple Valley school district. Three bedrooms, three baths, 1,728 square feet. Finished lower level, two-car garage, oil heat and a wood-burning fireplace. Built about 8 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 73 (Listing #73)\n- **Square feet:** 1,728\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — finished lower level\n- **Price:** $310,970"
+ },
+ "74": {
+  "text": "Eastville Realty · Listing 74 EASTVILLE REALTY 4 bed · 3 bath Ranch — Plum Ridge $304,780 Listing #74 · 2,194 sq ft Bright Ranch in the Plum Ridge school district. Four bedrooms, three baths, 2,194 square feet. Finished basement, two-car garage, oil heat and a wood-burning fireplace. Built about 15 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (Listing #74 is the listing number)\n- **Square feet:** 2,194\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Plum Ridge\n- **Basement:** Yes, finished\n- **Price:** $304,780"
+ },
+ "75": {
+  "text": "Eastville Realty · Listing 75 EASTVILLE REALTY 4 bed · 3 bath Ranch — Apple Valley $330,690 Listing #75 · 2,072 sq ft Move-in ready Ranch in the Apple Valley school district. Four bedrooms, three baths, 2,072 square feet. Walk-out basement, two-car garage, oil heat and a wood-burning fireplace. Built about 9 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not specified (Listing #75 is the listing number)\n- **Square feet:** 2,072\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — walk-out\n- **Price:** $330,690"
+ },
+ "76": {
+  "text": "Eastville Realty · Listing 76 EASTVILLE REALTY 3 bed · 3 bath Ranch — Plum Ridge $322,410 Listing #76 · 2,042 sq ft Inviting Ranch in the Plum Ridge school district. Three bedrooms, three baths, 2,042 square feet. Finished lower level, two-car garage, oil heat and a wood-burning fireplace. Built about 12 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (Listing #76 is the listing number)\n- **Square feet:** 2,042\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Plum Ridge\n- **Basement:** Yes — finished lower level\n- **Price:** $322,410"
+ },
+ "77": {
+  "text": "Eastville Realty · Listing 77 EASTVILLE REALTY 3 bed · 3 bath Ranch — Apple Valley $372,660 Listing #77 · 2,299 sq ft Bright Ranch in the Apple Valley school district. Three bedrooms, three baths, 2,299 square feet. Finished lower level, two-car garage, oil heat and a wood-burning fireplace. Built about 7 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided\n- **Square feet:** 2,299\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — finished lower level\n- **Price:** $372,660"
+ },
+ "78": {
+  "text": "Eastville Realty · Listing 78 EASTVILLE REALTY 3 bed · 3 bath Ranch — Apple Valley $303,890 Listing #78 · 1,657 sq ft Spacious Ranch in the Apple Valley school district. Three bedrooms, three baths, 1,657 square feet. Full basement with rec room, two-car garage, oil heat and a wood-burning fireplace. Year built not on file. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number: 78)\n- **Square feet:** 1,657\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes, full basement\n- **Price:** $303,890"
+ },
+ "79": {
+  "text": "Eastville Realty · Listing 79 EASTVILLE REALTY 4 bed · 3 bath Ranch — Plum Ridge $351,280 Listing #79 · 2,551 sq ft Inviting Ranch in the Plum Ridge school district. Four bedrooms, three baths, 2,551 square feet. Full basement with rec room, two-car garage, oil heat and a wood-burning fireplace. Built about 12 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing #79)\n- **Square feet:** 2,551\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Plum Ridge\n- **Basement:** Yes — full basement\n- **Price:** $351,280"
+ },
+ "80": {
+  "text": "Eastville Realty · Listing 80 EASTVILLE REALTY 3 bed · 3 bath Ranch — Plum Ridge $333,480 Listing #80 · 1,894 sq ft Move-in ready Ranch in the Plum Ridge school district. Three bedrooms, three baths, 1,894 square feet. Finished lower level, two-car garage, electric heat and a wood-burning fireplace. Built about 12 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 80\n- **Square feet:** 1,894\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Plum Ridge\n- **Basement:** Yes — finished lower level\n- **Price:** $333,480"
+ },
+ "81": {
+  "text": "Eastville Realty · Listing 81 EASTVILLE REALTY 3 bed · 3 bath Ranch — Apple Valley $350,580 Listing #81 · 2,333 sq ft Bright Ranch in the Apple Valley school district. Three bedrooms, three baths, 2,333 square feet. Walk-out basement, two-car garage, oil heat and a wood-burning fireplace. Built about 7 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 81\n- **Square feet:** 2,333\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — walk-out\n- **Price:** $350,580"
+ },
+ "82": {
+  "text": "Eastville Realty · Listing 82 EASTVILLE REALTY 4 bed · 3 bath Ranch — Plum Ridge $340,740 Listing #82 · 2,131 sq ft Inviting Ranch in the Plum Ridge school district. Four bedrooms, three baths, 2,131 square feet. Full basement with rec room, two-car garage, oil heat. Built about 13 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 82\n- **Square feet:** 2,131\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Plum Ridge\n- **Basement:** Yes, full basement\n- **Price:** $340,740"
+ },
+ "83": {
+  "text": "Eastville Realty · Listing 83 EASTVILLE REALTY 4 bed · 3 bath Ranch — Apple Valley $414,930 Listing #83 · 2,296 sq ft Inviting Ranch in the Apple Valley school district. Four bedrooms, three baths, 2,296 square feet. Walk-out basement, two-car garage, electric heat and a wood-burning fireplace. Year built not on file. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is **83**)\n- **Square feet:** 2,296\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — walk-out\n- **Price:** $414,930"
+ },
+ "84": {
+  "text": "Eastville Realty · Listing 84 EASTVILLE REALTY 3 bed · 3 bath Ranch — Apple Valley $393,450 Listing #84 · 2,327 sq ft Charming Ranch in the Apple Valley school district. Three bedrooms, three baths, 2,327 square feet. Finished lower level, two-car garage, oil heat. Built about 11 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (84 is the listing number)\n- **Square feet:** 2,327\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — finished lower level\n- **Price:** $393,450"
+ },
+ "85": {
+  "text": "Eastville Realty · Listing 85 EASTVILLE REALTY 3 bed · 3 bath Ranch — Apple Valley $365,040 $352,360 price reduced Listing #85 · 2,550 sq ft Spacious Ranch in the Apple Valley school district. Three bedrooms, three baths, 2,550 square feet. Built on a slab, two-car garage, oil heat and a wood-burning fireplace. Built about 17 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (85 is the listing number)\n- **Square feet:** 2,550\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** No — built on a slab\n- **Price:** $352,360 (reduced from $365,040)"
+ },
+ "86": {
+  "text": "Eastville Realty · Listing 86 EASTVILLE REALTY 3 bed · 3 bath Ranch — Apple Valley $405,480 Listing #86 · 2,382 sq ft Bright Ranch in the Apple Valley school district. Three bedrooms, three baths, 2,382 square feet. Finished basement, two-car garage, oil heat and a wood-burning fireplace. Built about 9 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is **86**)\n- **Square feet:** 2,382\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes, finished\n- **Price:** $405,480"
+ },
+ "87": {
+  "text": "Eastville Realty · Listing 87 EASTVILLE REALTY 5 bed · 3 bath Ranch — Apple Valley $409,520 Listing #87 · 2,804 sq ft Updated Ranch in the Apple Valley school district. Five bedrooms, three baths, 2,804 square feet. Full basement with rec room, two-car garage, oil heat. Built about 9 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is **87**)\n- **Square feet:** 2,804 sq ft\n- **Bedrooms:** 5\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — full basement\n- **Price:** $409,520"
+ },
+ "88": {
+  "text": "Eastville Realty · Listing 88 EASTVILLE REALTY 4 bed · 3 bath Ranch — Apple Valley $363,950 Listing #88 · 2,185 sq ft Updated Ranch in the Apple Valley school district. Four bedrooms, three baths, 2,185 square feet. Walk-out basement, two-car garage, electric heat and a wood-burning fireplace. Built about 11 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (Listing #88 is the listing number)\n- **Square feet:** 2,185\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — walk-out\n- **Price:** $363,950"
+ },
+ "89": {
+  "text": "Eastville Realty · Listing 89 EASTVILLE REALTY 3 bed · 3 bath Ranch — Plum Ridge $373,590 Listing #89 · 2,309 sq ft Classic Ranch in the Plum Ridge school district. Three bedrooms, three baths, 2,309 square feet. Finished basement, two-car garage, oil heat and a wood-burning fireplace. Built about 7 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing #89)\n- **Square feet:** 2,309\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Plum Ridge\n- **Basement:** Yes, finished\n- **Price:** $373,590"
+ },
+ "90": {
+  "text": "Eastville Realty · Listing 90 EASTVILLE REALTY 4 bed · 4 bath Ranch — Apple Valley $404,360 Listing #90 · 2,441 sq ft Spacious Ranch in the Apple Valley school district. Four bedrooms, four baths, 2,441 square feet. Full basement with rec room, two-car garage, electric heat and a wood-burning fireplace. Built about 9 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (Listing #90 is not identified as the house number)\n- **Square feet:** 2,441\n- **Bedrooms:** 4\n- **Bathrooms:** 4\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes, full basement\n- **Price:** $404,360"
+ },
+ "91": {
+  "text": "Eastville Realty · Listing 91 EASTVILLE REALTY 3 bed · 3 bath Ranch — Apple Valley $405,590 Listing #91 · 2,389 sq ft Well-kept Ranch in the Apple Valley school district. Three bedrooms, three baths, 2,389 square feet. Finished basement, two-car garage, oil heat and a wood-burning fireplace. Built about 5 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (91 is the listing number)\n- **Square feet:** 2,389\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes, finished\n- **Price:** $405,590"
+ },
+ "92": {
+  "text": "Eastville Realty · Listing 92 EASTVILLE REALTY 5 bed · 4 bath Ranch — Apple Valley $356,700 Listing #92 · 2,208 sq ft Classic Ranch in the Apple Valley school district. Five bedrooms, four baths, 2,208 square feet. Walk-out basement, two-car garage, oil heat and a wood-burning fireplace. Built about 8 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is 92)\n- **Square feet:** 2,208\n- **Bedrooms:** 5\n- **Bathrooms:** 4\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — walk-out basement\n- **Price:** $356,700"
+ },
+ "93": {
+  "text": "Eastville Realty · Listing 93 EASTVILLE REALTY 6 bed · 4 bath Ranch — Apple Valley $402,730 Listing #93 · 2,497 sq ft Bright Ranch in the Apple Valley school district. Six bedrooms, four baths, 2,497 square feet. Walk-out basement, two-car garage, oil heat and a wood-burning fireplace. Built about 21 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing #93 is the listing ID)\n- **Square feet:** 2,497\n- **Bedrooms:** 6\n- **Bathrooms:** 4\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — walk-out basement\n- **Price:** $402,730"
+ },
+ "94": {
+  "text": "Eastville Realty · Listing 94 EASTVILLE REALTY 4 bed · 3 bath Ranch — Apple Valley $424,240 Listing #94 · 2,307 sq ft Spacious Ranch in the Apple Valley school district. Four bedrooms, three baths, 2,307 square feet. Full basement with rec room, two-car garage, electric heat and a wood-burning fireplace. Built about 11 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 94 (listing number; no street address provided)\n- **Square feet:** 2,307\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — full basement\n- **Price:** $424,240"
+ },
+ "95": {
+  "text": "Eastville Realty · Listing 95 EASTVILLE REALTY 4 bed · 3 bath Ranch — Apple Valley $439,430 $417,390 price reduced Listing #95 · 2,428 sq ft Inviting Ranch in the Apple Valley school district. Four bedrooms, three baths, 2,428 square feet. Full basement with rec room, two-car garage, oil heat and a wood-burning fireplace. Year built not on file. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number: 95)\n- **Square feet:** 2,428\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — full basement\n- **Price:** $417,390 (reduced from $439,430)"
+ },
+ "96": {
+  "text": "Eastville Realty · Listing 96 EASTVILLE REALTY 4 bed · 3 bath Ranch — Apple Valley $388,570 Listing #96 · 2,081 sq ft Bright Ranch in the Apple Valley school district. Four bedrooms, three baths, 2,081 square feet. Finished lower level, two-car garage, oil heat and a wood-burning fireplace. Built about 19 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 96\n- **Square feet:** 2,081\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — finished lower level\n- **Price:** $388,570"
+ },
+ "97": {
+  "text": "Eastville Realty · Listing 97 EASTVILLE REALTY 3 bed · 3 bath Ranch — Apple Valley $451,790 Listing #97 · 2,386 sq ft Move-in ready Ranch in the Apple Valley school district. Three bedrooms, three baths, 2,386 square feet. Full basement with rec room, three-car garage, oil heat and a wood-burning fireplace. Built about 6 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is 97)\n- **Square feet:** 2,386\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes, full basement\n- **Price:** $451,790"
+ },
+ "98": {
+  "text": "Eastville Realty · Listing 98 EASTVILLE REALTY 3 bed · 3 bath Ranch — Apple Valley $459,700 Listing #98 · 2,605 sq ft Charming Ranch in the Apple Valley school district. Three bedrooms, three baths, 2,605 square feet. Finished lower level, three-car garage, oil heat and a wood-burning fireplace. Built about 7 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number: 98)\n- **Square feet:** 2,605\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — finished lower level\n- **Price:** $459,700"
+ },
+ "99": {
+  "text": "Eastville Realty · Listing 99 EASTVILLE REALTY 3 bed · 3 bath Ranch — Apple Valley $430,330 Listing #99 · 2,423 sq ft Move-in ready Ranch in the Apple Valley school district. Three bedrooms, three baths, 2,423 square feet. Walk-out basement, three-car garage, oil heat and a wood-burning fireplace. Built about 10 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided\n- **Square feet:** 2,423\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — walk-out\n- **Price:** $430,330"
+ },
+ "100": {
+  "text": "Eastville Realty · Listing 100 EASTVILLE REALTY 4 bed · 3 bath Ranch — Plum Ridge $433,960 Listing #100 · 2,588 sq ft Inviting Ranch in the Plum Ridge school district. Four bedrooms, three baths, 2,588 square feet. Full basement with rec room, two-car garage, oil heat and a wood-burning fireplace. Built about 6 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is **100**)\n- **Square feet:** 2,588\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Plum Ridge\n- **Basement:** Yes — full basement\n- **Price:** $433,960"
+ },
+ "101": {
+  "text": "Eastville Realty · Listing 101 EASTVILLE REALTY 5 bed · 3 bath Ranch — Apple Valley $460,560 Listing #101 · 2,600 sq ft Bright Ranch in the Apple Valley school district. Five bedrooms, three baths, 2,600 square feet. Full basement with rec room, two-car garage, oil heat and a wood-burning fireplace. Built about 12 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number is 101)\n- **Square feet:** 2,600\n- **Bedrooms:** 5\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes, full basement\n- **Price:** $460,560"
+ },
+ "102": {
+  "text": "Eastville Realty · Listing 102 EASTVILLE REALTY 4 bed · 3 bath Ranch — Plum Ridge $429,830 Listing #102 · 2,476 sq ft Bright Ranch in the Plum Ridge school district. Four bedrooms, three baths, 2,476 square feet. Full basement with rec room, two-car garage, electric heat and a wood-burning fireplace. Built about 5 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 102\n- **Square feet:** 2,476\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Plum Ridge\n- **Basement:** Yes, full basement\n- **Price:** $429,830"
+ },
+ "103": {
+  "text": "Eastville Realty · Listing 103 EASTVILLE REALTY 3 bed · 3 bath Ranch — Apple Valley $442,390 Listing #103 · 2,320 sq ft Updated Ranch in the Apple Valley school district. Three bedrooms, three baths, 2,320 square feet. Walk-out basement, three-car garage, oil heat and a wood-burning fireplace. Built about 2 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 103 (the listing number; no street address is provided)\n- **Square feet:** 2,320\n- **Bedrooms:** 3\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — walk-out\n- **Price:** $442,390"
+ },
+ "104": {
+  "text": "Eastville Realty · Listing 104 EASTVILLE REALTY 4 bed · 3 bath Ranch — Apple Valley $503,950 Listing #104 · 2,488 sq ft Updated Ranch in the Apple Valley school district. Four bedrooms, three baths, 2,488 square feet. Finished basement, two-car garage, oil heat and a wood-burning fireplace. Built about 9 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (listing number: 104)\n- **Square feet:** 2,488\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes, finished\n- **Price:** $503,950"
+ },
+ "105": {
+  "text": "Eastville Realty · Listing 105 EASTVILLE REALTY 4 bed · 3 bath Ranch — Apple Valley $490,920 Listing #105 · 2,662 sq ft Spacious Ranch in the Apple Valley school district. Four bedrooms, three baths, 2,662 square feet. Finished lower level, two-car garage, oil heat and a wood-burning fireplace. Built about 6 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 105 (listing number; no street address provided)\n- **Square feet:** 2,662\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — finished lower level\n- **Price:** $490,920"
+ },
+ "106": {
+  "text": "Eastville Realty · Listing 106 EASTVILLE REALTY 4 bed · 3 bath Ranch — Apple Valley $565,120 Listing #106 · 2,847 sq ft Charming Ranch in the Apple Valley school district. Four bedrooms, three baths, 2,847 square feet. Walk-out basement, two-car garage, electric heat and a wood-burning fireplace. Built about 6 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 106\n- **Square feet:** 2,847\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes — walk-out\n- **Price:** $565,120"
+ },
+ "107": {
+  "text": "Eastville Realty · Listing 107 EASTVILLE REALTY 4 bed · 3 bath Ranch — Apple Valley $485,030 Listing #107 · 2,579 sq ft Move-in ready Ranch in the Apple Valley school district. Four bedrooms, three baths, 2,579 square feet. Full basement with rec room, two-car garage, oil heat and a wood-burning fireplace. Built about 7 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** 107\n- **Square feet:** 2,579\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes, full basement\n- **Price:** $485,030"
+ },
+ "108": {
+  "text": "Eastville Realty · Listing 108 EASTVILLE REALTY 4 bed · 3 bath Ranch — Apple Valley $675,030 Listing #108 · 3,222 sq ft Spacious Ranch in the Apple Valley school district. Four bedrooms, three baths, 3,222 square feet. Full basement with rec room, three-car garage, oil heat and a wood-burning fireplace. Built about 1 years ago. Contact the listing office to schedule a showing.",
+  "answer": "- **House number:** Not provided (108 is the listing number)\n- **Square feet:** 3,222\n- **Bedrooms:** 4\n- **Bathrooms:** 3\n- **Style:** Ranch\n- **School district:** Apple Valley\n- **Basement:** Yes, full basement\n- **Price:** $675,030"
+ }
+}
