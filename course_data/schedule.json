@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T13:46:55Z",
+  "generated_at": "2026-10-30T12:46:38Z",
   "source": "canvas",
   "course": {
     "canvas_id": "165126",
@@ -88,13 +88,13 @@
     },
     {
       "name": "Rhythm Portfolio · Week 01",
-      "group": "Rhythm Portfolio",
+      "group": "Cycle 1 Deliverables",
       "kind": "assignment",
       "due_utc": "2026-09-01T03:59:59Z",
       "due_local": "Mon Aug 31, 2026, 11:59 PM EDT",
-      "points": 10.0,
+      "points": 5.0,
       "url": "https://canvas.emory.edu/courses/165126/assignments/1292604",
-      "instructions": "Portfolio Entry 0 — The number you signed\n\nCovers class 1 (Thu 8/27). Canvas text entry. AI off — this is your judgment, not the agent's.\n\nOn Thursday a client asked: what is a fireplace worth in Eastville? An AI agent answered $52,776, and you were asked to sign off on that number before it went into the client memo.\n\nAnswer three things. Short is fine; a sentence each is the target.\n\nWhat you signed. Paste the output of your signature cell exactly as it printed in class — name, Y or N, and your reason. Do not edit it. Signing \"Y\" is not penalized; most of the room did. What matters is that the record is honest.\n\nWhat the $52,776 actually measured. In business English, no jargon: what was the agent really comparing when it compared homes with and without a fireplace?\n\nWhat you would have needed to see to sign. Describe the evidence, table, or comparison that would have let you put your name on a fireplace number with confidence. You don't need to know how to produce it yet.\n\nYou will reopen this entry in Session 10 and rewrite line 3 with a number you computed yourself.\n\nHow the portfolio is graded — read this once, it applies every week: presence and seriousness, never correctness. A crossed-out wrong answer left visible scores higher than a suspiciously clean one. You are graded for doing the thinking, not for being right.\n\n10 — complete and serious: all three lines answered in your own words, signature unedited\n\n5 — present but token or partial\n\n0 — missing\n\nLight weeks (exam week, break weeks) are expected to be thin — submit what the sessions produced."
+      "instructions": "Portfolio Entry 0 — The number you signed\n\nCovers class 1 (Thu 8/27). Canvas text entry. AI off — this is your judgment, not the agent's.\n\nOn Thursday a client asked: what is a fireplace worth in Eastville? An AI agent answered $52,776, and you were asked to sign off on that number before it went into the client memo.\n\nAnswer three things. Short is fine; a sentence each is the target.\n\nWhat you signed. Paste the output of your signature cell exactly as it printed in class — name, Y or N, and your reason. Do not edit it. Signing \"Y\" is not penalized; most of the room did. What matters is that the record is honest.\n\nWhat the $52,776 actually measured. In business English, no jargon: what was the agent really comparing when it compared homes with and without a fireplace?\n\nWhat you would have needed to see to sign. Describe the evidence, table, or comparison that would have let you put your name on a fireplace number with confidence. You don't need to know how to produce it yet.\n\nYou will reopen this entry in Session 10 and rewrite line 3 with a number you computed yourself.\n\nHow the portfolio is graded — read this once, it applies every week: presence and seriousness, never correctness. A crossed-out wrong answer left visible scores higher than a suspiciously clean one. You are graded for doing the thinking, not for being right.\n\n5 — complete and serious: all three lines answered in your own words, signature unedited\n\n3 — present but token or partial\n\n0 — missing\n\nLight weeks (exam week, break weeks) are expected to be thin — submit what the sessions produced."
     },
     {
       "name": "Item F · Adversary Check (Session 2 spec)",
@@ -102,17 +102,17 @@
       "kind": "assignment",
       "due_utc": "2026-09-03T12:00:00Z",
       "due_local": "Thu Sep 3, 2026, 8:00 AM EDT",
-      "points": 10.0,
+      "points": 5.0,
       "url": "https://canvas.emory.edu/courses/165126/assignments/1303925",
       "instructions": "The adversary check. Individual — one submission per student, even though the spec was written in pairs.\n\nPhotograph or retype your pair's spec (§1–6). Prompt an AI:\n\n\"Here is our data spec: [paste §1–6]. Attack it: what would make this comparison unfair? What data are we assuming exists that might not?\"\n\nSubmit one page: the best attack it produced, and your fix — or why you're rejecting the attack. Include the prompt you used and the AI's response (a screenshot or paste is fine).\n\nThe rules: an AI may not write your spec. An AI must attack it. Disclosure is never penalized; non-disclosure is an integrity issue.\n\nUpload a PDF or Word file, or paste your page in the text box. Goes in the portfolio."
     },
     {
       "name": "Rhythm Portfolio · Week 02",
-      "group": "Rhythm Portfolio",
+      "group": "Cycle 1 Deliverables",
       "kind": "assignment",
       "due_utc": "2026-09-07T03:59:00Z",
       "due_local": "Sun Sep 6, 2026, 11:59 PM EDT",
-      "points": 10.0,
+      "points": 5.0,
       "url": "https://canvas.emory.edu/courses/165126/assignments/1292608",
       "instructions": "Rhythm Portfolio — Week 02: The file arrived\n\nThree short entries. Business English, no code. AI is forbidden for this entry. Graded for presence and seriousness, not correctness.\n\nYour §2, repaired. Rewrite the decision line of your spec so it names the decider — who acts on the basement number, doing what differently. (Thursday's discussion; check #3 on the Ask Card.) One or two sentences.\n\nLedger row s3, in your words. What was found, what was fixed, what is still unknown — and for whom. No code words. If your Thursday line said \"the data was dirty,\" this is the rewrite.\n\nThe 111. Your two hypotheses for where three extra rows came from, and which one you would test first and how you would know. Describe the check in plain English; don't write it.\n\nA specific wrong hypothesis scores full marks. A vague right one does not.\n\nType your answers here. No file upload."
     },
@@ -198,13 +198,83 @@
     },
     {
       "name": "Lab 1 · After class — audit the agent",
-      "group": "Rhythm Portfolio",
+      "group": "Cycle 1 Deliverables",
       "kind": "assignment",
       "due_utc": "2026-10-08T14:00:00Z",
       "due_local": "Thu Oct 8, 2026, 10:00 AM EDT",
       "points": 5.0,
       "url": "https://canvas.emory.edu/courses/165126/assignments/1313276",
       "instructions": "You know the answers to Stage B from class. Now find out whether an AI does. AI on. About 15 minutes. Graded on presence; disclosure is never penalized.\n\nCopy everything between the two lines below into your AI tool, with this prompt in front of it:\n\nYou are reviewing an analyst's work for a bank. For each of the two claims, say whether you would sign it and why. Point to the numbers you used.\n\nColumns\n\nprofit: annual profit the bank earned on the customer, in dollars (negative = the bank lost money)\n\nonline: 1 = uses online banking, 0 = does not\n\ntenure: years as a customer\n\nage: bracket code. 1 = under 15, 2 = 15–24, 3 = 25–34, 4 = 35–44, 5 = 45–54, 6 = 55–64, 7 = 65 and older\n\nincome: bracket code. 1 = under $15k, 2 = $15–19k, 3 = $20–29k, 4 = $30–39k, 5 = $40–49k, 6 = $50–74k, 7 = $75–99k, 8 = $100–124k, 9 = $125k and over\n\ndistrict: the bank's code for the customer's region: 1100, 1200 or 1300\n\nIn [6] · CODE\ndf.groupby('online')['profit'].agg(['mean', 'count']).round(2)\n\nOut [6] · OUTPUT\n mean count\nonline \n0 126.52 19858\n1 131.52 2954\n\nClaim 1: Online customers earn $131.52 on average against $126.52 for offline customers. The two groups are about equally profitable, so the bank has no profit reason to care which channel a customer uses.\n\nIn [7] · CODE\ndf.groupby(['age', 'online'])['profit'].agg(['mean', 'count']).round(1)\n\nOut [7] · OUTPUT\n mean count\nage online \n1 0 8.0 501\n 1 -4.3 123\n2 0 55.7 2741\n 1 72.3 775\n3 0 112.0 4439\n 1 143.3 824\n4 0 132.9 4594\n 1 163.3 716\n5 0 141.6 2894\n 1 196.7 305\n6 0 161.0 2144\n 1 172.7 113\n7 0 193.7 2545\n 1 188.9 98\n\nClaim 2: Among customers 65 and older (age bracket 7), online users are less profitable than offline users ($188.9 against $193.7). Recommendation: stop promoting online banking to customers 65 and older."
+    },
+    {
+      "name": "Peer evaluation — cycle 1",
+      "group": "Peer Evaluation",
+      "kind": "assignment",
+      "due_utc": "2026-10-10T03:59:00Z",
+      "due_local": "Fri Oct 9, 2026, 11:59 PM EDT",
+      "points": 5.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1312559",
+      "instructions": "📝 Peer Evaluation Guidelines\n\nPlease take a few minutes to thoughtfully evaluate your teammates’ contributions to the project. Your feedback promotes fairness and recognizes individual effort.\n\nInstructions\n\nUse each student’s official name (as listed on Canvas) when completing the evaluation.\n\nRate every team member, including yourself, on a 1–5 scale:\n\n1 = Minimal contribution\n\n3 = Consistent and satisfactory contribution\n\n5 = Exceptional contribution and leadership\n\nBase ratings on both quality of work and team collaboration.\n\nConfidentiality\n\nAll evaluations are anonymous. Each student will receive only a summary of feedback, not individual ratings. 🔒\n\nExample\nFirstname Lastname: 4\nFirstname Lastname: 5"
+    },
+    {
+      "name": "Team memo — what we tell our decider",
+      "group": "Cycle 1 Deliverables",
+      "kind": "assignment",
+      "due_utc": "2026-10-10T03:59:00Z",
+      "due_local": "Fri Oct 9, 2026, 11:59 PM EDT",
+      "points": 20.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1312557",
+      "instructions": "Objective\n\nIn session 2 your team wrote a sentence with the blanks empty: \"A ___ adds $___, give or take $___, for otherwise-similar homes.\" You can now fill it in, and say what it can and cannot be used for.\n\nThis memo is your team's answer for cycle 1. It is written to one reader: the buyer, the seller, or the listing agent your team chose. Your reader has not seen your notebook and does not read code. Write it so that you would sign every sentence in it.\n\nInstructions\n\nLength: one page, plus one chart. Most of what you need is already in your team ledger. Choose and shorten; do not start over.\n\nStart with a \"To\" line: who your reader is, and what decision they are making.\n\nThen write these five parts, in this order, using these headings.\n\nThe question. One sentence, in business words.\n\nThe answers. Four numbers: the basement, the fireplace, one square foot, and Apple Valley. For each one, give:\n\nthe number, or a range if it changes from model to model\n\nits give or take (the interval)\n\nthe words \"for otherwise-similar homes\"\n\nthe model it comes from\n\nIf a number changes across the four models from session 10, give the range, say which model you would defend, and say why. Your reason must be a fact about the data, such as how many homes are missing an age. It cannot be \"this model gives the answer we like.\"\n\nWhat we checked. Three data checks, and what you did about each: the duplicate rows (111 rows became 108), the prices stored as text, and the 11 homes with no age.\n\nWhat your reader should not do with these numbers. Be specific. Name an action, a price, or a range of home sizes. \"Results may vary\" does not count.\n\nWhat we would want next. The data that would answer what part 4 says this file cannot.\n\nBelow the memo, add two things.\n\nThe chart. The basement across the four models (the chart from session 10). Under it, write your filled-in sentence as the caption.\n\nThe AI challenge. Paste parts 2 and 4 into an AI tool and ask: \"You are our [buyer / seller / listing agent]. Where does this memo tell you more than the analysis shows?\" Then write one line: the strongest objection it raised, and what you changed because of it.\n\nBefore Thursday. Thursday's class (10/08) is working time for this memo. Come with a draft of parts 2 and 4.\n\nAI policy\n\nYou must use AI for the AI challenge above. You may also use AI to help you write, as long as you disclose it: one line saying what AI helped with, and what you checked before keeping it. Disclosure is never penalized. Not disclosing is an integrity issue.\n\nWhat to submit\n\nOne PDF per team, containing:\n\nyour team number and all names, at the top\n\nthe memo: the \"To\" line and the five parts\n\nthe chart with its caption\n\nthe AI challenge line\n\nthe disclosure line\n\nGrading (20 points)\n\nThe memo is graded on the quality of the answer, not on completion.\n\nWhat is graded\nWhat earns the points\nPoints\n\nThe \"To\" line and part 1\nName a reader and a decision\n2\n\nPart 2: the answers\nEvery number has its give or take, the words \"for otherwise-similar homes,\" and its model. A number that changes is given as a range, with the model you defend and a reason from the data\n7\n\nPart 3: what we checked\nNames the three data checks and what you did\n3\n\nParts 4 and 5: what your reader should not do, and what we would want next\nPart 4 is specific to your reader. Part 5 names the data that would answer what part 4 says this file cannot\n5\n\nThe chart\nCaptioned with your filled-in sentence\n2\n\nThe AI challenge line and the disclosure line\nBoth are there\n1\n\nTotal\n\n20"
+    },
+    {
+      "name": "S16 homework — One year of Chicago food inspections",
+      "group": "Cycle 2 Deliverables",
+      "kind": "quiz",
+      "due_utc": "2026-10-27T14:00:00Z",
+      "due_local": "Tue Oct 27, 2026, 10:00 AM EDT",
+      "points": 10.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1316754",
+      "instructions": "Objective\n\nPull a whole year of data from a real public API, prove that you have all of it, and sign one number with a definition. The City of Chicago publishes every food inspection through an API. A health-policy analyst asks: what share of Chicago food inspections in 2025 ended in a fail?\n\nInstructions\n\nDownload the starter notebook: s16_homework_chicago.ipynb (https://canvas.emory.edu/courses/165126/files/17200922). Open it in Colab (File → Upload notebook).\n\nRun the cells in order. The notebook tells you which Canvas question each part answers.\n\nAnswer the questions below. Number answers are exact whole numbers.\n\nIndividual work. Due Tue 10/27, 10:00 AM, before class.\n\nAI policy\n\nAI is on, with disclosure. If you use AI, tell us in the last question what you asked it and how you checked its answer. Disclosure is never penalized.\n\nGrading\n\n10 points, graded for correctness. Q1–Q7: 1 point each. Q8: 3 points (a clear definition, and a rate that matches it). Q9: no points."
+    },
+    {
+      "name": "Cycle 2 group formation",
+      "group": "Participation",
+      "kind": "assignment",
+      "due_utc": "2026-10-28T03:59:00Z",
+      "due_local": "Tue Oct 27, 2026, 11:59 PM EDT",
+      "points": 5.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1316287",
+      "instructions": "Cycle 2 team formation — five students per team.\n\nClick People (https://canvas.emory.edu/courses/165126/users) in the left course menu, then open the Groups tab and create or join a group under Student Groups.\n\nIf you already have two or more teammates:\n\none of you creates your group under Student Groups and every member signs up into it.\n\nThen submit the full names of all members as text.\n\nIf you have no preference: do not create or join a group.\n\nJust submit the text no preference and you will be placed on a team.\n\nDeadline: end of day, Tuesday October 27. Students without a team after the deadline are placed at random.\n\nDo one or the other: join a group and submit your members' names, or submit no preference. Students who do neither will not receive the participation grade."
+    },
+    {
+      "name": "S18 homework — Peachtree orders, counted once",
+      "group": "Rhythm Portfolio",
+      "kind": "quiz",
+      "due_utc": "2026-11-03T15:00:00Z",
+      "due_local": "Tue Nov 3, 2026, 10:00 AM EST",
+      "points": 10.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1318203",
+      "instructions": "Objective\n\nUse SQL to check numbers from a three-table join before you sign them. The database is Peachtree Provisions, a food supplier: customers (300 rows) → orders (2,000) → order_items (6,100), plus products (60). Each order has 1 or more items.\n\nInstructions\n\nOpen the SQL Sandbox: lawnhero.github.io/bus390-sql (https://lawnhero.github.io/bus390-sql/). Select the Peachtree Provisions dataset.\n\nFor each question, write a query and run it in the sandbox.\n\nNumber answers are exact whole numbers, except Q5 (dollars, two decimal places).\n\nQ7 uses the loan database from class. Run its query in your s18 notebook.\n\nIndividual work. Due Tue 11/03, 10:00 AM, before class.\n\nAI policy\n\nAI is on, with disclosure. Every query must run in the sandbox (or, for Q7, in your notebook). If you use AI, tell us in the last question what you asked it and how you checked its answer. Disclosure is never penalized.\n\nGrading\n\n10 points, graded for correctness. Q1: 1 · Q2: 1 · Q3: 2 · Q4: 1 · Q5: 2 · Q6: 1 · Q7: 2. Q8 and Q9: no points."
+    },
+    {
+      "name": "Cycle 2 · Team scope — your question, your file",
+      "group": "Cycle 2 Deliverables",
+      "kind": "assignment",
+      "due_utc": "2026-11-05T04:59:00Z",
+      "due_local": "Wed Nov 4, 2026, 11:59 PM EST",
+      "points": 10.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1318262",
+      "instructions": "Objective\n\nOn Thursday 11/05 each team gets a go or a no-go on its project. To get a go, you need two things: a question that passes the Ask Card, and a file that passes the gate. This homework is where you find out, before Thursday, which checks you pass. A no-go is not a grade penalty.\n\nYou may start from a file you found and work out what decision it could inform, or start from a question and go find the file. Either way, the card is filled in order 1 to 5, and the gate is answered with the file open.\n\nInstructions\n\nSubmit one text entry per team, with three parts. Use the Ask Card (https://canvas.emory.edu/courses/165126/pages/the-ask-card-field-guide-page-1), right-hand column.\n\nPart 1 — The Ask Card, filled forward\n\nOUTCOME — the exact column name. Say whether it is 1/0 or a number. Say where the value comes from.\n\nUNIT — one row = one what?\n\nDECIDER — who acts, on what day, before the outcome is known. Write the cost of a wrong call in each direction: one sentence for a false yes, one sentence for a false no.\n\nFEATURES — a table with two columns: feature and known on decision day? how do you know. Strike any feature that is recorded after the decision.\n\nSENTENCE — \"For each ___, we predict ___ well enough that ___ can ___.\" For a number outcome: \"For each ___, we predict ___ within ___, well enough that ___ can ___.\"\n\nPart 2 — The gate, with proof\n\nThe source: a link, who collected the data, and how your team got the file (download, API, or scraped).\n\nPaste the printed output of these three lines, run on your file:\ndf.shape\ndf.columns\ndf['outcome column'].value_counts() (for a number outcome, use .describe())\n\nOne sentence: is one row one of your unit? If not, say what one row is.\n\nOne sentence: is every column you named in Part 1 in this file?\n\nSize: a downloaded file needs at least 2,000 rows. A file your team scraped or collected needs at least 500 rows.\n\nPart 3 — The AI attack\n\nPaste Parts 1 and 2 into an agent with this prompt: \"Attack this plan. Which feature could leak the outcome? Which column do we assume exists but does not? Who would actually act on this prediction?\" Write the best attack it found and what you changed.\n\nAI policy\n\nAI may not propose your question. AI may help you read your file (Part 2). AI must attack your draft (Part 3). Say what it did.\n\nGrading\n\n10 points, one score for the team.\n\nPart 1 — card complete; every blank is a column name or a person, not a word like \"quality\"\n4\n\nPart 2 — gate proof present and read correctly\n4\n\nPart 3 — attack and fix\n2\n\nAn honest \"we fail check N, because …\" earns full credit for that part."
+    },
+    {
+      "name": "Exam 1 · Fernbank IMAX — audit the agent",
+      "group": "Exam 1",
+      "kind": "quiz",
+      "due_utc": null,
+      "due_local": null,
+      "points": 100.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1315256",
+      "instructions": "Objective\n\nFernbank's IMAX theater has 65 weeks of attendance records. The director asked an AI agent three questions: should the adult ticket go back to $6.00? Is advertising worth the money? How much do the weather and the school calendar matter for planning staff? The agent's work is inside the exam. Your job is to decide what you would sign.\n\nInstructions\n\nWork alone. Read the code and the output, then answer the questions. For each claim: your verdict, then your reason in one or two sentences. In your reason, name the line of code or the row of output you used. Some claims are wrong. Some are fine, and signing those is part of the job.\n\nWhen the agent removes weeks, say what you think of that at the claim where it happens. After that, judge each later claim as a claim about the weeks that are left. The last part of the exam tells you when the removed weeks come back into play.\n\nThe two \"Notes\" lines printed under the model output are standard and are not a reason on their own.\n\nThe printed sheet on your desk is a copy of the code and output, so you do not have to scroll.\n\nColumns\n\nweek: the week (date of the Tuesday)\n\nattendance: total paid attendance at the IMAX that week\n\nadult: price of an adult ticket that week, in dollars\n\nschool: number of days that week that local schools were in session (0 to 5; a half day counts as 0.5)\n\nsnow: 1 = significant snow or ice that week, 0 = none\n\ntemp: average temperature that week, in °F\n\nsunshine: sunshine that week, as a percent of the possible hours\n\nchristmas: 1 = the week of Christmas, 0 = any other week\n\nadvertising: Fernbank's advertising spending that week, in dollars\n\nAI policy\n\nAI off. No notes, no other tabs.\n\nGrading\n\n100 points. Verdict and reason are scored separately; a reason earns points only when its verdict is right.\n\nThe agent's code and output appear inside the exam, part by part. Blue bar = code the agent wrote. Grey bar = what the code printed."
     },
     {
       "name": "Lab 1 · Read-back",
@@ -247,6 +317,26 @@
       "instructions": "A regional bank asked an AI agent: are customers who use online banking more profitable? The agent's work is below, one stage at a time. Your job is to decide what you would sign.\n\nAI off. Work alone. Graded on presence, not on whether you are right.\n\nColumns\n\nprofit: annual profit the bank earned on the customer, in dollars (negative = the bank lost money)\n\nonline: 1 = uses online banking, 0 = does not\n\ntenure: years as a customer\n\nage: bracket code. 1 = under 15, 2 = 15–24, 3 = 25–34, 4 = 35–44, 5 = 45–54, 6 = 55–64, 7 = 65 and older\n\nincome: bracket code. 1 = under $15k, 2 = $15–19k, 3 = $20–29k, 4 = $30–39k, 5 = $40–49k, 6 = $50–74k, 7 = $75–99k, 8 = $100–124k, 9 = $125k and over\n\ndistrict: the bank's code for the customer's region: 1100, 1200 or 1300\n\nStage C: the model\n\nSet the removed customers aside. You saw in Stage A what the agent did to them. From here on, judge each claim as a claim about the 22,812 customers the agent kept.\n\nBlue bar = code the agent wrote. Grey bar = what the code printed.\n\nIn [8] · CODE\ny = df['profit']\nX = pd.get_dummies(df[['online', 'tenure', 'district', 'age', 'income']],\n columns=['age', 'income'], drop_first=True, dtype=int)\nX = sm.add_constant(X)\nmodel = sm.OLS(y, X).fit()\nprint(model.summary())\n\nOut [8] · OUTPUT\n OLS Regression Results \n==============================================================================\nDep. Variable: profit R-squared: 0.064\nModel: OLS Adj. R-squared: 0.064\nMethod: Least Squares F-statistic: 92.33\nDate: Mon, 05 Oct 2026 Prob (F-statistic): 0.00\nTime: 23:06:16 Log-Likelihood: -1.6038e+05\nNo. Observations: 22812 AIC: 3.208e+05\nDf Residuals: 22794 BIC: 3.209e+05\nDf Model: 17 \nCovariance Type: nonrobust \n==============================================================================\n coef std err t P>|t| [0.025 0.975]\n------------------------------------------------------------------------------\nconst -64.2796 47.696 -1.348 0.178 -157.767 29.208\nonline 17.6618 5.496 3.214 0.001 6.890 28.433\ntenure 4.0900 0.235 17.370 0.000 3.628 4.552\ndistrict 0.0170 0.038 0.443 0.658 -0.058 0.092\nage_2 30.3934 11.934 2.547 0.011 7.002 53.785\nage_3 69.7286 11.712 5.954 0.000 46.772 92.685\nage_4 74.1214 11.796 6.284 0.000 51.001 97.242\nage_5 79.1232 12.253 6.458 0.000 55.107 103.139\nage_6 99.5352 12.707 7.833 0.000 74.628 124.442\nage_7 135.2707 12.530 10.796 0.000 110.711 159.830\nincome_2 2.4799 11.645 0.213 0.831 -20.346 25.305\nincome_3 14.0313 8.345 1.681 0.093 -2.325 30.388\nincome_4 11.5613 8.552 1.352 0.176 -5.201 28.323\nincome_5 17.4314 8.526 2.044 0.041 0.720 34.143\nincome_6 42.9946 7.406 5.805 0.000 28.478 57.511\nincome_7 64.5857 8.081 7.992 0.000 48.746 80.425\nincome_8 82.8678 9.228 8.980 0.000 64.781 100.954\nincome_9 152.1563 8.213 18.527 0.000 136.059 168.254\n==============================================================================\nOmnibus: 11707.795 Durbin-Watson: 1.987\nProb(Omnibus): 0.000 Jarque-Bera (JB): 86604.074\nSkew: 2.385 Prob(JB): 0.00\nKurtosis: 11.268 Cond. No. 3.21e+04\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n[2] The condition number is large, 3.21e+04. This might indicate that there are\nstrong multicollinearity or other numerical problems.\n\nAgent, claim 1: For otherwise-similar customers, online users are worth about $18 more a year, give or take $11.\n\nAgent, claim 2: Each extra year with the bank is worth about $4 in annual profit, for otherwise-similar customers.\n\nAgent, claim 3: District has no effect on profit: the coefficient is $0.02 and its interval includes zero."
     },
     {
+      "name": "Lab 1 · Team round 2 — district repaired",
+      "group": "Rhythm Portfolio",
+      "kind": "assignment",
+      "due_utc": null,
+      "due_local": null,
+      "points": 3.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1313991",
+      "instructions": "Objective\n\nThe agent's district claim was wrong. Say what the bank can be told about district, now that the model is repaired.\n\nInstructions\n\nOne submission per team, from one laptop. Read the repaired model below, then answer as a team.\n\nAI policy\n\nAI off.\n\nGrading\n\nPresence, not whether you are right.\n\nWhat changed. District is a code for a region: 1100, 1200 or 1300. The agent entered it as a number. Here it is entered as dummies, the same way as age and income. Nothing else in the model changed. It still uses the 22,812 customers the agent kept.\n\nBlue bar = code. Grey bar = what the model printed for these rows.\n\nIn [9] · CODE\ny = df['profit']\nX = pd.get_dummies(df[['online', 'tenure', 'district', 'age', 'income']],\n columns=['district', 'age', 'income'], drop_first=True, dtype=int)\nX = sm.add_constant(X)\nmodel = sm.OLS(y, X).fit()\n\nOut [9] · OUTPUT (four rows; the age and income rows are not shown)\n coef [0.025 0.975]\nonline 17.03 6.25 27.80\ntenure 4.09 3.63 4.55\ndistrict_1200 18.64 6.14 31.14\ndistrict_1300 7.10 -8.11 22.30\n\nFor comparison, the agent's model had: online 17.66 (6.89 to 28.43), tenure 4.09 (3.63 to 4.55), district 0.02 (-0.06 to 0.09)."
+    },
+    {
+      "name": "Lab 1 · Team round on Stage C",
+      "group": "Rhythm Portfolio",
+      "kind": "assignment",
+      "due_utc": null,
+      "due_local": null,
+      "points": 3.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1313972",
+      "instructions": "Objective\n\nAgree on one verdict per claim for Stage C, before anyone sees the answers.\n\nInstructions\n\nOne submission per team, from one laptop. For each claim, first count how many of you signed it on Tuesday. Then discuss and choose one team verdict. In your reason, name the line of code or the row of output your verdict rests on.\n\nAI policy\n\nAI off.\n\nGrading\n\nPresence, not whether you are right.\n\nA regional bank asked an AI agent: are customers who use online banking more profitable? This is the agent's Stage C work, the same as on Tuesday.\n\nColumns\n\nprofit: annual profit the bank earned on the customer, in dollars (negative = the bank lost money)\n\nonline: 1 = uses online banking, 0 = does not\n\ntenure: years as a customer\n\nage: bracket code. 1 = under 15, 2 = 15–24, 3 = 25–34, 4 = 35–44, 5 = 45–54, 6 = 55–64, 7 = 65 and older\n\nincome: bracket code. 1 = under $15k, 2 = $15–19k, 3 = $20–29k, 4 = $30–39k, 5 = $40–49k, 6 = $50–74k, 7 = $75–99k, 8 = $100–124k, 9 = $125k and over\n\ndistrict: the bank's code for the customer's region: 1100, 1200 or 1300\n\nStage C: the model\n\nSet the removed customers aside. You saw in Stage A what the agent did to them. Judge each claim as a claim about the 22,812 customers the agent kept.\n\nBlue bar = code the agent wrote. Grey bar = what the code printed.\n\nIn [8] · CODE\ny = df['profit']\nX = pd.get_dummies(df[['online', 'tenure', 'district', 'age', 'income']],\n columns=['age', 'income'], drop_first=True, dtype=int)\nX = sm.add_constant(X)\nmodel = sm.OLS(y, X).fit()\nprint(model.summary())\n\nOut [8] · OUTPUT\n OLS Regression Results \n==============================================================================\nDep. Variable: profit R-squared: 0.064\nModel: OLS Adj. R-squared: 0.064\nMethod: Least Squares F-statistic: 92.33\nDate: Mon, 05 Oct 2026 Prob (F-statistic): 0.00\nTime: 23:06:16 Log-Likelihood: -1.6038e+05\nNo. Observations: 22812 AIC: 3.208e+05\nDf Residuals: 22794 BIC: 3.209e+05\nDf Model: 17 \nCovariance Type: nonrobust \n==============================================================================\n coef std err t P>|t| [0.025 0.975]\n------------------------------------------------------------------------------\nconst -64.2796 47.696 -1.348 0.178 -157.767 29.208\nonline 17.6618 5.496 3.214 0.001 6.890 28.433\ntenure 4.0900 0.235 17.370 0.000 3.628 4.552\ndistrict 0.0170 0.038 0.443 0.658 -0.058 0.092\nage_2 30.3934 11.934 2.547 0.011 7.002 53.785\nage_3 69.7286 11.712 5.954 0.000 46.772 92.685\nage_4 74.1214 11.796 6.284 0.000 51.001 97.242\nage_5 79.1232 12.253 6.458 0.000 55.107 103.139\nage_6 99.5352 12.707 7.833 0.000 74.628 124.442\nage_7 135.2707 12.530 10.796 0.000 110.711 159.830\nincome_2 2.4799 11.645 0.213 0.831 -20.346 25.305\nincome_3 14.0313 8.345 1.681 0.093 -2.325 30.388\nincome_4 11.5613 8.552 1.352 0.176 -5.201 28.323\nincome_5 17.4314 8.526 2.044 0.041 0.720 34.143\nincome_6 42.9946 7.406 5.805 0.000 28.478 57.511\nincome_7 64.5857 8.081 7.992 0.000 48.746 80.425\nincome_8 82.8678 9.228 8.980 0.000 64.781 100.954\nincome_9 152.1563 8.213 18.527 0.000 136.059 168.254\n==============================================================================\nOmnibus: 11707.795 Durbin-Watson: 1.987\nProb(Omnibus): 0.000 Jarque-Bera (JB): 86604.074\nSkew: 2.385 Prob(JB): 0.00\nKurtosis: 11.268 Cond. No. 3.21e+04\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n[2] The condition number is large, 3.21e+04. This might indicate that there are\nstrong multicollinearity or other numerical problems.\n\nAgent, claim 1: For otherwise-similar customers, online users are worth about $18 more a year, give or take $11.\n\nAgent, claim 2: Each extra year with the bank is worth about $4 in annual profit, for otherwise-similar customers.\n\nAgent, claim 3: District has no effect on profit: the coefficient is $0.02 and its interval includes zero."
+    },
+    {
       "name": "Prediction card — Session 10",
       "group": "Rhythm Portfolio",
       "kind": "assignment",
@@ -267,6 +357,46 @@
       "instructions": "Screens down.\n\nOne card per individual— both names in your answer to question 3.\n\nGraded for presence, not correctness."
     },
     {
+      "name": "Prediction card — Session 15",
+      "group": "Rhythm Portfolio",
+      "kind": "assignment",
+      "due_utc": null,
+      "due_local": null,
+      "points": 3.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1316192",
+      "instructions": "AI off. Your Ask Card open — on paper, or here: The Ask Card — Field Guide, page 1 (https://canvas.emory.edu/courses/165126/pages/the-ask-card-field-guide-page-1) (opens in a new tab). Other screens down.\n\nOne card per student. Graded for presence, not correctness.\n\n10 minutes. We start together."
+    },
+    {
+      "name": "Prediction card — Session 16",
+      "group": "Rhythm Portfolio",
+      "kind": "assignment",
+      "due_utc": null,
+      "due_local": null,
+      "points": 3.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1316668",
+      "instructions": "AI off. Screens down, except this card.\n\nOne card per student. Graded for presence, not correctness.\n\n10 minutes. We start together."
+    },
+    {
+      "name": "Prediction card — Session 17",
+      "group": "Rhythm Portfolio",
+      "kind": "assignment",
+      "due_utc": null,
+      "due_local": null,
+      "points": 3.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1317590",
+      "instructions": "AI is off. Keep your screen down. Open only this card.\n\nDo one card for each student. The grade is for presence, not for correct answers.\n\nYou have 10 minutes. We start together."
+    },
+    {
+      "name": "Prediction card — Session 18",
+      "group": "Rhythm Portfolio",
+      "kind": "assignment",
+      "due_utc": null,
+      "due_local": null,
+      "points": 3.0,
+      "url": "https://canvas.emory.edu/courses/165126/assignments/1318105",
+      "instructions": "AI is off. Keep your screen down. Open only this card.\n\nDo one card for each student. The grade is for presence, not for correct answers.\n\nYou have 10 minutes. We start together."
+    },
+    {
       "name": "Prediction card — Session 3",
       "group": "Rhythm Portfolio",
       "kind": "quiz",
@@ -279,7 +409,7 @@
     {
       "name": "Prediction card — Session 4",
       "group": "Rhythm Portfolio",
-      "kind": "quiz",
+      "kind": "assignment",
       "due_utc": null,
       "due_local": null,
       "points": 3.0,
@@ -359,12 +489,28 @@
       "url": "https://canvas.emory.edu/courses/165126/pages/isom352-homepage"
     },
     {
+      "title": "Lab 1: Stage C, with suggested answers",
+      "url": "https://canvas.emory.edu/courses/165126/pages/lab-1-stage-c-with-suggested-answers"
+    },
+    {
+      "title": "Lab 1: Stages A and B, with suggested answers",
+      "url": "https://canvas.emory.edu/courses/165126/pages/lab-1-stages-a-and-b-with-suggested-answers"
+    },
+    {
       "title": "Notes, scripts, and recordings",
       "url": "https://canvas.emory.edu/courses/165126/pages/notes-scripts-and-recordings"
     },
     {
+      "title": "Practice for Exam 1: the store file, with suggested answers",
+      "url": "https://canvas.emory.edu/courses/165126/pages/practice-for-exam-1-the-store-file-with-suggested-answers"
+    },
+    {
       "title": "Python and VS Code",
       "url": "https://canvas.emory.edu/courses/165126/pages/python-and-vs-code"
+    },
+    {
+      "title": "s15 · The loan file",
+      "url": "https://canvas.emory.edu/courses/165126/pages/s15-star-the-loan-file"
     },
     {
       "title": "TA Team",
@@ -376,6 +522,76 @@
     }
   ],
   "announcements": [
+    {
+      "title": "Appointment sign-ups — next week is invite-only",
+      "posted_utc": "2026-10-29T22:36:21Z",
+      "posted_local": "Thu Oct 29, 2026, 6:36 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1416944",
+      "body": "Hi everyone — a quick heads-up about the appointment slots.\nWeek of Nov 2 — \"352 Midterm Review\": these slots are reserved for a specific group of students I'll be reaching out to directly. If you've signed up for this week and haven't heard from me, please release your slot so those students can book it.\nWeek of Nov 9 — \"352 Midterm Open\": this week is open to everyone — please sign up there instead.\nThanks for helping keep this fair!"
+    },
+    {
+      "title": "Class 18: Where did the 2019 book lose money?",
+      "posted_utc": "2026-10-29T19:30:42Z",
+      "posted_local": "Thu Oct 29, 2026, 3:30 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1416854",
+      "body": "Class 18: Where did the 2019 book lose money?\nThe 2019 book has 20,000 loans and $6.64B, and 24.6% of them defaulted. One query claimed EQUI-scored loans default 99.95% of the time. The numbers were right — but a JOIN row is a match, not a loan: 25,547 rows for 20,000 loans, and a column that predicts the outcome almost perfectly is usually a leaked label. A join's proof line is COUNT(DISTINCT id).\nNext class (Tue 11/03): the flat file, and the first model.\nSlides and recording are on the notes and recordings page (https://canvas.emory.edu/courses/165126/pages/notes-scripts-and-recordings).\nAfter class assignments\n\nS18 homework — Peachtree orders, counted once (https://canvas.emory.edu/courses/165126/assignments/1318203) — due Tue 11/03, 10:00 AM. Run SQL in the sandbox and check the join counts before you sign them.\nCycle 2 · Team scope — your question, your file (https://canvas.emory.edu/courses/165126/assignments/1318262) — due Wed 11/04, 11:59 PM. One per team — your question, your file, and the Ask Card sentence."
+    },
+    {
+      "title": "Class 17: The row count was right. The table wasn't.",
+      "posted_utc": "2026-10-27T20:11:35Z",
+      "posted_local": "Tue Oct 27, 2026, 4:11 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1415966",
+      "body": "Class 17: The row count was right. The table wasn't.\nThe API was down, so the agent read all 108 listing pages and had an LLM turn each into a row. The proof line passed — 108 = 108. But a row count can't see inside a cell: one misread price moved the gap $125, and one unwritten definition of \"basement\" moved it $22,000. Rules you can read; a model you can't.\nNext class (Thu 10/29): the loan file — who defaults?\nSlides and recording are on the notes and recordings page (https://canvas.emory.edu/courses/165126/pages/notes-scripts-and-recordings).\nAfter class assignments\n\nCycle 2 group formation (https://canvas.emory.edu/courses/165126/assignments/1316287) — due Tue 10/27, 11:59 PM. Five per team; no preference → submit \"no preference\"."
+    },
+    {
+      "title": "Class 16: The number was right. The table was too small.",
+      "posted_utc": "2026-10-22T20:56:10Z",
+      "posted_local": "Thu Oct 22, 2026, 4:56 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1414163",
+      "body": "Class 16: The number was right. The table was too small.\nThe agent pulled Eastville from the broker's API and signed a $6,220 basement discount. The code ran clean every time — but it had pulled only page 1: 16 of 108 homes. Pulling every page moved the gap to $65,160. A correct number from a file that isn't the world isn't a claim about the world.\nNext class (Tue 10/27): SQL — the same questions, a different language.\nSlides and recording are on the notes and recordings page (https://canvas.emory.edu/courses/165126/pages/notes-scripts-and-recordings).\nAfter class assignments\n\nCycle 2: Ask — Your Individual Question (https://canvas.emory.edu/courses/165126/discussion_topics/1413012) — due Sun 10/25. Add to your post: where your data comes from (a link) and one audit question (check 1, 2, or 3).\nS16 homework — One year of Chicago food inspections (https://canvas.emory.edu/courses/165126/assignments/1316754) — due Tue 10/27, 10:00 AM. Pull a full year of Chicago food inspections and sign the fail rate.\nCycle 2 group formation (https://canvas.emory.edu/courses/165126/assignments/1316287) — due Tue 10/27, 11:59 PM. Five per team; no preference → submit \"no preference\"."
+    },
+    {
+      "title": "Class 15: Why do most projects die before they start?",
+      "posted_utc": "2026-10-20T18:13:08Z",
+      "posted_local": "Tue Oct 20, 2026, 2:13 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1413017",
+      "body": "Class 15: Why do most projects die before they start?\nThree teams wrote a project brief last year. Two of the three died. Today you read those briefs and found the exact check each one failed — the Ask Card's five checks, plus the gate. From now on that card is how you audit your own question before it becomes a project.\nNext class (Thu 10/22): team meeting. Bring your question's sentence.\nSlides and recording are on the notes and recordings page (https://canvas.emory.edu/courses/165126/pages/notes-scripts-and-recordings). The Ask Card field guide (https://canvas.emory.edu/courses/165126/pages/the-ask-card-field-guide-page-1) and the loan file (https://canvas.emory.edu/courses/165126/pages/s15-star-the-loan-file) are on Canvas.\nAfter class assignments\n\nCycle 2: Ask — Your Individual Question (https://canvas.emory.edu/courses/165126/discussion_topics/1413012) — post your question as a comment. Due Sun 10/25, sections 1–4, no file yet.\nCycle 2 group formation (https://canvas.emory.edu/courses/165126/assignments/1316287) — due Tue 10/27, 11:59 PM. Five per team; no preference → submit \"no preference\"."
+    },
+    {
+      "title": "📝 Exam Today (Thu 10/15) — Canvas Quiz + LockDown Browser",
+      "posted_utc": "2026-10-15T04:54:22Z",
+      "posted_local": "Thu Oct 15, 2026, 12:54 AM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1411186",
+      "body": "A reminder that today's exam (Thursday, October 15) will be taken on Canvas as a quiz, using Respondus LockDown Browser. 🔒\n\nPlease make sure to bring your electronic device (laptop) — you'll need it to access the quiz. 💻\n\nInstall LockDown Browser before you arrive, and update it if prompted.\n\nClose other applications before starting.\n\nArrive a few minutes early so we can start on time.\n\nGood luck — you've got this! 💪"
+    },
+    {
+      "title": "📅 Midterm Office Hours — Wed 10/14 · 10:00 AM–1:30 PM · GBS 415",
+      "posted_utc": "2026-10-14T00:42:02Z",
+      "posted_local": "Tue Oct 13, 2026, 8:42 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1410650",
+      "body": "I'll be holding office hours this Wednesday, October 14, from 10:00 AM to 1:30 PM in GBS 415, mainly for midterm questions. 🗓️\n\nStop by with anything you want to review before the midterm — no appointment needed, just drop in. 👋"
+    },
+    {
+      "title": "Practice for Exam 1: one more file to audit",
+      "posted_utc": "2026-10-09T04:32:32Z",
+      "posted_local": "Fri Oct 9, 2026, 12:32 AM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1409628",
+      "body": "So far you have worked through the same process on two different files:\n\nReal estate (Eastville). The example we used in class to learn the process. The question: what is a basement worth?\n\nRetail banking (Lab 1). The example you practised on. The question: are online customers more profitable? Suggested answers: Stages A and B (https://canvas.emory.edu/courses/165126/pages/lab-1-stages-a-and-b-with-suggested-answers) and Stage C (https://canvas.emory.edu/courses/165126/pages/lab-1-stage-c-with-suggested-answers).\n\nHere is a third, for practice before the exam:\n\nStore staffing. A convenience-store chain asks: do stores whose managers and crew have more experience earn more profit?\n\nThe file and the business are new. The work is the same: an AI agent has done the analysis, and you decide which of its claims you would sign.\n\nPractice quiz: Practice for Exam 1 · Audit the agent on the store file (https://canvas.emory.edu/courses/165126/quizzes/297317). Nine claims. Give yourself 30 minutes, work alone, and keep AI off for your first attempt. It is not graded and you can take it more than once.\n\nSuggested answers: The store file, with suggested answers (https://canvas.emory.edu/courses/165126/pages/practice-for-exam-1-the-store-file-with-suggested-answers). Each answer is hidden until you open it. Take the quiz first, then compare your reasons with ours.\n\nExam 1 is Thursday, October 15, in class: this same task, alone, with no AI.\n\nWenjun Gu, PhD"
+    },
+    {
+      "title": "Class 13: Which claim would your team sign?",
+      "posted_utc": "2026-10-08T21:21:32Z",
+      "posted_local": "Thu Oct 8, 2026, 5:21 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1409569",
+      "body": "Class 13: Which claim would your team sign?\n\nThe agent made three claims about the model; today your team decided which to sign — then saw the answers and spent twenty minutes on the memo. The sharpest find: \"district has no effect\" wasn't a finding, it was a coding choice. Fed in as one number, district washed out; as dummies, district 1200 is worth about $19. Two in three of you could read the line; one in four used it. Reading the code isn't checking it.\n\nNext class (Thu 10/15): Exam 1.\n\nNotes, scripts, and the recording are on the notes and recordings page (https://canvas.emory.edu/courses/165126/pages/notes-scripts-and-recordings).\n\nAfter class assignments\n\nPeer evaluation — cycle 1 (https://canvas.emory.edu/courses/165126/assignments/1312559) — due Fri 10/9, 12:45 PM.\n\nTeam memo — what we tell our decider (https://canvas.emory.edu/courses/165126/assignments/1312557) — due Fri 10/9, 11:59 PM. One PDF per team.\n\nCycle 1 Ledger — the closer (https://canvas.emory.edu/courses/165126/assignments/1303909) — due Sun 10/11, 11:59 PM."
+    },
+    {
+      "title": "Lab 1 practice page: Stages A and B, with suggested answers",
+      "posted_utc": "2026-10-08T00:34:39Z",
+      "posted_local": "Wed Oct 7, 2026, 8:34 PM EDT",
+      "url": "https://canvas.emory.edu/courses/165126/discussion_topics/1409125",
+      "body": "Several of you asked for the answers to Tuesday's lab. Stages A and B are now on a practice page: Lab 1: Stages A and B, with suggested answers (https://canvas.emory.edu/courses/165126/pages/lab-1-stages-a-and-b-with-suggested-answers).\n\nThe page has the agent's code, its output, its five claims, and all 14 questions. Each suggested answer is hidden until you open it.\n\nIf you missed Tuesday's class, do this before Thursday. Set aside about 30 minutes, keep AI off, and answer each question before you open its answer. That is the closest you can get to the lab itself. The page is for practice only. The in-class quizzes are closed and cannot be made up.\n\nIf you were in class, use the page to check your reasoning, not only your verdicts. A right verdict for the wrong reason will not hold up on the exam.\n\nStage C is not on this page. Your team works on it together on Thursday, and its answers will be posted after that.\n\nExam 1 is Thursday 10/15. It is the same task: an agent's notebook, and you decide what you would sign, alone and without AI."
+    },
     {
       "title": "Class 12: Are online customers more profitable?",
       "posted_utc": "2026-10-06T18:43:55Z",
