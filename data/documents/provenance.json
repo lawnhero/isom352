@@ -1,0 +1,12 @@
+{
+  "built_at": "2026-11-18T04:20:56Z",
+  "bytes": 111828,
+  "chromadb_version": "1.5.9",
+  "course": "isom352",
+  "kind": "documents",
+  "model": "text-embedding-3-small",
+  "n_chunks": 104,
+  "sha256": "be552cd063c392af77d748f2d1967cf7af67b6370e5e39d38e0978bc7f000cfa",
+  "source": "course_data/schedule.json",
+  "source_mtime": "2026-11-17T21:28:33Z"
+}
